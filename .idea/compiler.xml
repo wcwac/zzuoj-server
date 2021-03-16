@@ -2,12 +2,29 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="zzuoj-server" />
+        <module name="zzuoj-gateway" />
+        <module name="zzuoj-eureka" />
+        <module name="zzuoj-auth" />
+        <module name="zzuoj-conf-client-test" />
+        <module name="zzuoj-conf" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="zzuoj-base" target="1.5" />
+      <module name="zzuoj-config" target="1.5" />
+      <module name="zzuoj-test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="zzuoj-conf" options="" />
+      <module name="zzuoj-eureka" options="" />
+      <module name="zzuoj-gateway" options="" />
+    </option>
   </component>
 </project>
