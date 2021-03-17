@@ -4,4 +4,4 @@ spring:
       uri: http://localhost:7011
       label: master
       profile: dev
-      name: config-client
+      name: zzuoj-getway

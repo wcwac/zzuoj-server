@@ -7,15 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="zzuoj-gateway" />
         <module name="zzuoj-eureka" />
         <module name="zzuoj-auth" />
-        <module name="zzuoj-conf-client-test" />
+        <module name="zzuoj-gateway" />
         <module name="zzuoj-conf" />
+        <module name="zzuoj-common" />
+        <module name="test-client" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="zzuoj-base" target="1.5" />
+      <module name="zzuoj-conf-client-test" target="1.8" />
       <module name="zzuoj-config" target="1.5" />
       <module name="zzuoj-test" target="1.8" />
     </bytecodeTargetLevel>

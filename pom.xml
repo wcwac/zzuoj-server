@@ -12,8 +12,9 @@
         <module>zzuoj-gateway</module>
         <module>zzuoj-base/zzuoj-conf</module>
         <module>zzuoj-base/zzuoj-eureka</module>
-        <module>zzuoj-conf-client-test</module>
         <module>zzuoj-auth</module>
+        <module>zzuoj-common</module>
+        <module>test-client</module>
     </modules>
 
 <!--    所有微服务jar包版本全部统一配置-->
@@ -33,11 +34,16 @@
         <mysql-connector-java.version>5.1.47</mysql-connector-java.version>
         <druid.version>1.1.10</druid.version>
 
-<!--        eureka、config-->
+<!--        eureka、config、zuul-->
         <springcloud-netflix-eureka-server.version>2.2.1.RELEASE</springcloud-netflix-eureka-server.version>
         <springcloud-netflix-eureka-client.version>2.2.1.RELEASE</springcloud-netflix-eureka-client.version>
         <springcloud-config-server.version>2.2.1.RELEASE</springcloud-config-server.version>
         <springcloud-config.version>2.2.1.RELEASE</springcloud-config.version>
+        <springcloud-netfilx-zuul.version>2.2.1.RELEASE</springcloud-netfilx-zuul.version>
+<!--        hystrix、ribbon、feign-->
+        <springcloud-netfilx-hystrix.version>2.2.1.RELEASE</springcloud-netfilx-hystrix.version>
+        <spring-cloud-starter-netflix-ribbon.version>2.2.1.RELEASE</spring-cloud-starter-netflix-ribbon.version>
+        <spring-cloud-starter-openfeign.version>2.2.1.RELEASE</spring-cloud-starter-openfeign.version>
 
         <spring-boot-actuator.version>2.2.2.RELEASE</spring-boot-actuator.version>
 <!--        <junit.version>4.12</junit.version>-->
@@ -96,7 +102,7 @@
                 <version>${druid.version}</version>
             </dependency>
 
-<!--            eureka config-->
+<!--            eureka config  zuul -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
@@ -122,6 +128,30 @@
                 <version>${springcloud-config.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+                <version>${springcloud-netfilx-zuul.version}</version>
+            </dependency>
+
+<!--            hystrix、ribbon、feign-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+                <version>${springcloud-netfilx-hystrix.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+                <version>${spring-cloud-starter-netflix-ribbon.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${spring-cloud-starter-openfeign.version}</version>
+            </dependency>
+
+            <!--            springboot actuator-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-actuator</artifactId>
