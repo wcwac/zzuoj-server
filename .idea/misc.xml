@@ -11,6 +11,7 @@
       <set>
         <option value="$PROJECT_DIR$/zzuoj-base/pom.xml" />
         <option value="$PROJECT_DIR$/zzuoj-conf-client-test/pom.xml" />
+        <option value="$PROJECT_DIR$/zzuoj-service/pom.xml" />
         <option value="$PROJECT_DIR$/zzuoj-test/pom.xml" />
       </set>
     </option>

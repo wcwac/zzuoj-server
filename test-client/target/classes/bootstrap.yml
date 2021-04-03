@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      url: http://localhost:7001
+      label: master
+      profile: test
+      name: config-test-client
