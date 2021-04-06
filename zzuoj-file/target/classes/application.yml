@@ -31,13 +31,21 @@ eureka:
 ---
 server:
   port: 8203
+
+eureka:
+  instance:
+    instance-id: zzuoj-auth-8203  #修改Eureka上的默认描述信息
+  client:
+    service-url:
+      defaultZone: http://eureka01:7001/eureka
+
 spring:
   profiles: test
   application:
     name: zzuoj-file
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost:3306/demo?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    url: jdbc:mysql://localhost:3306/zzuoj?characterEncoding=utf-8&useSSl=false
     username: root
     password: yY139411.
     driver-class-name: com.mysql.jdbc.Driver
@@ -45,10 +53,4 @@ spring:
       initial-size: 3
       min-idle: 3
       max-active: 10
-      max-wait: 6000
-eureka:
-  instance:
-    instance-id: zzuoj-auth-8203  #修改Eureka上的默认描述信息
-  client:
-    service-url:
-      defualtZone: http://eureka01:7001/eureka
+      max-wait: 60000

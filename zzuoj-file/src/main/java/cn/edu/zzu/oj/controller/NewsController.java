@@ -1,6 +1,7 @@
 package cn.edu.zzu.oj.controller;
 
 
+import cn.edu.zzu.oj.anotation.BaseResponse;
 import cn.edu.zzu.oj.entity.News;
 import cn.edu.zzu.oj.service.impl.NewsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,10 @@ import java.util.List;
  * @author yuliuyuan
  * @since 2021-03-31
  */
+
+@BaseResponse
 @RestController
-    @RequestMapping("/news")
+@RequestMapping("/news")
 public class NewsController {
     @Autowired
     NewsServiceImpl newsService = null;
@@ -54,7 +57,7 @@ public class NewsController {
     }
 
     //显示所有的新闻
-    @GetMapping("/show")
+        @GetMapping("/show")
     public List<News> getAllNews(){
         return newsService.getAllNews();
     }

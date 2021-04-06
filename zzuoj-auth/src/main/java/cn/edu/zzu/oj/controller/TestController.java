@@ -1,10 +1,14 @@
 package cn.edu.zzu.oj.controller;
 
 
+import cn.edu.zzu.oj.Exceptions.BaseException;
+import cn.edu.zzu.oj.anotation.BaseResponse;
+import cn.edu.zzu.oj.enums.HttpStatus;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+@BaseResponse
 @RestController
 @RequestMapping("/auth")
 public class TestController {
@@ -38,10 +42,9 @@ public class TestController {
     }
 
 
-    @CrossOrigin
     @GetMapping("/test/show")
     public String show1(){
-
+//        throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
         return "hello salix";
     }
 }

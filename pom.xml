@@ -12,8 +12,8 @@
         <module>zzuoj-gateway</module>
         <module>zzuoj-base/zzuoj-conf</module>
         <module>zzuoj-base/zzuoj-eureka</module>
+        <module>zzuoj-base/zzuoj-common</module>
         <module>zzuoj-auth</module>
-        <module>zzuoj-common</module>
         <module>test-client</module>
         <module>zzuoj-user</module>
         <module>zzuoj-file</module>
@@ -55,6 +55,8 @@
 <!--        <junit.version>4.12</junit.version>-->
 <!--        <log4j.version>1.2.17</log4j.version>-->
         <lombok.version>1.16.18</lombok.version>
+
+        <log4j.version>2.13.3</log4j.version>
     </properties>
 
     <dependencies>
@@ -62,6 +64,18 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+<!--        为所有项目引入common包-->
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>zzuoj-base/zzuoj-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
