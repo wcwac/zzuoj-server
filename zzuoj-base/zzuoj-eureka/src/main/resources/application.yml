@@ -8,6 +8,6 @@ eureka:
     register-with-eureka: false #是否向eureka注册中心注册自己
     fetch-registry: false # 为false，表示自己是注册中心
     service-url:
-      defaultZone: http://eureka02:7002/eureka/,http://eureka03:7003/eureka/ #集群 不填自己的
+      defaultZone: http://eureka01:7001/
       #单机，直接配置下面的就行
 #      defaultZone: http://·${eureka.instance.hostname}:${server.port}/eureka/

@@ -1,3 +1,33 @@
+server:
+  port: 9001
+
 spring:
   application:
     name: zzuoj-gateway
+  cloud:
+    gateway:
+      httpclient:
+        connect-timeout: 1000
+        response-timeout: 5s
+      discovery:
+        locator:
+          enabled: true # 开启 Gateway 服务注册中心服务发现
+          lower-case-service-id: true #使用小写
+#      下面的配置方法需要配置很多微服务，使用动态路由配置之服务名称转发，也就是上面的配置。http://ip:gateway_port/servername/正常请求的链接
+#      routes:
+#        - id: zzuoj-auth
+#          uri: lb://ZZUOJ-AUTH #lb是load balance # 动态路由
+#          uri: http://localhost:8201/ #静态路由
+#          predicates:
+#            - Path=/auth/**
+#            - Query=token #必须有?token=*** 参数
+#            - Query=token, abc. # 正则匹配 ?token=abcd
+#            - Method=Get # 匹配Get请求
+
+# Eureka Server 配置
+eureka:
+  instance:
+    instance-id: zzuoj-gateway-9001
+  client:
+    service-url:
+      defaultZone: http://eureka01:7001/eureka
