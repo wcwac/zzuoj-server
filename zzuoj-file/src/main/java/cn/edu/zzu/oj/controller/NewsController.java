@@ -56,8 +56,9 @@ public class NewsController {
         }
     }
 
+    //todo: 将userNick这个属性也加入news表，不需要做连表查询就可以获得user信息
     //显示所有的新闻
-        @GetMapping("/show")
+    @GetMapping("/show")
     public List<News> getAllNews(){
         return newsService.getAllNews();
     }

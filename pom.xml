@@ -17,6 +17,7 @@
         <module>test-client</module>
         <module>zzuoj-user</module>
         <module>zzuoj-file</module>
+        <module>zzuoj-problem</module>
     </modules>
 
 <!--    所有微服务jar包版本全部统一配置-->
@@ -60,6 +61,8 @@
     </properties>
 
     <dependencies>
+
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

@@ -21,8 +21,6 @@ public class ResponseResultHandlerAdvice implements ResponseBodyAdvice {
     //返回true表示执行当前advice
     @Override
     public boolean supports(MethodParameter methodParameter, Class aClass) {
-        log.info("methodParameter:"+methodParameter);
-        log.info("aClass:"+aClass);
         return true;
     }
 
