@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
-public class ResponseResult implements Serializable {
+public class ResponseResult extends BaseDTO {
     /**
      * 返回状态码
      */

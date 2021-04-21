@@ -22,5 +22,9 @@ public interface INewsService extends IService<News> {
 
     public int updateByNewsId(News news);
 
-    public List<News> getAllNews();
+    public List<News> getNews(Integer pos, Integer limit);
+
+    public News getNewById(Integer id);
+
+    public Integer getNewsCnt();
 }

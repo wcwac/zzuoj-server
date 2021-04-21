@@ -5,12 +5,15 @@ import cn.edu.zzu.oj.entity.Problem;
 import cn.edu.zzu.oj.enums.HttpStatus;
 import cn.edu.zzu.oj.mapper.ProblemMapper;
 import cn.edu.zzu.oj.service.IProblemService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.log4j.Log4j2;
+import org.bouncycastle.crypto.agreement.jpake.JPAKEPrimeOrderGroup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sun.dc.pr.PRError;
 
 import java.util.List;
 
@@ -30,23 +33,42 @@ public class ProblemServiceImpl extends ServiceImpl<ProblemMapper, Problem> impl
     ProblemMapper problemMapper;
 
     @Override
-    public IPage<Problem> getProblemsPage(Page<Problem> page) {
-        return problemMapper.selectPageVo(page);
+    public List<Problem> getProblemsPage(Integer pos, Integer limit) {
+        Page<Problem> page = new Page<>(pos,limit);
+
+        IPage<Problem> problemIPage = problemMapper.selectPage(page, new QueryWrapper<Problem>());
+        List<Problem> records = problemIPage.getRecords();
+
+        return records;
     }
 
-    //todo: 网络、db出现问题,是否在后端开启事务
     @Override
-    public Integer insertProblems(List<Problem> problemList) {
+    public Integer getProblemCnt() {
+        QueryWrapper<Problem> queryWrapper = new QueryWrapper<Problem>();
+        return problemMapper.selectCount(queryWrapper);
+    }
+
+    @Override
+    public Integer addProblem(Problem problem) {
         Integer cnt = 0;
-        for(Problem v : problemList){
-            try{
-                cnt += problemMapper.insert(v);
-            } catch (Exception e){
-                log.error("insert problems error: %s",e.getMessage());
-                throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
-            }
+        try {
+            cnt = problemMapper.insert(problem);
+        } catch (Exception e){
+            throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return cnt;
     }
+
+    @Override
+    public Integer switchDefunctStatusByPid(Integer pid, String status) {
+        Integer cnt = 0;
+        try {
+            cnt = problemMapper.updateProblemDefunctStatus(new Problem().setProblemId(pid).setDefunct(status));
+        } catch (Exception e){
+            throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return cnt;
+    }
+
 
 }

@@ -4,6 +4,7 @@ import cn.edu.zzu.oj.entity.Problem;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -17,5 +18,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProblemMapper extends BaseMapper<Problem> {
-    IPage<Problem> selectPageVo(Page<Problem> page);
+
+    @Update("update problem set defunct = #{defunct} where problem_id =#{problemId}")
+    Integer updateProblemDefunctStatus(Problem problem);
 }

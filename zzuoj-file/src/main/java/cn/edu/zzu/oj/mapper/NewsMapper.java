@@ -2,7 +2,10 @@ package cn.edu.zzu.oj.mapper;
 
 import cn.edu.zzu.oj.entity.News;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.beans.factory.parsing.Problem;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -15,5 +18,4 @@ import org.springframework.stereotype.Repository;
  */
 @Mapper
 public interface NewsMapper extends BaseMapper<News> {
-
 }

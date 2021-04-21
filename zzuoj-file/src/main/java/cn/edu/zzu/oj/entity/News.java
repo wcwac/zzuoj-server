@@ -8,6 +8,7 @@ import java.util.Date;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 import org.springframework.stereotype.Component;
 
 /**
@@ -19,6 +20,7 @@ import org.springframework.stereotype.Component;
  * @since 2021-03-31
  */
 
+@Accessors(chain = true)
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class News implements Serializable {
@@ -39,6 +41,4 @@ public class News implements Serializable {
     private Integer importance;
 
     private String defunct;
-
-
 }

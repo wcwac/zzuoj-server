@@ -1,11 +1,16 @@
 package cn.edu.zzu.oj.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import java.util.Date;
+
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
+import lombok.*;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
@@ -15,8 +20,15 @@ import lombok.EqualsAndHashCode;
  * @author yuliuyuan
  * @since 2021-04-11
  */
+
+
+@ToString
+@Accessors(chain = true)
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
+@TableName(autoResultMap = true)
 public class Problem implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -28,8 +40,10 @@ public class Problem implements Serializable {
 
     private String description;
 
+    //输入说明
     private String input;
 
+    //输出说明
     private String output;
 
     private String sampleInput;
@@ -42,7 +56,7 @@ public class Problem implements Serializable {
 
     private String source;
 
-    private LocalDateTime inDate;
+    private Date inDate;
 
     private Integer timeLimit;
 
