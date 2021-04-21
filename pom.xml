@@ -6,7 +6,202 @@
 
     <groupId>org.example</groupId>
     <artifactId>zzuoj-server</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>zzuoj-gateway</module>
+        <module>zzuoj-base/zzuoj-conf</module>
+        <module>zzuoj-base/zzuoj-eureka</module>
+        <module>zzuoj-base/zzuoj-common</module>
+        <module>zzuoj-auth</module>
+        <module>test-client</module>
+        <module>zzuoj-user</module>
+        <module>zzuoj-file</module>
+        <module>zzuoj-problem</module>
+    </modules>
 
+<!--    所有微服务jar包版本全部统一配置-->
+<!--    版本配置可以看这个文档： https://cloud.spring.io/spring-cloud-static/Hoxton.SR1/reference/htmlsingle/#spring-cloud-config-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <!--springcloud、springboot web test-->
+<!--        test-->
+        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+        <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
+        <spring-boot-web.version>2.2.2.RELEASE</spring-boot-web.version>
+        <spring-boot-test.version>2.2.2.RELEASE</spring-boot-test.version>
+        <!--数据库-->
+        <mysql-connector-java.version>5.1.47</mysql-connector-java.version>
+        <druid.version>1.1.10</druid.version>
+        <mybatis-plus-generator.version>3.4.1</mybatis-plus-generator.version>
+        <mybatis-plus-boot-starter.version>3.4.1</mybatis-plus-boot-starter.version>
+
+<!--        eureka、config、zuul-->
+        <springcloud-netflix-eureka-server.version>2.2.1.RELEASE</springcloud-netflix-eureka-server.version>
+        <springcloud-netflix-eureka-client.version>2.2.1.RELEASE</springcloud-netflix-eureka-client.version>
+        <springcloud-config-server.version>2.2.1.RELEASE</springcloud-config-server.version>
+        <springcloud-config.version>2.2.1.RELEASE</springcloud-config.version>
+        <springcloud-netfilx-zuul.version>2.2.1.RELEASE</springcloud-netfilx-zuul.version>
+<!--        hystrix、ribbon、feign-->
+        <springcloud-netfilx-hystrix.version>2.2.1.RELEASE</springcloud-netfilx-hystrix.version>
+        <spring-cloud-starter-netflix-ribbon.version>2.2.1.RELEASE</spring-cloud-starter-netflix-ribbon.version>
+        <spring-cloud-starter-openfeign.version>2.2.1.RELEASE</spring-cloud-starter-openfeign.version>
+<!--        gateway-->
+        <spring-cloud-starter-gateway.version>2.2.1.RELEASE</spring-cloud-starter-gateway.version>
+
+        <spring-boot-actuator.version>2.2.2.RELEASE</spring-boot-actuator.version>
+<!--        <junit.version>4.12</junit.version>-->
+<!--        <log4j.version>1.2.17</log4j.version>-->
+        <lombok.version>1.16.18</lombok.version>
+
+        <log4j.version>2.13.3</log4j.version>
+    </properties>
+
+    <dependencies>
+
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+<!--        为所有项目引入common包-->
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>zzuoj-base/zzuoj-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!--springCloud的依赖-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+<!--            SpringBoot-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot-web.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot-test.version}</version>
+            </dependency>
+            <!--数据库-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+
+<!--            mybatis-plus-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus-generator.version}</version>
+            </dependency>
+
+<!--            eureka config  zuul -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+                <version>${springcloud-netflix-eureka-server.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+                <version>${springcloud-netflix-eureka-client.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-config-server</artifactId>
+                <version>${springcloud-config-server.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-config</artifactId>
+                <version>${springcloud-config.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+                <version>${springcloud-netfilx-zuul.version}</version>
+            </dependency>
+
+<!--            hystrix、ribbon、feign-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+                <version>${springcloud-netfilx-hystrix.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+                <version>${spring-cloud-starter-netflix-ribbon.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${spring-cloud-starter-openfeign.version}</version>
+            </dependency>
+
+<!--            gateway-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-gateway</artifactId>
+                <version>${spring-cloud-starter-gateway.version}</version>
+            </dependency>
+
+            <!--            springboot actuator-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${spring-boot-actuator.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 
 </project>

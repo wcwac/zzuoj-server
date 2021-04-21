@@ -1,0 +1,24 @@
+server:
+  port: 7011
+
+spring:
+  application:
+    name: config-server #相同微服务名称必须相同
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/yuliuyuan/zzuoj-config.git
+          default-label: master
+          search-paths: config
+          username: yuliuyuan
+          password: y13064484198
+
+eureka:
+  instance:
+    instance-id: zzuoj-config-server #在eureka中的名字
+  client:
+    register-with-eureka: true #是否向eureka注册中心注册自己
+    fetch-registry: true #是否拉取其他服务,客户端是否获取eureka服务器注册表上的注册信息，默认为true
+    service-url:
+      defaultZone: http://eureka01:7001/eureka
