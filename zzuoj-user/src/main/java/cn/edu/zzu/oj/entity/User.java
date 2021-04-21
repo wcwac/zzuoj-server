@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
@@ -13,6 +14,8 @@ import lombok.EqualsAndHashCode;
  * @author yuliuyuan
  * @since 2021-03-19
  */
+
+@Accessors(chain = true)
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class User implements Serializable {

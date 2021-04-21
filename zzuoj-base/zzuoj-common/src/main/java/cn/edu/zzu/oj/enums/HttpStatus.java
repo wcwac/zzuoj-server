@@ -10,7 +10,7 @@ public enum HttpStatus {
     CHECKPOINT(103, "Checkpoint"),
 
     // 2xx Success
-    OK(200, "OK"),
+    OK(200, "   OK"),
     CREATED(201, "Created"),
     ACCEPTED(202, "Accepted"),
     NON_AUTHORITATIVE_INFORMATION(203, "Non-Authoritative Information"),

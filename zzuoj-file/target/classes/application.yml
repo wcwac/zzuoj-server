@@ -4,11 +4,11 @@ spring:
 
 ---
 server:
-  port: 8204
+  port: 8203
 spring:
   profiles: dev
   application:
-    name: zzuoj-problem
+    name: zzuoj-file
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://localhost:3306/zzuoj?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
@@ -23,18 +23,18 @@ spring:
 
 eureka:
   instance:
-    instance-id: zzuoj-problem-8204  #修改Eureka上的默认描述信息
+    instance-id: zzuoj-file-8203  #修改Eureka上的默认描述信息
   client:
     service-url:
       defaultZone: http://eureka01:7001/eureka
 
 ---
 server:
-  port: 820
+  port: 8203
 
 eureka:
   instance:
-    instance-id: zzuoj-problem-8204  #修改Eureka上的默认描述信息
+    instance-id: zzuoj-file-8203  #修改Eureka上的默认描述信息
   client:
     service-url:
       defaultZone: http://eureka01:7001/eureka
@@ -42,7 +42,7 @@ eureka:
 spring:
   profiles: test
   application:
-    name: zzuoj-problem
+    name: zzuoj-file
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://localhost:3306/zzuoj?characterEncoding=utf-8&useSSl=false
