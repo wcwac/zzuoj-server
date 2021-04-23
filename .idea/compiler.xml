@@ -12,8 +12,8 @@
         <module name="zzuoj-file" />
         <module name="zzuoj-conf" />
         <module name="zzuoj-problem" />
-        <module name="zzuoj-user" />
         <module name="zzuoj-common" />
+        <module name="zzuoj-user-interface" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -26,6 +26,7 @@
       <module name="zzuoj-entity" target="1.8" />
       <module name="zzuoj-service" target="1.8" />
       <module name="zzuoj-test" target="1.8" />
+      <module name="zzuoj-user-service" target="1.8" />
       <module name="zzuoj-util" target="1.8" />
     </bytecodeTargetLevel>
   </component>

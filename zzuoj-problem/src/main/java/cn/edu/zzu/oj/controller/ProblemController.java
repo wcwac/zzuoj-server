@@ -12,6 +12,7 @@ import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.log4j.Log4j2;
+import org.omg.PortableInterceptor.INACTIVE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -50,9 +51,21 @@ public class ProblemController {
             list = problemService.getProblemsPage(pos, limit);
         } catch (Exception e){
             log.error("show problems list error: " + e.toString());
-            throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
+            return null;
         }
         return WebEntityToFrontEntity.ProblemToProblemFront(list);
+    }
+
+    @GetMapping("/delete")
+    public String deleteProblemById(@RequestParam("problemId") Integer problemId){
+        Integer cnt = 0;
+        try {
+            cnt = problemService.deleteProblemById(problemId);
+        } catch (Exception e){
+            log.error("delete problem by id error:" + e.toString());
+            return "delete problem by id error";
+        }
+        return "delete problem by id success";
     }
 
     @GetMapping("/cnt")
@@ -106,5 +119,17 @@ public class ProblemController {
             throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return "update defunct status success";
+    }
+
+
+    @GetMapping("/get")
+    public Problem getProblemById(@RequestParam("problemId") Integer problemId) {
+        Problem problem = null;
+        try {
+            problem = problemService.getProblemById(problemId);
+        } catch (Exception e){
+            return null;
+        }
+        return problem;
     }
 }

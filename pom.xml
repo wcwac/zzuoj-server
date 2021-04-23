@@ -13,9 +13,7 @@
         <module>zzuoj-base/zzuoj-conf</module>
         <module>zzuoj-base/zzuoj-eureka</module>
         <module>zzuoj-base/zzuoj-common</module>
-        <module>zzuoj-auth</module>
-        <module>test-client</module>
-        <module>zzuoj-user</module>
+        <module>zzuoj-user-serivce</module>
         <module>zzuoj-file</module>
         <module>zzuoj-problem</module>
     </modules>

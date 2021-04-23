@@ -43,6 +43,28 @@ public class ProblemServiceImpl extends ServiceImpl<ProblemMapper, Problem> impl
     }
 
     @Override
+    public Problem getProblemById(Integer id) {
+        Problem problem = null;
+        try {
+            problem = problemMapper.selectById(id);
+        } catch (Exception e){
+            throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return problem;
+    }
+
+    @Override
+    public Integer deleteProblemById(Integer id) {
+        Integer cnt = 0;
+        try {
+            cnt =  problemMapper.deleteById(id);
+        } catch (Exception e){
+            throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return cnt;
+    }
+
+    @Override
     public Integer getProblemCnt() {
         QueryWrapper<Problem> queryWrapper = new QueryWrapper<Problem>();
         return problemMapper.selectCount(queryWrapper);

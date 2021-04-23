@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>zzuoj-user</artifactId>
+    <artifactId>zzuoj-user-service</artifactId>
 
     <dependencies>
         <dependency>
