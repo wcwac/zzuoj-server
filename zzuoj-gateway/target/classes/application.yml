@@ -3,6 +3,11 @@ spring:
     active: test
 
 ---
+zzuoj:
+  filter:
+    allowPaths: "/zzuoj-problem/problem/show,/zzuoj-problem/problem/cnt,/zzuoj-problem/problem/get,
+                 /zzuoj-file/news/show,/zzuoj-file/news/cnt,/zzuoj-file/news/get"
+
 server:
   port: 9001
 spring:
@@ -37,6 +42,11 @@ eureka:
     service-url:
       defaultZone: http://eureka01:7001/eureka
 ---
+zzuoj:
+  filter:
+    allowPaths: "/zzuoj-problem/problem/show,/zzuoj-problem/problem/cnt,/zzuoj-problem/problem/get,
+                 /zzuoj-file/news/show,/zzuoj-file/news/cnt,/zzuoj-file/news/get"
+
 server:
   port: 9001
 spring:

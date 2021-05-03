@@ -2,6 +2,7 @@ package cn.edu.zzu.oj.controller;
 
 
 import cn.edu.zzu.oj.Exceptions.BaseException;
+import cn.edu.zzu.oj.Exceptions.ExceptionHandlerAdvice;
 import cn.edu.zzu.oj.anotation.BaseResponse;
 import cn.edu.zzu.oj.converter.WebEntityToFrontEntity;
 import cn.edu.zzu.oj.entity.Problem;
@@ -13,6 +14,8 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.log4j.Log4j2;
 import org.omg.PortableInterceptor.INACTIVE;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,10 +38,10 @@ import java.util.Map;
  */
 
 @BaseResponse
-@Log4j2
 @RestController
 @RequestMapping("/problem")
 public class ProblemController {
+    private static Logger log = LoggerFactory.getLogger(ProblemController.class);
 
     @Autowired
     ProblemServiceImpl problemService;
@@ -56,69 +59,9 @@ public class ProblemController {
         return WebEntityToFrontEntity.ProblemToProblemFront(list);
     }
 
-    @GetMapping("/delete")
-    public String deleteProblemById(@RequestParam("problemId") Integer problemId){
-        Integer cnt = 0;
-        try {
-            cnt = problemService.deleteProblemById(problemId);
-        } catch (Exception e){
-            log.error("delete problem by id error:" + e.toString());
-            return "delete problem by id error";
-        }
-        return "delete problem by id success";
-    }
-
     @GetMapping("/cnt")
     public Integer getProblems(){
         return problemService.getProblemCnt();
-    }
-
-    @PostMapping("/add")
-    public String insertProblem(@RequestBody String jsonData){
-        Map<String, Object> params = null;
-        try {
-            params = JSON.parseObject(jsonData, HashMap.class);
-            Problem problem = new Problem().setTitle( (String) params.get("title") )
-                    .setTimeLimit((Integer) params.get("timeLimit"))
-                    .setMemoryLimit((Integer) params.get("memoryLimit"))
-                    .setDescription((String) params.get("description"))
-                    .setInput((String) params.get("inputDescription"))
-                    .setOutput((String) params.get("outputDescription"))
-                    .setSampleInput((String) params.get("input") )
-                    .setSampleOutput((String) params.get("output"))
-                    .setHint((String) params.get("hint"))
-                    .setSpj((String) params.get("isSpecialJudge"))
-                    .setSource((String) params.get("source"));
-            problem.setInDate(new Date()).setAccepted(0).setSubmit(0);
-
-
-
-            problemService.addProblem(problem);
-        } catch (Exception e){
-            log.error("add problem error: " + e.toString());
-            throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-        return "Add problem success!";
-    }
-
-    @GetMapping("/test")
-    public String test(){
-        return "problem service is success!";
-    }
-
-    @PostMapping("/isdefunct")
-    public String switchDefunctStatus(@RequestBody String jsonData){
-        Map<String, Object> params = null;
-        try {
-            params = JSON.parseObject(jsonData, HashMap.class);
-            Integer problemId = (Integer) params.get("pid");
-            String status = (String) params.get("newStatus");
-            problemService.switchDefunctStatusByPid(problemId, status);
-        } catch (Exception e){
-            log.error("switchDefunctStatus error: " + e.toString());
-            throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-        return "update defunct status success";
     }
 
 

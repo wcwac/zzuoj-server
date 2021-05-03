@@ -12,15 +12,13 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 public class UserSessionDTO extends BaseDTO {
 
-    public static final String HEADER_KEY = "ZZUOJ";
+    public static final String HEADER_KEY = "ZZUOJUserInfo";
     public static final String HEADER_VALUE_LOGOUT = "logout";
 
     private Long userId;
     private String username;
     private String nickname;
     private String email;
-    private String studentId;
-    private Integer emailVerified;
     private List<String> roles;
 
     private String ipv4;
