@@ -24,7 +24,7 @@ public class JwtModel extends BaseDTO {
     //0表示root 1表示admin 2表示user
     private Integer role;
 
-    private String ipv4;
+//    private String ipv4;
 
     public boolean userIdEquals(Long userId) {
         return this.userId != null && this.userId.equals(userId);

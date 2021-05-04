@@ -74,15 +74,21 @@ public class LoginFilter implements GlobalFilter, Ordered  {
             // 无 session，非 allowUrl
             return authErro(exchange, " 你的账号没有该权限或未登录! ");
         }
-//        else if(isAllowPath){
-//             allowUrl
-//            return chain.filter(exchange);
-//        }
 
         try {
-            log.info("have token: %s", token);
             //有token
             JWTUtil.checkToken(token, objectMapper);
+            //做一个权限认证，普通user url直接放，root、admin需要验证权限
+            String[] temp = requestUrl.split("/");
+            //需要admin权限
+            if(temp.length > 3 && temp[2].equals("admin")){
+
+            }
+            //需要root权限
+            if(temp.length> 3 && temp[2].equals("root")){
+
+            }
+
             return chain.filter(exchange);
 //            return chain.filter(exchange).then(thenHandlerSession(exchange));
         } catch (ExpiredJwtException e) {
@@ -154,4 +160,11 @@ public class LoginFilter implements GlobalFilter, Ordered  {
         }
         return false;
     }
+
+//    public static void main(String[] args) {
+//        String s = "/zzuoj/temp/temp1/temp2";
+//        System.out.println(s.split("/")[0]);
+//        System.out.println(s.split("/")[1]);
+//        System.out.println(s.split("/")[2]);
+//    }
 }

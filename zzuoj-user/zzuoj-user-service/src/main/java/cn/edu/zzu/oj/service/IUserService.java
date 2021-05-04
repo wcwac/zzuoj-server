@@ -9,10 +9,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author yuliuyuan
- * @since 2021-03-19
+ * @since 2021-05-04
  */
 public interface IUserService extends IService<User> {
-
     //注册
     public Boolean registry(User user);
 

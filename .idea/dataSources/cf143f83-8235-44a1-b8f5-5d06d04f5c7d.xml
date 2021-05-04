@@ -980,7 +980,7 @@
       <Engine>MyISAM</Engine>
       <Collation>utf8_general_ci</Collation>
     </table>
-    <table id="306" parent="10" name="users">
+    <table id="306" parent="10" name="user">
       <Engine>MyISAM</Engine>
       <Collation>utf8_general_ci</Collation>
     </table>

@@ -14,8 +14,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+
 public class JWTUtil {
     private static Logger log = LoggerFactory.getLogger(JWTUtil.class);
 
@@ -31,7 +30,6 @@ public class JWTUtil {
     public static String createJWT(String id, String issuer, String subject, long ttlMillis) {
         // 指定签名的时候使用的签名算法，也就是header那部分，jjwt已经将这部分内容封装好了。
         SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
-
         // 生成JWT的时间
         long nowMillis = System.currentTimeMillis();
         Date now = new Date(nowMillis);
