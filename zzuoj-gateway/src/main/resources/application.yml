@@ -6,7 +6,8 @@ spring:
 zzuoj:
   filter:
     allowPaths: "/zzuoj-problem/problem/show,/zzuoj-problem/problem/cnt,/zzuoj-problem/problem/get,
-                 /zzuoj-file/news/show,/zzuoj-file/news/cnt,/zzuoj-file/news/get"
+                 /zzuoj-file/news/show,/zzuoj-file/news/cnt,/zzuoj-file/news/get,
+                 /zzuoj-user/user/login,/zzuoj-user/user/registry"
 
 server:
   port: 9001
@@ -45,7 +46,8 @@ eureka:
 zzuoj:
   filter:
     allowPaths: "/zzuoj-problem/problem/show,/zzuoj-problem/problem/cnt,/zzuoj-problem/problem/get,
-                 /zzuoj-file/news/show,/zzuoj-file/news/cnt,/zzuoj-file/news/get"
+                 /zzuoj-file/news/show,/zzuoj-file/news/cnt,/zzuoj-file/news/get,
+                 /zzuoj-user/user/login,/zzuoj-user/user/registry"
 
 server:
   port: 9001

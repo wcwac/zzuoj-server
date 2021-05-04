@@ -1,12 +1,12 @@
-package cn.edu.zzu.oj.Exceptions;
+package cn.edu.zzu.oj.handler;
 
 //Runtime Exception,用来处理运行时异常
 
 
+import cn.edu.zzu.oj.Exceptions.BaseException;
 import cn.edu.zzu.oj.anotation.BaseResponse;
 import cn.edu.zzu.oj.entity.ResponseResult;
 import cn.edu.zzu.oj.enums.HttpStatus;
-import lombok.extern.log4j.Log4j2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;

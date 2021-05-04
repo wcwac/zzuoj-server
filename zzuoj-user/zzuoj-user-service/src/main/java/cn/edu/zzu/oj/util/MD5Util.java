@@ -1,32 +1,23 @@
 package cn.edu.zzu.oj.util;
 
+import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class MD5Util {
     public static String md5(String str){
-        MessageDigest md5 = null;
+        byte[] digest = null;
         try {
-            md5 = MessageDigest.getInstance("MD5Util");
-        } catch (Exception e) {
-            return "";
+            MessageDigest md5 = MessageDigest.getInstance("md5");
+            digest  = md5.digest(str.getBytes("utf-8"));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         }
-        char[] charArray = str.toCharArray();
-        byte[] byteArray = new byte[charArray.length];
-
-        for (int i = 0; i < charArray.length; i++)
-            byteArray[i] = (byte) charArray[i];
-
-        byte[] md5Bytes = md5.digest(byteArray);
-
-        StringBuffer hexValue = new StringBuffer();
-
-        for (int i = 0; i < md5Bytes.length; i++) {
-            int val = ((int) md5Bytes[i]) & 0xff;
-            if (val < 16)
-                hexValue.append("0");
-            hexValue.append(Integer.toHexString(val));
-        }
-
-        return hexValue.toString();
+        //16是表示转换为16进制数
+        String md5Str = new BigInteger(1, digest).toString(16);
+        return md5Str;
     }
 }

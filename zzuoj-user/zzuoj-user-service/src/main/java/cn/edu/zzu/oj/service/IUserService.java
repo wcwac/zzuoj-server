@@ -18,4 +18,7 @@ public interface IUserService extends IService<User> {
 
     //验证
     public Boolean verify(User user);
+
+    //登陆
+    public User login(String uId, String pwd);
 }

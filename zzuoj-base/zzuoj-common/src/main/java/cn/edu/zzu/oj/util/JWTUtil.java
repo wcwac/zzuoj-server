@@ -19,7 +19,7 @@ import java.util.Map;
 public class JWTUtil {
     private static Logger log = LoggerFactory.getLogger(JWTUtil.class);
 
-    private static final String KEY = "022bdc63c3c5a45879ee6581508b9d03adfec4a4658c0ab3d722e50c91a351c42c231cf43bb8f86998202bd301ec52239a74fc0c9a9aeccce604743367c9646b";
+    private static final String KEY = "test022bdc63c3c5a45879ee6581508b9d03adfec4a4658c0ab3d722e50c91a351c42c231cf43bb8f86998202bd301ec52239a74fc0c9a9aeccce604743367c9646b";
 
     public static SecretKey generateKey() {
         byte[] encodedKey = Base64.decodeBase64(KEY);
@@ -37,16 +37,16 @@ public class JWTUtil {
         Date now = new Date(nowMillis);
 
         // 创建payload的私有声明（根据特定的业务需要添加，如果要拿这个做验证，一般是需要和jwt的接收方提前沟通好验证方式的）
-        Map<String, Object> claims = new HashMap<>();
-        claims.put("uid", "123456");
-        claims.put("user_name", "admin");
-        claims.put("nick_name", "X-rapido");
+//        Map<String, Object> claims = new HashMap<>();
+//        claims.put("uid", "123456");
+//        claims.put("user_name", "admin");
+//        claims.put("nick_name", "X-rapido");
 
         SecretKey key = generateKey();
         // 这里其实就是new一个JwtBuilder，设置jwt的body
         JwtBuilder builder = Jwts.builder()
                 // 如果有私有声明，一定要先设置这个自己创建的私有的声明，这个是给builder的claim赋值，一旦写在标准的声明赋值之后，就是覆盖了那些标准的声明的
-                .setClaims(claims)
+//                .setClaims(claims)
                 // 设置jti(JWT ID)：是JWT的唯一标识，根据业务需要，这个可以设置为一个不重复的值，主要用来作为一次性token,从而回避重放攻击。
                 .setId(id)
                 // iat: jwt的签发时间

@@ -1,11 +1,10 @@
 package cn.edu.zzu.oj.filter;
 
 import cn.edu.zzu.oj.config.FilterProperties;
-import cn.edu.zzu.oj.entity.UserSessionDTO;
+import cn.edu.zzu.oj.entity.jwt.JwtModel;
 import cn.edu.zzu.oj.util.JWTUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.ExpiredJwtException;
 import org.slf4j.Logger;
@@ -15,18 +14,14 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
-import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
-import org.springframework.web.server.WebSession;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -85,6 +80,7 @@ public class LoginFilter implements GlobalFilter, Ordered  {
 //        }
 
         try {
+            log.info("have token: %s", token);
             //有token
             JWTUtil.checkToken(token, objectMapper);
             return chain.filter(exchange);
@@ -104,14 +100,14 @@ public class LoginFilter implements GlobalFilter, Ordered  {
 
     private Mono<Void> thenHandlerSession(ServerWebExchange exchange) {
         return Mono.fromRunnable(() -> {
-            List<String> userInfos = exchange.getResponse().getHeaders().remove(UserSessionDTO.HEADER_KEY);
+            List<String> userInfos = exchange.getResponse().getHeaders().remove(JwtModel.HEADER_KEY);
             Optional.of(userInfos).filter(list -> !list.isEmpty()).map(list -> list.get(0)).ifPresent(userInfoStr -> {
                 Optional.of(exchange).map(ServerWebExchange::getSession).map(Mono::block).ifPresent(webSession -> {
                     Map<String, Object> map = webSession.getAttributes();
-                    if (UserSessionDTO.HEADER_VALUE_LOGOUT.equals(userInfoStr)) {
-                        map.remove(UserSessionDTO.HEADER_KEY);
+                    if (JwtModel.HEADER_VALUE_LOGOUT.equals(userInfoStr)) {
+                        map.remove(JwtModel.HEADER_KEY);
                     } else {
-                        map.put(UserSessionDTO.HEADER_KEY, userInfoStr);
+                        map.put(JwtModel.HEADER_KEY, userInfoStr);
                     }
                 });
             });
@@ -152,9 +148,7 @@ public class LoginFilter implements GlobalFilter, Ordered  {
     }
 
     private boolean isAllowPath(String requestUrl) {
-        System.out.println("111111:"+requestUrl);
         for (String allowPath : filterProp.getAllowPaths()){
-            System.out.println("22222222:"+allowPath);
             if (requestUrl.startsWith(allowPath))
                 return true;
         }

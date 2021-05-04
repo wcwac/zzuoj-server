@@ -1,14 +1,19 @@
 package cn.edu.zzu.oj.controller;
 
+import cn.edu.zzu.oj.Exceptions.BaseException;
 import cn.edu.zzu.oj.anotation.BaseResponse;
-import cn.edu.zzu.oj.entity.ResponseResult;
 import cn.edu.zzu.oj.entity.User;
-import cn.edu.zzu.oj.entity.UserSessionDTO;
+import cn.edu.zzu.oj.entity.jwt.JwtModel;
 import cn.edu.zzu.oj.entity.front.UserFront;
+import cn.edu.zzu.oj.enums.HttpStatus;
 import cn.edu.zzu.oj.service.impl.UserServiceImpl;
+import cn.edu.zzu.oj.util.JWTUtil;
 import cn.edu.zzu.oj.util.MD5Util;
-import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.extension.exceptions.ApiException;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -16,21 +21,18 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import javax.xml.crypto.Data;
 import java.util.Date;
 import java.util.Map;
+import java.util.Random;
 
 @BaseResponse
 @RestController
 @RequestMapping("/user")
 public class UserController {
+    private static Logger log = LoggerFactory.getLogger(UserController.class);
+
     @Autowired
     UserServiceImpl userService;
-
-    @GetMapping("/test")
-    public String test(){
-        return "hello salix";
-    }
 
     @Transactional
     @PostMapping("/registry")
@@ -54,17 +56,31 @@ public class UserController {
         }
     }
 //
-//    @PostMapping("/login")
-//    @ResponseBody
-//    public UserSessionDTO login(HttpServletResponse response,
-//                                                @RequestBody @NotNull Map<String, String> json,
-//                                                @RequestHeader("user-agent") String userAgent) throws ApiException {
-//        String username = null, password = null;
-//        try {
-//            username = json.get("username");
-//            password = json.get("password");
-//        } catch (Exception e) {
-//
-//        }
-//    }
+    @PostMapping("/login")
+    @ResponseBody
+    public String login(HttpServletResponse response,
+                                                @RequestBody @NotNull Map<String, String> json,
+                                                @RequestHeader("user-agent") String userAgent) throws ApiException, JsonProcessingException {
+        String username = null, password = null;
+        JwtModel userSessionDTO = null;
+        try {
+            username = json.get("username");
+            password = json.get("password");
+            User user = userService.login(username, MD5Util.md5(password));
+            userSessionDTO = new JwtModel().setUserId(user.getUserId())
+                    .setNickname(user.getNick())
+                    .setEmail(user.getEmail())
+                    .setIpv4(user.getIp());
+            //todo: 将角色权限控制放在user表？ 为了扩展性，可以不这样做，但是需要连表查询
+//            userSessionDTO.setRole();
+        } catch (Exception e) {
+            log.error("login error: " + e.toString());
+            throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        //签发30分钟的token
+        ObjectMapper objectMapper = new ObjectMapper();
+        return JWTUtil.createJWT(userSessionDTO.getUserId(), "salix", objectMapper.writeValueAsString(userSessionDTO), 30 * 60L * 1000L);
+    }
+
+
 }
