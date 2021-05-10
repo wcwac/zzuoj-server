@@ -5,3 +5,12 @@ spring:
       label: master
       profile: test
       name: config-zzuoj-user
+
+logging:
+  level:
+    cn:
+      edu:
+        zzu:
+          oj:
+            mapper:
+              debug

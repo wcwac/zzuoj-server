@@ -1,8 +1,8 @@
-package cn.edu.zzu.oj.entity.front;
+package cn.edu.zzu.oj.entity.frontToWeb;
 
 
 import java.io.Serializable;
 
-//与前端交互的模版
+//前端往后端传
 public class BaseFront implements Serializable {
 }

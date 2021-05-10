@@ -16,6 +16,9 @@ import java.util.List;
  */
 public interface IPrivilegeService extends IService<Privilege> {
 
+    //gets
+    public List<Privilege> getPrivilegesByUserIds(List<String> uIds) throws Exception;
+
     //get
     public Integer getPrivilegeByUserId(String uId);
 

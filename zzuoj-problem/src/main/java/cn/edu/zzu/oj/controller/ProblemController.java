@@ -4,7 +4,7 @@ package cn.edu.zzu.oj.controller;
 import cn.edu.zzu.oj.anotation.BaseResponse;
 import cn.edu.zzu.oj.converter.WebEntityToFrontEntity;
 import cn.edu.zzu.oj.entity.Problem;
-import cn.edu.zzu.oj.entity.front.ProblemFront;
+import cn.edu.zzu.oj.entity.frontToWeb.ProblemFront;
 import cn.edu.zzu.oj.service.impl.ProblemServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

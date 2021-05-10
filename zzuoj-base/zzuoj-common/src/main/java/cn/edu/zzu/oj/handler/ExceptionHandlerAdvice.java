@@ -25,7 +25,7 @@ public class ExceptionHandlerAdvice {
     @ExceptionHandler(Exception.class)
     public ResponseResult handleException(Exception e){
         log.error(e.getMessage(),e);
-        return new ResponseResult(HttpStatus.INTERNAL_SERVER_ERROR.value(),HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(),null);
+        return ResponseResult.err(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(),null);
     }
 
     /**
@@ -36,7 +36,7 @@ public class ExceptionHandlerAdvice {
     @ExceptionHandler(RuntimeException.class)
     public ResponseResult handleRuntimeException(RuntimeException e){
         log.error(e.getMessage(),e);
-        return new ResponseResult(HttpStatus.INTERNAL_SERVER_ERROR.value(),HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(),null);
+        return ResponseResult.err(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(),null);
     }
 
     /**
@@ -48,6 +48,6 @@ public class ExceptionHandlerAdvice {
     public ResponseResult handleBaseException(BaseException e){
         log.error(e.getMessage(),e);
         HttpStatus code=e.getCode();
-        return new ResponseResult(code.value(),code.getReasonPhrase(),null);
+        return ResponseResult.err(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(),null);
     }
 }

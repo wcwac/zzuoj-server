@@ -1,4 +1,4 @@
-package cn.edu.zzu.oj.entity.front;
+package cn.edu.zzu.oj.entity.frontToWeb;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;

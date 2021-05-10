@@ -1,4 +1,4 @@
-package cn.edu.zzu.oj.entity.front;
+package cn.edu.zzu.oj.entity.frontToWeb;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

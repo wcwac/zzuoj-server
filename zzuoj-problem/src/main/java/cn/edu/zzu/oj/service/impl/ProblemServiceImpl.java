@@ -37,12 +37,15 @@ public class ProblemServiceImpl extends ServiceImpl<ProblemMapper, Problem> impl
     ProblemMapper problemMapper;
 
     @Override
-    public List<Problem> getProblemsPage(Integer pos, Integer limit) {
-        Page<Problem> page = new Page<>(pos,limit);
-
-        IPage<Problem> problemIPage = problemMapper.selectPage(page, new QueryWrapper<Problem>());
-        List<Problem> records = problemIPage.getRecords();
-
+    public List<Problem> getProblemsPage(Integer pos, Integer limit) throws Exception {
+        List<Problem> records = null;
+        try {
+            Page<Problem> page = new Page<>(pos,limit);
+            IPage<Problem> userIPage = problemMapper.selectPage(page, new QueryWrapper<Problem>());
+            records = userIPage.getRecords();
+        } catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
         return records;
     }
 

@@ -32,7 +32,7 @@ public class ResponseResultHandlerAdvice implements ResponseBodyAdvice {
             return o;
         }else{
             //对于String要特殊处理，不然就有error 实现ResponseBbodyAdvice接口后，Controller层返回String类型报错的解决办法：https://juszoe.github.io/views/spring-boot/ResponseBodyAdvice%E5%BC%82%E5%B8%B8.html#%E9%97%AE%E9%A2%98
-            ResponseResult responseResult = new ResponseResult(HttpStatus.OK.value(),HttpStatus.OK.getReasonPhrase(),o);
+            ResponseResult responseResult = ResponseResult.ok(HttpStatus.OK.getReasonPhrase(),o);
             if(o instanceof String) {
                 ObjectMapper objectMapper = new ObjectMapper();
                 try {

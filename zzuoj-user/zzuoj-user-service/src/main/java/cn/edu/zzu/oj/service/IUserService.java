@@ -2,6 +2,9 @@ package cn.edu.zzu.oj.service;
 
 import cn.edu.zzu.oj.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.beans.factory.parsing.Problem;
+
+import java.util.List;
 
 /**
  * <p>
@@ -20,4 +23,10 @@ public interface IUserService extends IService<User> {
 
     //登陆
     public User login(String uId, String pwd);
+
+    public List<User> getUserPage(Integer pos, Integer limit) throws Exception;
+
+    public Integer getUserCnt() throws Exception;
+
+    public Integer switchDefunctStatusByUid(String uid, String status);
 }

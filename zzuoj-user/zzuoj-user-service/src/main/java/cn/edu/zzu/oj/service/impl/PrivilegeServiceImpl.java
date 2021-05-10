@@ -3,11 +3,14 @@ package cn.edu.zzu.oj.service.impl;
 import cn.edu.zzu.oj.entity.Privilege;
 import cn.edu.zzu.oj.mapper.PrivilegeMapper;
 import cn.edu.zzu.oj.service.IPrivilegeService;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -25,10 +28,23 @@ public class PrivilegeServiceImpl extends ServiceImpl<PrivilegeMapper, Privilege
     private PrivilegeMapper privilegeMapper;
 
     @Override
+    public List<Privilege> getPrivilegesByUserIds(List<String> uIds) throws Exception {
+        List<Privilege> res = new ArrayList<>();
+        try {
+            List<Privilege> privileges = privilegeMapper.selectBatchIds(uIds);
+        } catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+        return res;
+    }
+
+    @Override
     public Integer getPrivilegeByUserId(String uId) {
         Integer res = 0;
         try {
-            Privilege p = privilegeMapper.selectById(uId);
+            QueryWrapper<Privilege> queryWrapper = new QueryWrapper<>();
+            queryWrapper.eq("user_id", uId);
+            Privilege p = privilegeMapper.selectOne(queryWrapper);
             if(p != null) res = p.getRightstr();
         } catch (Exception e){
             throw e;
@@ -41,7 +57,7 @@ public class PrivilegeServiceImpl extends ServiceImpl<PrivilegeMapper, Privilege
         Integer res = 0;
         try {
             QueryWrapper<Privilege> queryWrapper = new QueryWrapper<>();
-            queryWrapper.eq("userId", uId);
+            queryWrapper.eq("user_id", uId);
             res = privilegeMapper.delete(queryWrapper);
         } catch (Exception e){
             throw e;

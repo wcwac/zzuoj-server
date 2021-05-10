@@ -14,11 +14,13 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
@@ -55,6 +57,13 @@ public class LoginFilter implements GlobalFilter, Ordered  {
 
         //继续向下执行
         ServerHttpRequest request = exchange.getRequest();
+        //OPTIONS方法放行
+        log.info("method: " + request.getMethod());
+        if (request.getMethod().equals(HttpMethod.OPTIONS)) {
+            log.info("method: " + request.getMethod());
+            return chain.filter(exchange);
+        }
+
         String requestUrl = request.getPath().toString();
         String realIp = Optional.of(request)
                 .map(o -> o.getHeaders().getFirst("x-real-ip"))
@@ -67,19 +76,20 @@ public class LoginFilter implements GlobalFilter, Ordered  {
         ServerHttpResponse resp = exchange.getResponse();
 
         boolean isAllowPath = isAllowPath(requestUrl);
+        log.info("token: "+token);
         if(isAllowPath) {
             return chain.filter(exchange);
         }
         if (token == null) {
             // 无 session，非 allowUrl
-            return authErro(exchange, " 你的账号没有该权限或未登录! ");
+            return authErro(exchange, "Authentication failed");
         }
 
         try {
             //有token
             JWTUtil.checkToken(token, objectMapper);
             //做一个权限认证，普通user url直接放，root、admin需要验证权限
-            String[] temp = requestUrl.split("/");
+            String[] temp = requestUrl.split("x");
             //需要admin权限
             if(temp.length > 3 && temp[2].equals("admin")){
 
@@ -94,13 +104,13 @@ public class LoginFilter implements GlobalFilter, Ordered  {
         } catch (ExpiredJwtException e) {
             log.error(e.getMessage(), e);
             if (e.getMessage().contains("Allowed clock skew")) {
-                return authErro(exchange, "认证过期");
+                return authErro(exchange, "Authentication expired");
             } else {
-                return authErro(exchange, "认证失败");
+                return authErro(exchange, "Authentication failed");
             }
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-            return authErro(exchange, "认证失败");
+            return authErro(exchange, "Authentication failed");
         }
     }
 
@@ -144,7 +154,7 @@ public class LoginFilter implements GlobalFilter, Ordered  {
 //         返回鉴权失败的消息
         JSONObject message = new JSONObject();
         message.put("code", HttpStatus.UNAUTHORIZED.value());
-        message.put("message", msg);
+        message.put("msg", msg);
         message.put("timestamp", String.valueOf(System.currentTimeMillis()));
         message.put("data", null);
         ServerHttpResponse response = exchange.getResponse();

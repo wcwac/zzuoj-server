@@ -19,18 +19,10 @@ public class JwtModel extends BaseDTO {
     public static final String HEADER_VALUE_LOGOUT = "logout";
 
     private String userId;
-    private String nickname;
+    private String nickName;
     private String email;
     //0表示root 1表示admin 2表示user
     private Integer role;
 
 //    private String ipv4;
-
-    public boolean userIdEquals(Long userId) {
-        return this.userId != null && this.userId.equals(userId);
-    }
-
-    public boolean userIdNotEquals(Long userId) {
-        return !userIdEquals(userId);
-    }
 }
