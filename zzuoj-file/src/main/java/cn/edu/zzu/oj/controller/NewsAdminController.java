@@ -37,6 +37,7 @@ public class NewsAdminController {
                     .setImportance((Integer) params.get("importance"))
                     .setTime(new Date())
                     .setUserId("1");
+            System.out.println(news.getContent());
             if(newsService.insert(news) == 1){
                 return "add news success";
             }

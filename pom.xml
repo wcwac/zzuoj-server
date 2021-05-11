@@ -15,7 +15,8 @@
         <module>zzuoj-base/zzuoj-common</module>
         <module>zzuoj-file</module>
         <module>zzuoj-problem</module>
-        <module>zzuoj-user/zzuoj-user-interface</module>
+        <module>zzuoj-user</module>
+        <module>zzuoj-contest</module>
     </modules>
 
 <!--    所有微服务jar包版本全部统一配置-->
