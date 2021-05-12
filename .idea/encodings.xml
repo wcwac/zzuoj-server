@@ -15,7 +15,7 @@
     <file url="file://$PROJECT_DIR$/zzuoj-gateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zzuoj-problem/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zzuoj-problem/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/zzuoj-user/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/zzuoj-user/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/resources" charset="UTF-8" />
   </component>
 </project>

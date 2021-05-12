@@ -1,5 +1,7 @@
 package cn.edu.zzu.oj.filter;
 
+import cn.edu.zzu.oj.client.AuthClient;
+import cn.edu.zzu.oj.client.UserClient;
 import cn.edu.zzu.oj.config.FilterProperties;
 import cn.edu.zzu.oj.entity.jwt.JwtModel;
 import cn.edu.zzu.oj.util.JWTUtil;
@@ -40,15 +42,16 @@ public class LoginFilter implements GlobalFilter, Ordered  {
 
     private ObjectMapper objectMapper;
 
+    @Autowired
+    private AuthClient authClient;
+
     public LoginFilter(ObjectMapper objectMapper) {
         this.objectMapper = objectMapper;
     }
 
-//    @Autowired
-//    private
-
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+
         //三种url
         // 1. 无需登陆即可访问的url(filterProp里定义的)
         // 2. 普通用户需要登陆之后可以访问的
