@@ -1,11 +1,10 @@
-package cn.edu.zzu.oj.controller;
+package cn.edu.zzu.oj.controller.auth;
 
 
 import cn.edu.zzu.oj.Exceptions.BaseException;
 import cn.edu.zzu.oj.anotation.BaseResponse;
 import cn.edu.zzu.oj.enums.HttpStatus;
 import cn.edu.zzu.oj.service.impl.PrivilegeServiceImpl;
-import org.apache.http.protocol.HTTP;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package cn.edu.zzu.oj.controller;
+package cn.edu.zzu.oj.controller.user;
 
 import cn.edu.zzu.oj.Exceptions.BaseException;
 import cn.edu.zzu.oj.anotation.BaseResponse;
