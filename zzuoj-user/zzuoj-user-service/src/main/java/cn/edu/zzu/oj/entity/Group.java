@@ -2,6 +2,7 @@ package cn.edu.zzu.oj.entity;
 
 import java.io.Serializable;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,6 +17,7 @@ import lombok.experimental.Accessors;
  * @since 2021-05-12
  */
 
+@TableName("`group`")
 @Accessors(chain = true)
 @AllArgsConstructor
 @Data

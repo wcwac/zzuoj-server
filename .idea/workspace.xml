@@ -20,32 +20,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="737edd83-1331-461f-ae03-6f8b546125f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/controller/ContestAdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-interface/src/main/java/cn.edu.zzu.oj/api/GroupInternalApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/group/GroupAdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/group/GroupInternalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/config/MybatisPlusConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn.edu.zzu/oj/ContestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/ContestApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn.edu.zzu/oj/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/config/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn.edu.zzu/oj/config/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/config/MybatisPlusConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn.edu.zzu/oj/controller/ContestAdminController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn.edu.zzu/oj/controller/ContestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn.edu.zzu/oj/util/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/util/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/target/classes/cn/edu/zzu/oj/controller/ContestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-interface/src/main/java/cn.edu.zzu.oj/api/UserInternalApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-interface/src/main/java/cn.edu.zzu.oj/api/UserInternalApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-interface/target/classes/cn/edu/zzu/oj/api/UserInternalApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-interface/target/classes/cn/edu/zzu/oj/api/UserInternalApi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/AuthInternalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/auth/AuthInternalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/PrivilegeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/auth/PrivilegeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/PrivilegeRootController.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/auth/PrivilegeRootController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/UserAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/user/UserAdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/UserInternalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/user/UserInternalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/controller/AuthInternalController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/controller/PrivilegeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/controller/PrivilegeRootController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/controller/UserAdminController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/controller/UserInternalController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/mapper/ContestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/mapper/ContestMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/service/impl/ContestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/service/impl/ContestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-problem/src/main/java/cn/edu/zzu/oj/service/impl/ProblemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-problem/src/main/java/cn/edu/zzu/oj/service/impl/ProblemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/group/GroupAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/group/GroupAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/user/UserAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/user/UserAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/entity/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/entity/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/service/IGroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/service/IGroupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/service/impl/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/service/impl/GroupServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/controller/group/GroupAdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/controller/group/GroupAdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/controller/user/UserAdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/controller/user/UserAdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/controller/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/controller/user/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/entity/Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/entity/Group.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/service/IGroupService.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/service/IGroupService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/service/IUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/service/impl/GroupServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/service/impl/GroupServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/service/impl/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,8 +99,8 @@
       <recent name="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.edu.zzu.oj.controller" />
       <recent name="cn.edu.zzu.oj.config" />
+      <recent name="cn.edu.zzu.oj.controller" />
       <recent name="cn.edu.zzu.oj.converter" />
       <recent name="cn.edu.zzu.oj.enums" />
       <recent name="cn.edu.zzu.oj.entity" />
@@ -114,7 +113,7 @@
       <recent name="$PROJECT_DIR$/zzuoj-user-interface/src/main/java/cn.edu.zzu.oj" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CodeGenerator (1)">
+  <component name="RunManager" selected="Application.UserApplication">
     <configuration name="CodeGenerator (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.edu.zzu.oj.util.CodeGenerator" />
       <module name="zzuoj-user-service" />
@@ -280,12 +279,12 @@
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
     <state x="599" y="343" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1792.1022@0.25.1792.1022" timestamp="1617606919368" />
-    <state x="709" y="247" key="#com.intellij.ide.util.MemberChooser" timestamp="1620808769444">
+    <state x="709" y="247" key="#com.intellij.ide.util.MemberChooser" timestamp="1620882336177">
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
     <state x="709" y="247" key="#com.intellij.ide.util.MemberChooser/-1194.25.1194.809/0.25.1792.1022@0.25.1792.1022" timestamp="1617690698439" />
     <state x="709" y="248" key="#com.intellij.ide.util.MemberChooser/-1194.25.1194.809/0.25.1792.1026@0.25.1792.1026" timestamp="1616056788205" />
-    <state x="709" y="247" key="#com.intellij.ide.util.MemberChooser/0.25.1792.1022@0.25.1792.1022" timestamp="1620808769444" />
+    <state x="709" y="247" key="#com.intellij.ide.util.MemberChooser/0.25.1792.1022@0.25.1792.1022" timestamp="1620882336177" />
     <state x="709" y="247" key="#com.intellij.ide.util.MemberChooser/0.25.1792.1023@0.25.1792.1023" timestamp="1620550645182" />
     <state x="709" y="247" key="#com.intellij.ide.util.MemberChooser/0.25.1792.1024@0.25.1792.1024" timestamp="1620539918004" />
     <state x="709" y="248" key="#com.intellij.ide.util.MemberChooser/0.25.1792.1026@0.25.1792.1026" timestamp="1616153842826" />
@@ -324,7 +323,7 @@
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
     <state x="860" y="311" key="FileChooserDialogImpl/0.25.1792.1022@0.25.1792.1022" timestamp="1620306574440" />
-    <state width="1750" height="297" key="GridCell.Tab.0.bottom" timestamp="1620812361045">
+    <state width="1750" height="502" key="GridCell.Tab.0.bottom" timestamp="1620889096062">
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
     <state width="1750" height="360" key="GridCell.Tab.0.bottom/-1032.25.1032.643/0.25.1792.1095@0.25.1792.1095" timestamp="1615467499197" />
@@ -336,13 +335,13 @@
     <state width="1750" height="280" key="GridCell.Tab.0.bottom/-1196.25.1196.871/0.25.1792.1022@0.25.1792.1022" timestamp="1616917698972" />
     <state width="1750" height="212" key="GridCell.Tab.0.bottom/-1196.25.1196.871/0.25.1792.1031@0.25.1792.1031" timestamp="1615437809897" />
     <state width="1750" height="309" key="GridCell.Tab.0.bottom/0.25.1792.1022@0.0.1792.1120" timestamp="1618819469587" />
-    <state width="1750" height="297" key="GridCell.Tab.0.bottom/0.25.1792.1022@0.25.1792.1022" timestamp="1620812361045" />
+    <state width="1750" height="502" key="GridCell.Tab.0.bottom/0.25.1792.1022@0.25.1792.1022" timestamp="1620889096062" />
     <state width="1750" height="307" key="GridCell.Tab.0.bottom/0.25.1792.1023@0.25.1792.1023" timestamp="1620546545063" />
     <state width="1750" height="359" key="GridCell.Tab.0.bottom/0.25.1792.1024@0.25.1792.1024" timestamp="1620540620229" />
     <state width="1750" height="255" key="GridCell.Tab.0.bottom/0.25.1792.1026@0.25.1792.1026" timestamp="1616232582032" />
     <state width="1750" height="335" key="GridCell.Tab.0.bottom/0.25.1792.1031@0.25.1792.1031" timestamp="1615866590753" />
     <state width="1750" height="212" key="GridCell.Tab.0.bottom/1792.365.1032.695/0.25.1792.1031@0.25.1792.1031" timestamp="1615443922241" />
-    <state width="1750" height="297" key="GridCell.Tab.0.center" timestamp="1620812361044">
+    <state width="1750" height="502" key="GridCell.Tab.0.center" timestamp="1620889096061">
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
     <state width="1750" height="360" key="GridCell.Tab.0.center/-1032.25.1032.643/0.25.1792.1095@0.25.1792.1095" timestamp="1615467499196" />
@@ -354,13 +353,13 @@
     <state width="1750" height="280" key="GridCell.Tab.0.center/-1196.25.1196.871/0.25.1792.1022@0.25.1792.1022" timestamp="1616917698971" />
     <state width="1750" height="212" key="GridCell.Tab.0.center/-1196.25.1196.871/0.25.1792.1031@0.25.1792.1031" timestamp="1615437809897" />
     <state width="1750" height="309" key="GridCell.Tab.0.center/0.25.1792.1022@0.0.1792.1120" timestamp="1618819469586" />
-    <state width="1750" height="297" key="GridCell.Tab.0.center/0.25.1792.1022@0.25.1792.1022" timestamp="1620812361044" />
+    <state width="1750" height="502" key="GridCell.Tab.0.center/0.25.1792.1022@0.25.1792.1022" timestamp="1620889096061" />
     <state width="1750" height="307" key="GridCell.Tab.0.center/0.25.1792.1023@0.25.1792.1023" timestamp="1620546545063" />
     <state width="1750" height="359" key="GridCell.Tab.0.center/0.25.1792.1024@0.25.1792.1024" timestamp="1620540620229" />
     <state width="1750" height="255" key="GridCell.Tab.0.center/0.25.1792.1026@0.25.1792.1026" timestamp="1616232582032" />
     <state width="1750" height="335" key="GridCell.Tab.0.center/0.25.1792.1031@0.25.1792.1031" timestamp="1615866590752" />
     <state width="1750" height="212" key="GridCell.Tab.0.center/1792.365.1032.695/0.25.1792.1031@0.25.1792.1031" timestamp="1615443922240" />
-    <state width="1750" height="297" key="GridCell.Tab.0.left" timestamp="1620812361044">
+    <state width="1750" height="502" key="GridCell.Tab.0.left" timestamp="1620889096060">
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
     <state width="1750" height="360" key="GridCell.Tab.0.left/-1032.25.1032.643/0.25.1792.1095@0.25.1792.1095" timestamp="1615467499196" />
@@ -373,13 +372,13 @@
     <state width="1750" height="212" key="GridCell.Tab.0.left/-1196.25.1196.871/0.25.1792.1031@0.25.1792.1031" timestamp="1615437809896" />
     <state width="1750" height="309" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1618819469474" />
     <state width="1750" height="309" key="GridCell.Tab.0.left/0.25.1792.1022@0.0.1792.1120" timestamp="1618819469585" />
-    <state width="1750" height="297" key="GridCell.Tab.0.left/0.25.1792.1022@0.25.1792.1022" timestamp="1620812361044" />
+    <state width="1750" height="502" key="GridCell.Tab.0.left/0.25.1792.1022@0.25.1792.1022" timestamp="1620889096060" />
     <state width="1750" height="307" key="GridCell.Tab.0.left/0.25.1792.1023@0.25.1792.1023" timestamp="1620546545062" />
     <state width="1750" height="359" key="GridCell.Tab.0.left/0.25.1792.1024@0.25.1792.1024" timestamp="1620540620228" />
     <state width="1750" height="255" key="GridCell.Tab.0.left/0.25.1792.1026@0.25.1792.1026" timestamp="1616232582031" />
     <state width="1750" height="335" key="GridCell.Tab.0.left/0.25.1792.1031@0.25.1792.1031" timestamp="1615866590752" />
     <state width="1750" height="212" key="GridCell.Tab.0.left/1792.365.1032.695/0.25.1792.1031@0.25.1792.1031" timestamp="1615443922240" />
-    <state width="1750" height="297" key="GridCell.Tab.0.right" timestamp="1620812361044">
+    <state width="1750" height="502" key="GridCell.Tab.0.right" timestamp="1620889096062">
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
     <state width="1750" height="360" key="GridCell.Tab.0.right/-1032.25.1032.643/0.25.1792.1095@0.25.1792.1095" timestamp="1615467499197" />
@@ -391,32 +390,32 @@
     <state width="1750" height="280" key="GridCell.Tab.0.right/-1196.25.1196.871/0.25.1792.1022@0.25.1792.1022" timestamp="1616917698972" />
     <state width="1750" height="212" key="GridCell.Tab.0.right/-1196.25.1196.871/0.25.1792.1031@0.25.1792.1031" timestamp="1615437809897" />
     <state width="1750" height="309" key="GridCell.Tab.0.right/0.25.1792.1022@0.0.1792.1120" timestamp="1618819469586" />
-    <state width="1750" height="297" key="GridCell.Tab.0.right/0.25.1792.1022@0.25.1792.1022" timestamp="1620812361044" />
+    <state width="1750" height="502" key="GridCell.Tab.0.right/0.25.1792.1022@0.25.1792.1022" timestamp="1620889096062" />
     <state width="1750" height="307" key="GridCell.Tab.0.right/0.25.1792.1023@0.25.1792.1023" timestamp="1620546545063" />
     <state width="1750" height="359" key="GridCell.Tab.0.right/0.25.1792.1024@0.25.1792.1024" timestamp="1620540620229" />
     <state width="1750" height="255" key="GridCell.Tab.0.right/0.25.1792.1026@0.25.1792.1026" timestamp="1616232582032" />
     <state width="1750" height="335" key="GridCell.Tab.0.right/0.25.1792.1031@0.25.1792.1031" timestamp="1615866590753" />
     <state width="1750" height="212" key="GridCell.Tab.0.right/1792.365.1032.695/0.25.1792.1031@0.25.1792.1031" timestamp="1615443922241" />
-    <state width="1750" height="344" key="GridCell.Tab.1.bottom" timestamp="1620805045759">
+    <state width="1750" height="524" key="GridCell.Tab.1.bottom" timestamp="1620888870100">
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
     <state width="1750" height="215" key="GridCell.Tab.1.bottom/-1196.25.1196.871/0.25.1792.1022@0.25.1792.1022" timestamp="1616913107104" />
-    <state width="1750" height="344" key="GridCell.Tab.1.bottom/0.25.1792.1022@0.25.1792.1022" timestamp="1620805045759" />
-    <state width="1750" height="344" key="GridCell.Tab.1.center" timestamp="1620805045759">
+    <state width="1750" height="524" key="GridCell.Tab.1.bottom/0.25.1792.1022@0.25.1792.1022" timestamp="1620888870100" />
+    <state width="1750" height="524" key="GridCell.Tab.1.center" timestamp="1620888870098">
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
     <state width="1750" height="215" key="GridCell.Tab.1.center/-1196.25.1196.871/0.25.1792.1022@0.25.1792.1022" timestamp="1616913107104" />
-    <state width="1750" height="344" key="GridCell.Tab.1.center/0.25.1792.1022@0.25.1792.1022" timestamp="1620805045759" />
-    <state width="1750" height="344" key="GridCell.Tab.1.left" timestamp="1620805045759">
+    <state width="1750" height="524" key="GridCell.Tab.1.center/0.25.1792.1022@0.25.1792.1022" timestamp="1620888870098" />
+    <state width="1750" height="524" key="GridCell.Tab.1.left" timestamp="1620888870094">
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
     <state width="1750" height="215" key="GridCell.Tab.1.left/-1196.25.1196.871/0.25.1792.1022@0.25.1792.1022" timestamp="1616913107103" />
-    <state width="1750" height="344" key="GridCell.Tab.1.left/0.25.1792.1022@0.25.1792.1022" timestamp="1620805045759" />
-    <state width="1750" height="344" key="GridCell.Tab.1.right" timestamp="1620805045759">
+    <state width="1750" height="524" key="GridCell.Tab.1.left/0.25.1792.1022@0.25.1792.1022" timestamp="1620888870094" />
+    <state width="1750" height="524" key="GridCell.Tab.1.right" timestamp="1620888870099">
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
     <state width="1750" height="215" key="GridCell.Tab.1.right/-1196.25.1196.871/0.25.1792.1022@0.25.1792.1022" timestamp="1616913107104" />
-    <state width="1750" height="344" key="GridCell.Tab.1.right/0.25.1792.1022@0.25.1792.1022" timestamp="1620805045759" />
+    <state width="1750" height="524" key="GridCell.Tab.1.right/0.25.1792.1022@0.25.1792.1022" timestamp="1620888870099" />
     <state width="228" height="457" key="HiddenNamespacesPopup" timestamp="1620113013037">
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
@@ -450,12 +449,12 @@
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
     <state x="428" y="269" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.25.1792.1022@0.25.1792.1022" timestamp="1620631693831" />
-    <state x="598" y="293" width="949" height="518" key="find.popup" timestamp="1620306584410">
+    <state x="598" y="293" width="949" height="518" key="find.popup" timestamp="1620867009035">
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
     <state x="598" y="295" width="597" height="490" key="find.popup/-1032.25.1032.695/0.25.1792.1031@0.25.1792.1031" timestamp="1615464167878" />
     <state x="598" y="293" width="650" height="490" key="find.popup/-1194.25.1194.809/0.25.1792.1022@0.25.1792.1022" timestamp="1617704028498" />
-    <state x="598" y="293" width="949" height="518" key="find.popup/0.25.1792.1022@0.25.1792.1022" timestamp="1620306584410" />
+    <state x="598" y="293" width="949" height="518" key="find.popup/0.25.1792.1022@0.25.1792.1022" timestamp="1620867009035" />
     <state x="598" y="293" width="949" height="519" key="find.popup/0.25.1792.1023@0.25.1792.1023" timestamp="1618485450924" />
     <state x="280" y="204" width="1262" height="680" key="new project wizard" timestamp="1620788435067">
       <screen x="0" y="25" width="1792" height="1022" />
@@ -482,24 +481,14 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/zzuoj-base/zzuoj-common/src/main/java/cn/edu/zzu/oj/util/JWTUtil.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/service/impl/PrivilegeServiceImpl.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/user/UserAdminController.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/util/CodeGenerator.java</url>
           <line>18</line>
           <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/user/UserAdminController.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

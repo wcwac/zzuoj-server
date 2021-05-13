@@ -2,6 +2,7 @@ package cn.edu.zzu.oj.service;
 
 import cn.edu.zzu.oj.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.omg.PortableInterceptor.INACTIVE;
 import org.springframework.beans.factory.parsing.Problem;
 
 import java.util.List;
@@ -24,9 +25,17 @@ public interface IUserService extends IService<User> {
     //登陆
     public User login(String uId, String pwd);
 
+    //分页获取用户
     public List<User> getUserPage(Integer pos, Integer limit) throws Exception;
 
+    //获取用户个数
     public Integer getUserCnt() throws Exception;
 
+    //是否改变禁用状态
     public Integer switchDefunctStatusByUid(String uid, String status);
+
+    //通过userId获取user
+    public User getUserById(String uId);
+
+    public Integer updateUserByUserId(User user);
 }

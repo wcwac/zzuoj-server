@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,6 +19,8 @@ import lombok.experimental.Accessors;
  * @since 2021-03-19
  */
 
+
+
 @Accessors(chain = true)
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -25,6 +28,7 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId("user_id")
     private String userId;
 
     private String email;

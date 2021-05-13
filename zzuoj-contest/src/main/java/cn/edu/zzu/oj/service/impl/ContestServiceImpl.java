@@ -17,4 +17,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class ContestServiceImpl extends ServiceImpl<ContestMapper, Contest> implements IContestService {
 
+    @Override
+    public Integer addContest(Contest conest) {
+        return null;
+    }
 }

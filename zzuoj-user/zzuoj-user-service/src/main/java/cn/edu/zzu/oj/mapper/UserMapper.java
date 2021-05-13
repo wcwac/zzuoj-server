@@ -16,4 +16,7 @@ import org.springframework.beans.factory.parsing.Problem;
 public interface UserMapper extends BaseMapper<User> {
     @Update("update user set defunct = #{defunct} where user_id =#{userId}")
     Integer updateUserDefunctStatus(User user);
+
+    @Update("update user set email = #{email}, nick = #{nick}, school = #{school} where user_id =#{userId}")
+    Integer updateUserByUserId(User user);
 }

@@ -2,6 +2,7 @@ package cn.edu.zzu.oj.controller.user;
 
 import cn.edu.zzu.oj.Exceptions.BaseException;
 import cn.edu.zzu.oj.anotation.BaseResponse;
+import cn.edu.zzu.oj.entity.Group;
 import cn.edu.zzu.oj.entity.ResponseResult;
 import cn.edu.zzu.oj.entity.User;
 import cn.edu.zzu.oj.entity.frontToWeb.UserFront;
@@ -70,7 +71,6 @@ public class UserController {
 
     //
     @PostMapping("/login")
-    @ResponseBody
     public ResponseResult login(HttpServletResponse response,
                                 @RequestBody @NotNull Map<String, String> json,
                                 @RequestHeader("user-agent") String userAgent) throws ApiException, JsonProcessingException {
@@ -98,4 +98,30 @@ public class UserController {
         ObjectMapper objectMapper = new ObjectMapper();
         return ResponseResult.ok("登陆成功", JWTUtil.createJWT(jwtModel.getUserId(), "salix", objectMapper.writeValueAsString(jwtModel), 5 * 60 * 60L * 1000L));
     }
+
+    @GetMapping("/get")
+    public User getUserById(@RequestParam String userId){
+        User user = null;
+        try {
+            user = userService.getUserById(userId);
+
+            user.setPassword(null).setIp(null).setAccesstime(null).setDefunct(null);
+        } catch (Exception e){
+            log.error("get user by userId error: " + e.toString());
+            throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return user;
+    }
+
+    @PostMapping("/update")
+    public String updateUserById(@RequestBody User user){
+        try {
+            userService.updateUserByUserId(user);
+        } catch (Exception e){
+            log.error("get user by userId error: " + e.toString());
+            throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return "update profile by userId success";
+    }
+
 }

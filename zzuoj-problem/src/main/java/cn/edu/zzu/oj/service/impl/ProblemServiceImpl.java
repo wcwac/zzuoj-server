@@ -41,8 +41,8 @@ public class ProblemServiceImpl extends ServiceImpl<ProblemMapper, Problem> impl
         List<Problem> records = null;
         try {
             Page<Problem> page = new Page<>(pos,limit);
-            IPage<Problem> userIPage = problemMapper.selectPage(page, new QueryWrapper<Problem>());
-            records = userIPage.getRecords();
+            IPage<Problem> problemIPage = problemMapper.selectPage(page, new QueryWrapper<Problem>());
+            records = problemIPage.getRecords();
         } catch (Exception e){
             throw new Exception(e.getMessage());
         }

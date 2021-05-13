@@ -54,7 +54,7 @@ public class UserAdminController {
     }
 
     @GetMapping("/cnt")
-    public Integer getProblems(){
+    public Integer getUsers(){
         Integer cnt = null;
         try {
             cnt = userService.getUserCnt();

@@ -87,5 +87,28 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return cnt;
     }
 
+    @Override
+    public User getUserById(String uId) {
+        User user = null;
+        try {
+            user = userMapper.selectById(uId);
+        } catch (Exception e){
+            throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return user;
+    }
+
+    //可以更新email nick school
+    @Override
+    public Integer updateUserByUserId(User user) {
+        Integer cnt = 0;
+        try {
+            cnt = userMapper.updateUserByUserId(user);
+        } catch (Exception e){
+            throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return cnt;
+    }
+
 }
 
