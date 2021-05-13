@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthInternalController implements AuthInternalApi {
     @Override
     public String test(){
-        System.out.println("test api ok");
         return "hello test api ok";
     }
 }

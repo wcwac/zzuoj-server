@@ -2,11 +2,10 @@ package cn.edu.zzu.oj.controller.user;
 
 import cn.edu.zzu.oj.Exceptions.BaseException;
 import cn.edu.zzu.oj.anotation.BaseResponse;
-import cn.edu.zzu.oj.entity.Group;
 import cn.edu.zzu.oj.entity.ResponseResult;
 import cn.edu.zzu.oj.entity.User;
 import cn.edu.zzu.oj.entity.frontToWeb.UserFront;
-import cn.edu.zzu.oj.entity.jwt.JwtModel;
+import cn.edu.zzu.oj.entity.jwt.UserSessionDTO;
 import cn.edu.zzu.oj.enums.HttpStatus;
 import cn.edu.zzu.oj.service.impl.PrivilegeServiceImpl;
 import cn.edu.zzu.oj.service.impl.UserServiceImpl;
@@ -75,7 +74,7 @@ public class UserController {
                                 @RequestBody @NotNull Map<String, String> json,
                                 @RequestHeader("user-agent") String userAgent) throws ApiException, JsonProcessingException {
         String username = null, password = null;
-        JwtModel jwtModel = null;
+        UserSessionDTO userSessionDTO = null;
         try {
             username = json.get("username");
             password = json.get("password");
@@ -83,20 +82,20 @@ public class UserController {
             if(user == null ) {
                 return ResponseResult.err("登陆失败", null);
             }
-            jwtModel = new JwtModel().setUserId(user.getUserId())
+            userSessionDTO = new UserSessionDTO().setUserId(user.getUserId())
                     .setNickName(user.getNick())
                     .setEmail(user.getEmail());
 //                    .setIpv4(user.getIp());
             //todo: auth、user目前在一个微服务，直接在当前controller通过auth的service请求权限
             Integer role = privilegeService.getPrivilegeByUserId(user.getUserId());
-            jwtModel.setRole(role);
+            userSessionDTO.setRole(role);
         } catch (Exception e) {
             log.error("login error: " + e);
             throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
         }
         //签发5小时的token
         ObjectMapper objectMapper = new ObjectMapper();
-        return ResponseResult.ok("登陆成功", JWTUtil.createJWT(jwtModel.getUserId(), "salix", objectMapper.writeValueAsString(jwtModel), 5 * 60 * 60L * 1000L));
+        return ResponseResult.ok("登陆成功", JWTUtil.createJWT(userSessionDTO.getUserId(), "salix", objectMapper.writeValueAsString(userSessionDTO), 5 * 60 * 60L * 1000L));
     }
 
     @GetMapping("/get")

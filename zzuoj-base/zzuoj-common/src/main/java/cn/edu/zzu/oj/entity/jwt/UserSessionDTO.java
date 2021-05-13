@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class JwtModel extends BaseDTO {
+public class UserSessionDTO extends BaseDTO {
 
     public static final String HEADER_KEY = "ZZUOJUserInfo";
     public static final String HEADER_VALUE_LOGOUT = "logout";

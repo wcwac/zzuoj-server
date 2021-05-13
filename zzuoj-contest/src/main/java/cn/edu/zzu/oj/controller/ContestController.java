@@ -1,9 +1,18 @@
 package cn.edu.zzu.oj.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import cn.edu.zzu.oj.anotation.BaseResponse;
+import cn.edu.zzu.oj.anotation.UserSession;
+import cn.edu.zzu.oj.entity.Contest;
+import cn.edu.zzu.oj.entity.jwt.UserSessionDTO;
+import cn.edu.zzu.oj.service.impl.ContestServiceImpl;
+import cn.edu.zzu.oj.util.UserSessionUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 /**
  * <p>
@@ -13,8 +22,51 @@ import org.springframework.web.bind.annotation.RestController;
  * @author yuliuyuan
  * @since 2021-05-12
  */
+@BaseResponse
 @RestController
-@RequestMapping("/oj/contest")
+@RequestMapping("/contest")
 public class ContestController {
+    private static Logger log = LoggerFactory.getLogger(ContestController.class);
+
+    @Autowired
+    ContestServiceImpl contestService;
+
+    //pos表示的是相对于第一条记录的偏移，数据库中第一条记录pos为0，
+    @GetMapping("/show")
+    public List<Contest> show(@RequestParam("pos") Integer pos, @RequestParam("limit") Integer limit, @UserSession UserSessionDTO userSessionDTO){
+        List<Contest> list = null;
+        try {
+            list = contestService.getContestsByPage(pos, limit);
+
+            if(UserSessionUtil.isAdmin(userSessionDTO)){
+                for(int i=0 ; i<list.size(); i++){
+                    list.get(i).setGroupId(null).setPassword(null).setProblems(null);
+                }
+            }
+        } catch (Exception e){
+            log.error("show contests list error: " + e.toString());
+            return null;
+        }
+        return list;
+    }
+
+    @GetMapping("/cnt")
+    public Integer getContests(@UserSession UserSessionDTO userMeta){
+        System.out.println(userMeta);
+        return contestService.getContestCnt();
+    }
+
+
+    @GetMapping("/get")
+    public Contest getContestById(@RequestParam("contestId") Integer contestId) {
+        Contest contest = null;
+        try {
+            contest = contestService.getContestByContestId(contestId);
+        } catch (Exception e){
+            return null;
+        }
+        return contest;
+    }
+
 
 }

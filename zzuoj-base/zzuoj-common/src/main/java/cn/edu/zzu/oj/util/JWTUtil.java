@@ -1,6 +1,7 @@
 package cn.edu.zzu.oj.util;
 
-import cn.edu.zzu.oj.entity.jwt.JwtModel;
+import cn.edu.zzu.oj.entity.jwt.UserSessionDTO;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
@@ -89,7 +90,7 @@ public class JWTUtil {
         //TODO 根据自己的业务修改
         Claims claims = JWTUtil.parseJWT(jwtToken);
         String subject = claims.getSubject();
-        JwtModel jwtModel = objectMapper.readValue(subject, JwtModel.class);
+        UserSessionDTO userSessionDTO = objectMapper.readValue(subject, UserSessionDTO.class);
 
         //TODO 对jwt里面的用户信息做判断
 
@@ -98,5 +99,11 @@ public class JWTUtil {
         Date expiration = claims.getExpiration();
         log.info("======== token的过期时间：" + df.format(expiration));
         return true;
+    }
+
+    public static UserSessionDTO getJwtModel(String jwtToken, ObjectMapper objectMapper) throws JsonProcessingException {
+        Claims claims = JWTUtil.parseJWT(jwtToken);
+        String subject = claims.getSubject();
+        return objectMapper.readValue(subject, UserSessionDTO.class);
     }
 }
