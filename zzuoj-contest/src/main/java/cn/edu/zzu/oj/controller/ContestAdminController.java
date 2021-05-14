@@ -2,6 +2,7 @@ package cn.edu.zzu.oj.controller;
 
 import cn.edu.zzu.oj.Exceptions.BaseException;
 import cn.edu.zzu.oj.anotation.BaseResponse;
+import cn.edu.zzu.oj.converter.FrontToEntity;
 import cn.edu.zzu.oj.entity.Contest;
 import cn.edu.zzu.oj.entity.frontToWeb.ContestFront;
 import cn.edu.zzu.oj.enums.HttpStatus;
@@ -33,7 +34,7 @@ public class ContestAdminController {
                     .setDefunct( contestFront.getDefunct() )
                     .setDescription( contestFront.getDescription() )
                     .setIsPrivate( contestFront.getIsPrivate() )
-                    .setLangmask( ContestUtil.getLangMask(contestFront.getProblems()) )
+                    .setLangmask( ContestUtil.getLangMask(contestFront.getLangmask()) )
                     .setPassword( contestFront.getPassword() )
                     .setGroupId( contestFront.getGroupId() )
                     .setProblems( contestFront.getProblems() );
@@ -65,6 +66,23 @@ public class ContestAdminController {
             return "update contest defunct success";
         } else {
             return "update contest defunct fail";
+        }
+    }
+
+    //todo update私有共有的时候 需要设置其他字段是否为空
+    @PostMapping("/update")
+    public String updateContestById(@RequestBody ContestFront contestFront){
+        Integer cnt = 0;
+        try {
+            cnt = contestService.updateContestByContestId(FrontToEntity.ContestFrontToContest(contestFront) );
+        } catch (Exception e) {
+            log.error("update contest fail: "+ e.getMessage());
+            throw new BaseException(HttpStatus.HTTP_VERSION_NOT_SUPPORTED);
+        }
+        if(1 == cnt){
+            return "update contest success";
+        } else {
+            return "update contest fail";
         }
     }
 }

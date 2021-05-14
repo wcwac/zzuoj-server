@@ -14,6 +14,8 @@ import java.util.List;
 @NoArgsConstructor
 @Accessors(chain = true)
 public class ContestFront  extends BaseFront{
+    private Integer contestId;
+
     private String title;
 
     private List<Date> time;

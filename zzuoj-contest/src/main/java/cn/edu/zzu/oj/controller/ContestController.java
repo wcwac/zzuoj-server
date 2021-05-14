@@ -3,9 +3,12 @@ package cn.edu.zzu.oj.controller;
 
 import cn.edu.zzu.oj.anotation.BaseResponse;
 import cn.edu.zzu.oj.anotation.UserSession;
+import cn.edu.zzu.oj.converter.EntityToFront;
 import cn.edu.zzu.oj.entity.Contest;
+import cn.edu.zzu.oj.entity.frontToWeb.ContestFront;
 import cn.edu.zzu.oj.entity.jwt.UserSessionDTO;
 import cn.edu.zzu.oj.service.impl.ContestServiceImpl;
+import cn.edu.zzu.oj.util.ContestUtil;
 import cn.edu.zzu.oj.util.UserSessionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,14 +61,19 @@ public class ContestController {
 
 
     @GetMapping("/get")
-    public Contest getContestById(@RequestParam("contestId") Integer contestId) {
-        Contest contest = null;
+    public ContestFront getContestById(@RequestParam("contestId") Integer contestId, @UserSession UserSessionDTO userSessionDTO) {
+        ContestFront contestFront = null;
         try {
-            contest = contestService.getContestByContestId(contestId);
+            Contest contest = contestService.getContestByContestId(contestId);
+            contestFront = EntityToFront.ContestToContestFront(contest);
+
+            if(!UserSessionUtil.isAdmin(userSessionDTO)){
+                contestFront.setGroupId(null).setPassword(null).setProblems(null);
+            }
         } catch (Exception e){
             return null;
         }
-        return contest;
+        return contestFront;
     }
 
 
