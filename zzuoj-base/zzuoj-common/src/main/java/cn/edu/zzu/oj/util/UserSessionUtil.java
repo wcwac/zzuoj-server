@@ -7,4 +7,8 @@ public class UserSessionUtil {
     public static boolean isAdmin(UserSessionDTO userSessionDTO){
         return userSessionDTO.getRole() != 0;
     }
+
+    public static boolean isRoot(UserSessionDTO userSessionDTO){
+        return userSessionDTO.getRole() != 1;
+    }
 }

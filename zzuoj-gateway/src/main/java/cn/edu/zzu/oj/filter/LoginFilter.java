@@ -4,6 +4,7 @@ import cn.edu.zzu.oj.client.AuthClient;
 import cn.edu.zzu.oj.config.FilterProperties;
 import cn.edu.zzu.oj.entity.jwt.UserSessionDTO;
 import cn.edu.zzu.oj.util.JWTUtil;
+import cn.edu.zzu.oj.util.UserSessionUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -120,20 +121,24 @@ public class LoginFilter implements GlobalFilter, Ordered  {
 //                        }
 //                    }
                     return new HttpHeaders(multiValueMap);
+
                 }
             };
-            return chain.filter(exchange.mutate().request(decorator).build()).then(thenHandlerSession(exchange));
+
 
 //            //需要admin权限
-//            if(temp.length > 3 && temp[2].equals("admin")){
-//
-//            }
+            if(temp.length > 3 && temp[2].equals("admin")){
+                if( !UserSessionUtil.isAdmin(userSessionDTO) ){
+                    return authErro(exchange, "Authentication failed");
+                }
+            }
 //            //需要root权限
-//            if(temp.length> 3 && temp[2].equals("root")){
-//
-//            }
-
-//            return chain.filter(exchange);
+            if(temp.length> 3 && temp[2].equals("root")){
+                if( !UserSessionUtil.isRoot(userSessionDTO) ){
+                    return authErro(exchange, "Authentication failed");
+                }
+            }
+            return chain.filter(exchange.mutate().request(decorator).build()).then(thenHandlerSession(exchange));
         } catch (ExpiredJwtException e) {
             log.error(e.getMessage(), e);
             if (e.getMessage().contains("Allowed clock skew")) {
@@ -169,20 +174,6 @@ public class LoginFilter implements GlobalFilter, Ordered  {
         return 0;
     }
 
-
-//    private Mono<Void> authErro(ServerHttpResponse resp, String mess) {
-//        resp.setStatusCode(HttpStatus.UNAUTHORIZED);
-//        resp.getHeaders().add("Content-Type", "application/json;charset=UTF-8");
-//        Resp<String> returnData = new Resp<>(org.apache.http.HttpStatus.SC_UNAUTHORIZED, mess, mess);
-//        String returnStr = "";
-//        try {
-//            returnStr = objectMapper.writeValueAsString(returnData);
-//        } catch (JsonProcessingException e) {
-//            log.error(e.getMessage(), e);
-//        }
-//        DataBuffer buffer = resp.bufferFactory().wrap(returnStr.getBytes(StandardCharsets.UTF_8));
-//        return resp.writeWith(Flux.just(buffer));
-//    }
     private Mono<Void> authErro(ServerWebExchange exchange, String msg) {
 //         返回鉴权失败的消息
         JSONObject message = new JSONObject();

@@ -1,7 +1,7 @@
 package cn.edu.zzu.oj.service.impl;
 
 import cn.edu.zzu.oj.Exceptions.BaseException;
-import cn.edu.zzu.oj.entity.Contest;
+import cn.edu.zzu.oj.entity.ContestT;
 import cn.edu.zzu.oj.enums.HttpStatus;
 import cn.edu.zzu.oj.mapper.ContestMapper;
 import cn.edu.zzu.oj.service.IContestService;
@@ -10,7 +10,6 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.parsing.Problem;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,15 +23,15 @@ import java.util.List;
  * @since 2021-05-13
  */
 @Service
-public class ContestServiceImpl extends ServiceImpl<ContestMapper, Contest> implements IContestService {
+public class ContestServiceImpl extends ServiceImpl<ContestMapper, ContestT> implements IContestService {
     @Autowired
     ContestMapper contestMapper;
 
     @Override
-    public Integer addContest(Contest contest) throws Exception {
+    public Integer addContest(ContestT contestT) throws Exception {
         Integer cnt = 0;
         try{
-            cnt = contestMapper.insert(contest);
+            cnt = contestMapper.insert(contestT);
         } catch (Exception e){
             throw new Exception();
         }
@@ -51,10 +50,10 @@ public class ContestServiceImpl extends ServiceImpl<ContestMapper, Contest> impl
     }
 
     @Override
-    public Integer updateContestByContestId(Contest contest) {
+    public Integer updateContestByContestId(ContestT contestT) {
         Integer cnt = 0;
         try {
-            cnt = contestMapper.updateById(contest);
+            cnt = contestMapper.updateById(contestT);
         } catch (Exception e){
             throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -62,8 +61,8 @@ public class ContestServiceImpl extends ServiceImpl<ContestMapper, Contest> impl
     }
 
     @Override
-    public Contest getContestByContestId(Integer contestId) {
-        Contest res = null;
+    public ContestT getContestByContestId(Integer contestId) {
+        ContestT res = null;
         try {
             res = contestMapper.selectById(contestId);
         } catch (Exception e){
@@ -73,11 +72,11 @@ public class ContestServiceImpl extends ServiceImpl<ContestMapper, Contest> impl
     }
 
     @Override
-    public List<Contest> getContestsByPage(Integer pos, Integer limit) throws Exception {
-        List<Contest> records = null;
+    public List<ContestT> getContestsByPage(Integer pos, Integer limit) throws Exception {
+        List<ContestT> records = null;
         try {
-            Page<Contest> page = new Page<>(pos,limit);
-            IPage<Contest> contestIPage = contestMapper.selectPage(page, new QueryWrapper<Contest>());
+            Page<ContestT> page = new Page<>(pos,limit);
+            IPage<ContestT> contestIPage = contestMapper.selectPage(page, new QueryWrapper<ContestT>());
             records = contestIPage.getRecords();
         } catch (Exception e){
             throw new Exception(e.getMessage());
@@ -89,7 +88,7 @@ public class ContestServiceImpl extends ServiceImpl<ContestMapper, Contest> impl
     public Integer getContestCnt() {
         Integer cnt = 0;
         try {
-            cnt = contestMapper.selectCount(new QueryWrapper<Contest>());
+            cnt = contestMapper.selectCount(new QueryWrapper<ContestT>());
         } catch (Exception e){
             throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -97,10 +96,10 @@ public class ContestServiceImpl extends ServiceImpl<ContestMapper, Contest> impl
     }
 
     @Override
-    public Integer switchDefunct(Contest contest) {
+    public Integer switchDefunct(ContestT contestT) {
         Integer cnt = 0;
         try {
-            cnt = contestMapper.updateContestDefunctStatus(contest);
+            cnt = contestMapper.updateContestDefunctStatus(contestT);
         } catch (Exception e){
             throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
         }

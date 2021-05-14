@@ -106,4 +106,5 @@ public class JWTUtil {
         String subject = claims.getSubject();
         return objectMapper.readValue(subject, UserSessionDTO.class);
     }
+
 }

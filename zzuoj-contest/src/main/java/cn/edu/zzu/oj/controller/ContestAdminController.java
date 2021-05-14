@@ -3,7 +3,7 @@ package cn.edu.zzu.oj.controller;
 import cn.edu.zzu.oj.Exceptions.BaseException;
 import cn.edu.zzu.oj.anotation.BaseResponse;
 import cn.edu.zzu.oj.converter.FrontToEntity;
-import cn.edu.zzu.oj.entity.Contest;
+import cn.edu.zzu.oj.entity.ContestT;
 import cn.edu.zzu.oj.entity.frontToWeb.ContestFront;
 import cn.edu.zzu.oj.enums.HttpStatus;
 import cn.edu.zzu.oj.service.impl.ContestServiceImpl;
@@ -28,7 +28,7 @@ public class ContestAdminController {
     public String addContest(@RequestBody ContestFront contestFront){
         Integer  cnt = 0;
         try {
-            Contest contest = new Contest().setTitle( contestFront.getTitle() )
+            ContestT contestT = new ContestT().setTitle( contestFront.getTitle() )
                     .setStartTime( contestFront.getTime().get(0) )
                     .setEndTime( contestFront.getTime().get(1) )
                     .setDefunct( contestFront.getDefunct() )
@@ -38,7 +38,7 @@ public class ContestAdminController {
                     .setPassword( contestFront.getPassword() )
                     .setGroupId( contestFront.getGroupId() )
                     .setProblems( contestFront.getProblems() );
-            cnt = contestService.addContest(contest);
+            cnt = contestService.addContest(contestT);
         } catch (Exception e) {
             log.error("add contest fail: "+ e.getMessage());
             throw new BaseException(HttpStatus.HTTP_VERSION_NOT_SUPPORTED);
@@ -57,7 +57,7 @@ public class ContestAdminController {
         try {
             Integer contestId = (Integer) jsonData.get("contestId");
             String newStatus = (String) jsonData.get("newStatus");
-            cnt = this.contestService.updateContestByContestId(new Contest().setContestId(contestId).setDefunct(newStatus));
+            cnt = this.contestService.updateContestByContestId(new ContestT().setContestId(contestId).setDefunct(newStatus));
         } catch (Exception e) {
             log.error("update contest defunct fail: "+ e.getMessage());
             throw new BaseException(HttpStatus.HTTP_VERSION_NOT_SUPPORTED);

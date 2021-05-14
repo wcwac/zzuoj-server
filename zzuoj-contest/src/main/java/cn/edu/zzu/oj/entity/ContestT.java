@@ -23,7 +23,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class Contest implements Serializable {
+public class ContestT implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

@@ -1,8 +1,7 @@
 package cn.edu.zzu.oj.service;
 
-import cn.edu.zzu.oj.entity.Contest;
+import cn.edu.zzu.oj.entity.ContestT;
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.omg.PortableInterceptor.INACTIVE;
 
 import java.util.List;
 
@@ -14,25 +13,25 @@ import java.util.List;
  * @author yuliuyuan
  * @since 2021-05-13
  */
-public interface IContestService extends IService<Contest> {
+public interface IContestService extends IService<ContestT> {
     //add
-    public Integer addContest(Contest contest) throws Exception;
+    public Integer addContest(ContestT contestT) throws Exception;
 
     //delete
     public Integer deleteContestByContestId(Integer contestId);
 
     //update
-    public Integer updateContestByContestId(Contest contest);
+    public Integer updateContestByContestId(ContestT contestT);
 
     //get
-    public Contest getContestByContestId(Integer contestId);
+    public ContestT getContestByContestId(Integer contestId);
 
     //get contests
-    public List<Contest> getContestsByPage(Integer pos, Integer limit) throws Exception;
+    public List<ContestT> getContestsByPage(Integer pos, Integer limit) throws Exception;
 
     //get cnt
     public Integer getContestCnt();
 
     //switchDefunct
-    public Integer switchDefunct(Contest contest);
+    public Integer switchDefunct(ContestT contestT);
 }

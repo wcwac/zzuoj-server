@@ -7,7 +7,8 @@ zzuoj:
   filter:
     allowPaths: "/zzuoj-problem/problem/show,/zzuoj-problem/problem/cnt,/zzuoj-problem/problem/get,
                  /zzuoj-file/news/show,/zzuoj-file/news/cnt,/zzuoj-file/news/get,
-                 /zzuoj-user/user/login,/zzuoj-user/user/registry"
+                 /zzuoj-user/user/login,/zzuoj-user/user/registry,
+                 /zzuoj-contest/contest/show,/zzuoj-contest/contest/cnt,/zzuoj-contest/contest/get"
 
 server:
   port: 9001
@@ -47,7 +48,8 @@ zzuoj:
   filter:
     allowPaths: "/zzuoj-problem/problem/show,/zzuoj-problem/problem/cnt,/zzuoj-problem/problem/get,
                  /zzuoj-file/news/show,/zzuoj-file/news/cnt,/zzuoj-file/news/get,
-                 /zzuoj-user/user/login,/zzuoj-user/user/registry"
+                 /zzuoj-user/user/login,/zzuoj-user/user/registry,
+                 /zzuoj-contest/contest/show,/zzuoj-contest/contest/cnt,/zzuoj-contest/contest/get"
 
 server:
   port: 9001
