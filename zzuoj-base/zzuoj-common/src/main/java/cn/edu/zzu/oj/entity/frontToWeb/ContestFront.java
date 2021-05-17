@@ -36,4 +36,6 @@ public class ContestFront  extends BaseFront{
     private String groupId;
 
     private String problems;
+
+    private String userId;
 }

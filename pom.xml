@@ -15,7 +15,7 @@
         <module>zzuoj-base/zzuoj-common</module>
         <module>zzuoj-file</module>
         <module>zzuoj-problem</module>
-        <module>zzuoj-contestT</module>
+        <module>zzuoj-contest</module>
         <module>zzuoj-user/zzuoj-user-service</module>
         <module>zzuoj-user/zzuoj-user-interface</module>
     </modules>

@@ -4,7 +4,7 @@ package cn.edu.zzu.oj.controller;
 import cn.edu.zzu.oj.anotation.BaseResponse;
 import cn.edu.zzu.oj.anotation.UserSession;
 import cn.edu.zzu.oj.converter.EntityToFront;
-import cn.edu.zzu.oj.entity.ContestT;
+import cn.edu.zzu.oj.entity.Contest;
 import cn.edu.zzu.oj.entity.frontToWeb.ContestFront;
 import cn.edu.zzu.oj.entity.jwt.UserSessionDTO;
 import cn.edu.zzu.oj.service.impl.ContestServiceImpl;
@@ -35,18 +35,18 @@ public class ContestController {
 
     //pos表示的是相对于第一条记录的偏移，数据库中第一条记录pos为0，
     @GetMapping("/show")
-    public List<ContestT> show(@RequestParam("pos") Integer pos, @RequestParam("limit") Integer limit, @UserSession UserSessionDTO userSessionDTO){
-        List<ContestT> list = null;
+    public List<Contest> show(@RequestParam("pos") Integer pos, @RequestParam("limit") Integer limit, @UserSession UserSessionDTO userSessionDTO) {
+        List<Contest> list = null;
         try {
             list = contestService.getContestsByPage(pos, limit);
 
             System.out.println(userSessionDTO);
-            if(userSessionDTO == null || UserSessionUtil.isAdmin(userSessionDTO)){
-                for(int i=0 ; i<list.size(); i++){
+            if (userSessionDTO == null || UserSessionUtil.isAdmin(userSessionDTO)) {
+                for (int i = 0; i < list.size(); i++) {
                     list.get(i).setGroupId(null).setPassword(null).setProblems(null);
                 }
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             log.error("show contests list error: " + e.getMessage());
             return null;
         }
@@ -54,7 +54,7 @@ public class ContestController {
     }
 
     @GetMapping("/cnt")
-    public Integer getContests(@UserSession UserSessionDTO userMeta){
+    public Integer getContests(@UserSession UserSessionDTO userMeta) {
         System.out.println(userMeta);
         return contestService.getContestCnt();
     }
@@ -64,17 +64,17 @@ public class ContestController {
     public ContestFront getContestById(@RequestParam("contestId") Integer contestId, @UserSession UserSessionDTO userSessionDTO) {
         ContestFront contestFront = null;
         try {
-            ContestT contestT = contestService.getContestByContestId(contestId);
-            contestFront = EntityToFront.ContestToContestFront(contestT);
+            Contest contest = contestService.getContestByContestId(contestId);
+            contestFront = EntityToFront.ContestToContestFront(contest);
 
-            if(!UserSessionUtil.isAdmin(userSessionDTO)){
-                contestFront.setGroupId(null).setPassword(null).setProblems(null);
+            if (userSessionDTO == null || !UserSessionUtil.isAdmin(userSessionDTO)) {
+                contestFront.setGroupId(null).setPassword(null);
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             return null;
         }
+        System.out.println("+++++");
+        System.out.println(contestFront);
         return contestFront;
     }
-
-
 }

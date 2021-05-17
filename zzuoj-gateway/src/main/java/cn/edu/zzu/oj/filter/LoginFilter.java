@@ -9,6 +9,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.ExpiredJwtException;
+import lombok.SneakyThrows;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +55,7 @@ public class LoginFilter implements GlobalFilter, Ordered  {
         this.objectMapper = objectMapper;
     }
 
+    @SneakyThrows
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
 
@@ -83,9 +85,26 @@ public class LoginFilter implements GlobalFilter, Ordered  {
         String token = exchange.getRequest().getHeaders().getFirst("Authorization");
         ServerHttpResponse resp = exchange.getResponse();
 
+        UserSessionDTO userSessionDTO = JWTUtil.getJwtModel(token, objectMapper);
+        // 装饰器 修改 getHeaders 方法
+        ServerHttpRequestDecorator decorator = new ServerHttpRequestDecorator(exchange.getRequest()) {
+            @Override
+            public HttpHeaders getHeaders() {
+                MultiValueMap<String, String> multiValueMap = CollectionUtils.toMultiValueMap(new LinkedCaseInsensitiveMap(8, Locale.ENGLISH));
+                super.getHeaders().forEach((key, value) -> multiValueMap.put(key, value));
+                //              multiValueMap.remove("cookie"); // 在此处已解码 token, 故不下传省流量, 如果后续有多值 cookie 此处需要修改
+                multiValueMap.remove(UserSessionDTO.HEADER_KEY);
+                multiValueMap.add(UserSessionDTO.HEADER_KEY, JSON.toJSONString(userSessionDTO));
+                return new HttpHeaders(multiValueMap);
+            }
+        };
+
         boolean isAllowPath = isAllowPath(requestUrl);
         log.info("token: "+token);
         if(isAllowPath) {
+            if(token != null && JWTUtil.checkToken(token, objectMapper)){
+                return chain.filter(exchange.mutate().request(decorator).build()).then(thenHandlerSession(exchange));
+            }
             return chain.filter(exchange);
         }
         if (token == null) {
@@ -95,35 +114,13 @@ public class LoginFilter implements GlobalFilter, Ordered  {
 
         try {
             //有token
-            JWTUtil.checkToken(token, objectMapper);
+            if( !JWTUtil.checkToken(token, objectMapper) ){
+                return authErro(exchange, "Authentication failed");
+            }
             //做一个权限认证，普通user url直接放，root、admin需要验证权限
             String[] temp = requestUrl.split("/");
 
             //todo: 用户信息加到request params中
-            UserSessionDTO userSessionDTO = JWTUtil.getJwtModel(token, objectMapper);
-
-            // 装饰器 修改 getHeaders 方法
-            ServerHttpRequestDecorator decorator = new ServerHttpRequestDecorator(exchange.getRequest()) {
-                @Override
-                public HttpHeaders getHeaders() {
-                    MultiValueMap<String, String> multiValueMap = CollectionUtils.toMultiValueMap(new LinkedCaseInsensitiveMap(8, Locale.ENGLISH));
-                    super.getHeaders().forEach((key, value) -> multiValueMap.put(key, value));
-                    //              multiValueMap.remove("cookie"); // 在此处已解码 token, 故不下传省流量, 如果后续有多值 cookie 此处需要修改
-                    multiValueMap.remove(UserSessionDTO.HEADER_KEY);
-                    multiValueMap.add(UserSessionDTO.HEADER_KEY, JSON.toJSONString(userSessionDTO));
-//                    for (Field field : UserSessionDTO.class.getDeclaredFields()) { // 删掉对 UserSession 逐个字段加入 header 的操作
-//                        try {
-//                            field.setAccessible(true);
-//                            multiValueMap.remove("authorization-" + field.getName());
-//                            multiValueMap.add("authorization-" + field.getName(), String.valueOf(field.get(userSessionDTO)));
-//                        } catch (IllegalAccessException e) {
-//                            log.error("getHeaders Decorator", e);
-//                        }
-//                    }
-                    return new HttpHeaders(multiValueMap);
-
-                }
-            };
 
 
 //            //需要admin权限

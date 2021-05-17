@@ -1,7 +1,7 @@
 package cn.edu.zzu.oj.service.impl;
 
 import cn.edu.zzu.oj.Exceptions.BaseException;
-import cn.edu.zzu.oj.entity.ContestT;
+import cn.edu.zzu.oj.entity.Contest;
 import cn.edu.zzu.oj.enums.HttpStatus;
 import cn.edu.zzu.oj.mapper.ContestMapper;
 import cn.edu.zzu.oj.service.IContestService;
@@ -23,15 +23,15 @@ import java.util.List;
  * @since 2021-05-13
  */
 @Service
-public class ContestServiceImpl extends ServiceImpl<ContestMapper, ContestT> implements IContestService {
+public class ContestServiceImpl extends ServiceImpl<ContestMapper, Contest> implements IContestService {
     @Autowired
     ContestMapper contestMapper;
 
     @Override
-    public Integer addContest(ContestT contestT) throws Exception {
+    public Integer addContest(Contest contest) throws Exception {
         Integer cnt = 0;
         try{
-            cnt = contestMapper.insert(contestT);
+            cnt = contestMapper.insert(contest);
         } catch (Exception e){
             throw new Exception();
         }
@@ -50,10 +50,10 @@ public class ContestServiceImpl extends ServiceImpl<ContestMapper, ContestT> imp
     }
 
     @Override
-    public Integer updateContestByContestId(ContestT contestT) {
+    public Integer updateContestByContestId(Contest contest) {
         Integer cnt = 0;
         try {
-            cnt = contestMapper.updateById(contestT);
+            cnt = contestMapper.updateById(contest);
         } catch (Exception e){
             throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -61,8 +61,8 @@ public class ContestServiceImpl extends ServiceImpl<ContestMapper, ContestT> imp
     }
 
     @Override
-    public ContestT getContestByContestId(Integer contestId) {
-        ContestT res = null;
+    public Contest getContestByContestId(Integer contestId) {
+        Contest res = null;
         try {
             res = contestMapper.selectById(contestId);
         } catch (Exception e){
@@ -72,11 +72,11 @@ public class ContestServiceImpl extends ServiceImpl<ContestMapper, ContestT> imp
     }
 
     @Override
-    public List<ContestT> getContestsByPage(Integer pos, Integer limit) throws Exception {
-        List<ContestT> records = null;
+    public List<Contest> getContestsByPage(Integer pos, Integer limit) throws Exception {
+        List<Contest> records = null;
         try {
-            Page<ContestT> page = new Page<>(pos,limit);
-            IPage<ContestT> contestIPage = contestMapper.selectPage(page, new QueryWrapper<ContestT>());
+            Page<Contest> page = new Page<>(pos,limit);
+            IPage<Contest> contestIPage = contestMapper.selectPage(page, new QueryWrapper<Contest>());
             records = contestIPage.getRecords();
         } catch (Exception e){
             throw new Exception(e.getMessage());
@@ -88,7 +88,7 @@ public class ContestServiceImpl extends ServiceImpl<ContestMapper, ContestT> imp
     public Integer getContestCnt() {
         Integer cnt = 0;
         try {
-            cnt = contestMapper.selectCount(new QueryWrapper<ContestT>());
+            cnt = contestMapper.selectCount(new QueryWrapper<Contest>());
         } catch (Exception e){
             throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -96,10 +96,10 @@ public class ContestServiceImpl extends ServiceImpl<ContestMapper, ContestT> imp
     }
 
     @Override
-    public Integer switchDefunct(ContestT contestT) {
+    public Integer switchDefunct(Contest contest) {
         Integer cnt = 0;
         try {
-            cnt = contestMapper.updateContestDefunctStatus(contestT);
+            cnt = contestMapper.updateContestDefunctStatus(contest);
         } catch (Exception e){
             throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
         }

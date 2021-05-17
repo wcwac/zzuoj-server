@@ -1,6 +1,6 @@
 package cn.edu.zzu.oj.service;
 
-import cn.edu.zzu.oj.entity.ContestT;
+import cn.edu.zzu.oj.entity.Contest;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
@@ -13,25 +13,25 @@ import java.util.List;
  * @author yuliuyuan
  * @since 2021-05-13
  */
-public interface IContestService extends IService<ContestT> {
+public interface IContestService extends IService<Contest> {
     //add
-    public Integer addContest(ContestT contestT) throws Exception;
+    public Integer addContest(Contest contest) throws Exception;
 
     //delete
     public Integer deleteContestByContestId(Integer contestId);
 
     //update
-    public Integer updateContestByContestId(ContestT contestT);
+    public Integer updateContestByContestId(Contest contest);
 
     //get
-    public ContestT getContestByContestId(Integer contestId);
+    public Contest getContestByContestId(Integer contestId);
 
     //get contests
-    public List<ContestT> getContestsByPage(Integer pos, Integer limit) throws Exception;
+    public List<Contest> getContestsByPage(Integer pos, Integer limit) throws Exception;
 
     //get cnt
     public Integer getContestCnt();
 
     //switchDefunct
-    public Integer switchDefunct(ContestT contestT);
+    public Integer switchDefunct(Contest contest);
 }
