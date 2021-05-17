@@ -1,10 +1,7 @@
 package cn.edu.zzu.oj.converter;
 
 import cn.edu.zzu.oj.entity.News;
-import cn.edu.zzu.oj.entity.front.NewFront;
-import cn.edu.zzu.oj.entity.front.ProblemFront;
-import org.apache.catalina.User;
-import org.springframework.beans.factory.parsing.Problem;
+import cn.edu.zzu.oj.entity.frontToWeb.NewFront;
 
 import java.util.ArrayList;
 import java.util.List;

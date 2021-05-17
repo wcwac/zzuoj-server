@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:7011
+      label: master
+      profile: test
+      name: config-zzuoj-user
+
+logging:
+  level:
+    cn:
+      edu:
+        zzu:
+          oj:
+            mapper:
+              debug

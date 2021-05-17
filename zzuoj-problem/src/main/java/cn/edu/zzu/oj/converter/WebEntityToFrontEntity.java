@@ -1,7 +1,7 @@
 package cn.edu.zzu.oj.converter;
 
 import cn.edu.zzu.oj.entity.Problem;
-import cn.edu.zzu.oj.entity.front.ProblemFront;
+import cn.edu.zzu.oj.entity.frontToWeb.ProblemFront;
 
 import java.util.ArrayList;
 import java.util.List;

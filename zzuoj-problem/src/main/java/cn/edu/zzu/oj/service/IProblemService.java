@@ -17,11 +17,17 @@ import java.util.List;
  */
 public interface IProblemService extends IService<Problem> {
 
-    public List<Problem> getProblemsPage(Integer pos, Integer limit);
+    public List<Problem> getProblemsPage(Integer pos, Integer limit) throws Exception;
+
+    public Problem getProblemById(Integer id);
+
+    public Integer deleteProblemById(Integer id);
 
     public Integer getProblemCnt();
 
     public Integer addProblem(Problem problem);
 
     public Integer switchDefunctStatusByPid(Integer pid, String status);
+
+
 }

@@ -6,7 +6,8 @@ import cn.edu.zzu.oj.entity.ResponseResult;
 import cn.edu.zzu.oj.enums.HttpStatus;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.extern.log4j.Log4j2;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.server.ServerHttpRequest;
@@ -15,8 +16,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 @ControllerAdvice(annotations = BaseResponse.class)
-@Log4j2
 public class ResponseResultHandlerAdvice implements ResponseBodyAdvice {
+    private static Logger log = LoggerFactory.getLogger(ResponseResultHandlerAdvice.class);
 
     //返回true表示执行当前advice
     @Override
@@ -31,7 +32,7 @@ public class ResponseResultHandlerAdvice implements ResponseBodyAdvice {
             return o;
         }else{
             //对于String要特殊处理，不然就有error 实现ResponseBbodyAdvice接口后，Controller层返回String类型报错的解决办法：https://juszoe.github.io/views/spring-boot/ResponseBodyAdvice%E5%BC%82%E5%B8%B8.html#%E9%97%AE%E9%A2%98
-            ResponseResult responseResult = new ResponseResult(HttpStatus.OK.value(),HttpStatus.OK.getReasonPhrase(),o);
+            ResponseResult responseResult = ResponseResult.ok(HttpStatus.OK.getReasonPhrase(),o);
             if(o instanceof String) {
                 ObjectMapper objectMapper = new ObjectMapper();
                 try {

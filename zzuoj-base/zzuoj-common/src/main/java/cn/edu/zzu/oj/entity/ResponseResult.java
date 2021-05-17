@@ -1,5 +1,6 @@
 package cn.edu.zzu.oj.entity;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -20,4 +21,11 @@ public class ResponseResult extends BaseDTO {
      * 数据
      */
     private Object data;
+
+    public static ResponseResult ok(String msg, Object temp) {
+        return new ResponseResult(1, msg, temp);
+    }
+    public static ResponseResult err(String msg, Object temp) {
+        return new ResponseResult(0, msg, temp);
+    }
 }
