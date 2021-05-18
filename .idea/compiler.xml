@@ -11,8 +11,9 @@
         <module name="zzuoj-gateway" />
         <module name="zzuoj-conf" />
         <module name="zzuoj-file-interface" />
+        <module name="zzuoj-problem-service" />
+        <module name="zzuoj-problem-interface" />
         <module name="zzuoj-file-service" />
-        <module name="zzuoj-problem" />
         <module name="zzuoj-contest" />
         <module name="zzuoj-user-service" />
         <module name="zzuoj-common" />
@@ -27,6 +28,7 @@
       <module name="zzuoj-conf-client-test" target="1.8" />
       <module name="zzuoj-config" target="1.5" />
       <module name="zzuoj-entity" target="1.8" />
+      <module name="zzuoj-problem" target="1.8" />
       <module name="zzuoj-service" target="1.8" />
       <module name="zzuoj-temp" target="1.8" />
       <module name="zzuoj-test" target="1.8" />
