@@ -9,8 +9,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="zzuoj-eureka" />
         <module name="zzuoj-gateway" />
-        <module name="zzuoj-file" />
         <module name="zzuoj-conf" />
+        <module name="zzuoj-file-interface" />
+        <module name="zzuoj-file-service" />
         <module name="zzuoj-problem" />
         <module name="zzuoj-contest" />
         <module name="zzuoj-user-service" />

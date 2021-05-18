@@ -13,11 +13,13 @@
         <module>zzuoj-base/zzuoj-conf</module>
         <module>zzuoj-base/zzuoj-eureka</module>
         <module>zzuoj-base/zzuoj-common</module>
-        <module>zzuoj-file</module>
+        <module>zzuoj-file/zzuoj-file-service</module>
+        <module>zzuoj-file/zzuoj-file-interface</module>
         <module>zzuoj-problem</module>
         <module>zzuoj-contest</module>
         <module>zzuoj-user/zzuoj-user-service</module>
         <module>zzuoj-user/zzuoj-user-interface</module>
+        <module>zzuoj-file/zzuoj-file-interface</module>
     </modules>
 
 <!--    所有微服务jar包版本全部统一配置-->

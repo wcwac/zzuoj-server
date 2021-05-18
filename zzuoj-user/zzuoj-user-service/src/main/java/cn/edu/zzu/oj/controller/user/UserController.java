@@ -14,6 +14,7 @@ import cn.edu.zzu.oj.util.MD5Util;
 import com.baomidou.mybatisplus.extension.exceptions.ApiException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -33,11 +34,12 @@ import java.util.Map;
  * @author yuliuyuan
  * @since 2021-05-04
  */
+@Slf4j
 @BaseResponse
 @RestController
 @RequestMapping("/user")
 public class UserController {
-    private static Logger log = LoggerFactory.getLogger(UserController.class);
+//    private static Logger log = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
     UserServiceImpl userService;
@@ -95,7 +97,7 @@ public class UserController {
         }
         //签发5小时的token
         ObjectMapper objectMapper = new ObjectMapper();
-        return ResponseResult.ok("登陆成功", JWTUtil.createJWT(userSessionDTO.getUserId(), "salix", objectMapper.writeValueAsString(userSessionDTO), 5 * 60 * 60L * 1000L));
+        return ResponseResult.ok("登陆成功", JWTUtil.createJWT(userSessionDTO.getUserId(), "salix", objectMapper.writeValueAsString(userSessionDTO),  5 * 60 * 60L * 1000L));
     }
 
     @GetMapping("/get")

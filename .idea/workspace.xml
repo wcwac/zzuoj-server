@@ -20,32 +20,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="737edd83-1331-461f-ae03-6f8b546125f7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cf143f83-8235-44a1-b8f5-5d06d04f5c7d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cf143f83-8235-44a1-b8f5-5d06d04f5c7d.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-interface/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-interface/src/main/java/cn.edu.zzu.oj/api/FilesysApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-interface/src/main/java/cn.edu.zzu.oj/dto/BinaryFileUploadReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-interface/src/main/java/cn.edu.zzu.oj/dto/FileDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-interface/src/main/java/cn.edu.zzu.oj/dto/FileDownloadReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-interface/src/main/java/cn.edu.zzu.oj/dto/PlainFileDownloadDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/config/FileSystemProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/controller/FileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/controller/FileInternalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/service/FileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/service/impl/FileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-base/zzuoj-common/src/main/java/cn/edu/zzu/oj/entity/frontToWeb/ContestFront.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-base/zzuoj-common/src/main/java/cn/edu/zzu/oj/entity/frontToWeb/ContestFront.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-base/zzuoj-common/target/classes/cn/edu/zzu/oj/entity/frontToWeb/ContestFront.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-base/zzuoj-common/target/classes/cn/edu/zzu/oj/entity/frontToWeb/ContestFront.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-base/zzuoj-common/src/main/java/cn/edu/zzu/oj/entity/jwt/UserSessionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-base/zzuoj-common/src/main/java/cn/edu/zzu/oj/entity/jwt/UserSessionDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-base/zzuoj-common/target/classes/cn/edu/zzu/oj/entity/jwt/UserSessionDTO$UserSessionDTOBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-base/zzuoj-common/target/classes/cn/edu/zzu/oj/entity/jwt/UserSessionDTO$UserSessionDTOBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-base/zzuoj-common/target/classes/cn/edu/zzu/oj/entity/jwt/UserSessionDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-base/zzuoj-common/target/classes/cn/edu/zzu/oj/entity/jwt/UserSessionDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/controller/ContestAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/controller/ContestAdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/controller/ContestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/controller/ContestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/converter/EntityToFront.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/converter/EntityToFront.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/converter/FrontToEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/converter/FrontToEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/entity/ContestT.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/entity/Contest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/mapper/ContestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/mapper/ContestMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/service/IContestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/service/IContestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/service/impl/ContestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/service/impl/ContestServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zzuoj-contest/target/classes/cn/edu/zzu/oj/controller/ContestAdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/target/classes/cn/edu/zzu/oj/controller/ContestAdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/target/classes/cn/edu/zzu/oj/controller/ContestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/target/classes/cn/edu/zzu/oj/controller/ContestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/target/classes/cn/edu/zzu/oj/converter/EntityToFront.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/target/classes/cn/edu/zzu/oj/converter/EntityToFront.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/target/classes/cn/edu/zzu/oj/converter/FrontToEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/target/classes/cn/edu/zzu/oj/converter/FrontToEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/target/classes/cn/edu/zzu/oj/entity/ContestT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/target/classes/cn/edu/zzu/oj/mapper/ContestMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/target/classes/cn/edu/zzu/oj/mapper/ContestMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/target/classes/cn/edu/zzu/oj/service/IContestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/target/classes/cn/edu/zzu/oj/service/IContestService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zzuoj-contest/target/classes/cn/edu/zzu/oj/service/impl/ContestServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-contest/target/classes/cn/edu/zzu/oj/service/impl/ContestServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/src/main/java/cn/edu/zzu/oj/FileApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/FileApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/src/main/java/cn/edu/zzu/oj/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/src/main/java/cn/edu/zzu/oj/config/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/config/MybatisPlusConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/src/main/java/cn/edu/zzu/oj/controller/NewsAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/controller/news/NewsAdminControllerTTT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/src/main/java/cn/edu/zzu/oj/controller/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/controller/news/NewsControllerTTT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/src/main/java/cn/edu/zzu/oj/converter/WebEntityToFrontEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/converter/WebEntityToFrontEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/src/main/java/cn/edu/zzu/oj/entity/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/entity/News.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/src/main/java/cn/edu/zzu/oj/mapper/NewsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/mapper/NewsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/src/main/java/cn/edu/zzu/oj/service/INewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/service/INewsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/src/main/java/cn/edu/zzu/oj/service/impl/NewsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/service/impl/NewsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/src/main/java/cn/edu/zzu/oj/util/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/util/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/target/classes/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/target/classes/cn/edu/zzu/oj/FileApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/target/classes/cn/edu/zzu/oj/config/CorsConfig$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/target/classes/cn/edu/zzu/oj/config/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/target/classes/cn/edu/zzu/oj/config/MybatisPlusConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/target/classes/cn/edu/zzu/oj/controller/NewsAdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/target/classes/cn/edu/zzu/oj/controller/NewsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/target/classes/cn/edu/zzu/oj/converter/WebEntityToFrontEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/target/classes/cn/edu/zzu/oj/entity/News.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/target/classes/cn/edu/zzu/oj/mapper/NewsMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/target/classes/cn/edu/zzu/oj/service/INewsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/target/classes/cn/edu/zzu/oj/service/impl/NewsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/target/classes/cn/edu/zzu/oj/util/CodeGenerator$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/target/classes/cn/edu/zzu/oj/util/CodeGenerator$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-file/target/classes/cn/edu/zzu/oj/util/CodeGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-gateway/src/main/java/cn/edu/zzu/oj/GateWayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-gateway/src/main/java/cn/edu/zzu/oj/GateWayApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zzuoj-gateway/src/main/java/cn/edu/zzu/oj/filter/LoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-gateway/src/main/java/cn/edu/zzu/oj/filter/LoginFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-gateway/target/classes/cn/edu/zzu/oj/GateWayApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-gateway/target/classes/cn/edu/zzu/oj/GateWayApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zzuoj-gateway/target/classes/cn/edu/zzu/oj/filter/LoginFilter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-gateway/target/classes/cn/edu/zzu/oj/filter/LoginFilter$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zzuoj-gateway/target/classes/cn/edu/zzu/oj/filter/LoginFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-gateway/target/classes/cn/edu/zzu/oj/filter/LoginFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/src/main/java/cn/edu/zzu/oj/controller/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/controller/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/target/classes/cn/edu/zzu/oj/controller/user/UserController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +112,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/zzuoj-base/zzuoj-common/src/main/java/cn/edu/zzu/oj/config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/service" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -92,16 +123,16 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/zzuoj-file" />
+      <recent name="$PROJECT_DIR$/zzuoj-user/zzuoj-user-interface/src/main" />
+      <recent name="$PROJECT_DIR$/zzuoj-user/zzuoj-user-interface/src/main/java/cn.edu.zzu.oj" />
+      <recent name="$PROJECT_DIR$/zzuoj-user" />
+      <recent name="$PROJECT_DIR$/zzuoj-user-service/api" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="cn.edu.zzu.oj" />
       <recent name="cn.edu.zzu.oj.controller" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/zzuoj-base/zzuoj-common/src/main/java/cn/edu/zzu/oj/config" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/zzuoj-contest/src/main/resources" />
-      <recent name="$PROJECT_DIR$/zzuoj-contest/src/main/java" />
-      <recent name="$PROJECT_DIR$/zzuoj-base/zzuoj-common/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cn.edu.zzu.oj.util" />
@@ -110,18 +141,18 @@
       <recent name="cn.edu.zzu.oj.controller" />
       <recent name="cn.edu.zzu.oj.converter" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/zzuoj-user/zzuoj-user-interface/src/main" />
-      <recent name="$PROJECT_DIR$/zzuoj-user/zzuoj-user-interface/src/main/java/cn.edu.zzu.oj" />
-      <recent name="$PROJECT_DIR$/zzuoj-user" />
-      <recent name="$PROJECT_DIR$/zzuoj-user-service/api" />
-      <recent name="$PROJECT_DIR$/zzuoj-user-interface/src/main/java/cn.edu.zzu.oj" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/service" />
+      <recent name="$PROJECT_DIR$/zzuoj-file/zzuoj-file-interface/src/main/java/cn.edu.zzu.oj" />
+      <recent name="$PROJECT_DIR$/zzuoj-base/zzuoj-common/src/main/java/cn/edu/zzu/oj/config" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/zzuoj-contest/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CodeGenerator">
+  <component name="RunManager" selected="Application.FileApplication">
     <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.edu.zzu.oj.util.CodeGenerator" />
-      <module name="zzuoj-contest" />
+      <module name="zzuoj-user-service" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cn.edu.zzu.oj.util.*" />
@@ -132,12 +163,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.edu.zzu.oj.util.CodeGenerator" />
-      <module name="zzuoj-user-service" />
+    <configuration name="ConfigServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.edu.zzu.oj.ConfigServer" />
+      <module name="zzuoj-conf" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.edu.zzu.oj.util.*" />
+          <option name="PATTERN" value="cn.edu.zzu.oj.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -173,7 +204,7 @@
     </configuration>
     <configuration name="FileApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cn.edu.zzu.oj.FileApplication" />
-      <module name="zzuoj-file" />
+      <module name="zzuoj-file-service" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cn.edu.zzu.oj.*" />
@@ -225,11 +256,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ContestApplication" />
-        <item itemvalue="Application.UserApplication" />
         <item itemvalue="Application.ProblemApplication" />
+        <item itemvalue="Application.UserApplication" />
+        <item itemvalue="Application.ContestApplication" />
+        <item itemvalue="Application.ConfigServer" />
         <item itemvalue="Application.EurekaServer" />
-        <item itemvalue="Application.CodeGenerator" />
       </list>
     </recent_temporary>
   </component>
@@ -259,7 +290,8 @@
       <workItem from="1620788033139" duration="1967000" />
       <workItem from="1620792070640" duration="4942000" />
       <workItem from="1620805056489" duration="5716000" />
-      <workItem from="1620976934381" duration="12291000" />
+      <workItem from="1620976934381" duration="35468000" />
+      <workItem from="1621258914987" duration="6875000" />
     </task>
     <servers />
   </component>
@@ -287,13 +319,14 @@
     <state x="384" y="135" key="#Project_Structure/0.25.1792.1022@0.25.1792.1022" timestamp="1620981263619" />
     <state x="384" y="135" key="#Project_Structure/0.25.1792.1023@0.25.1792.1023" timestamp="1619140055687" />
     <state x="384" y="135" key="#Project_Structure/0.25.1792.1026@0.25.1792.1026" timestamp="1616142321111" />
-    <state x="359" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1620195595527">
-      <screen x="0" y="25" width="1792" height="1022" />
+    <state x="359" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621259018090">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="359" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1194.25.1194.809/0.25.1792.1026@0.25.1792.1026" timestamp="1616053595054" />
     <state x="359" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1792.1022@0.25.1792.1022" timestamp="1620195595527" />
     <state x="359" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1792.1026@0.25.1792.1026" timestamp="1616142451821" />
     <state x="359" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1792.1031@0.25.1792.1031" timestamp="1615866588613" />
+    <state x="359" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1792.1038@0.25.1792.1038" timestamp="1621259018090" />
     <state x="599" y="343" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1617606919368">
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
@@ -333,17 +366,18 @@
     <state x="634" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1792.1022@0.25.1792.1022" timestamp="1620892585114" />
     <state x="634" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1792.1023@0.25.1792.1023" timestamp="1619139477872" />
     <state x="634" y="289" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1792.1026@0.25.1792.1026" timestamp="1616153332042" />
-    <state x="103" y="125" width="1592" height="823" key="DiffContextDialog" timestamp="1620541205064">
-      <screen x="0" y="25" width="1792" height="1023" />
+    <state x="103" y="126" width="1592" height="836" key="DiffContextDialog" timestamp="1621239179510">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="103" y="125" width="1592" height="822" key="DiffContextDialog/0.25.1792.1022@0.25.1792.1022" timestamp="1620182664272" />
     <state x="103" y="125" width="1592" height="823" key="DiffContextDialog/0.25.1792.1023@0.25.1792.1023" timestamp="1620541205064" />
+    <state x="103" y="126" width="1592" height="836" key="DiffContextDialog/0.25.1792.1038@0.25.1792.1038" timestamp="1621239179510" />
     <state x="860" y="311" key="FileChooserDialogImpl" timestamp="1620306574440">
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
     <state x="860" y="311" key="FileChooserDialogImpl/0.25.1792.1022@0.25.1792.1022" timestamp="1620306574440" />
-    <state width="1750" height="389" key="GridCell.Tab.0.bottom" timestamp="1621142082312">
-      <screen x="0" y="25" width="1792" height="1022" />
+    <state width="1750" height="349" key="GridCell.Tab.0.bottom" timestamp="1621323404359">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1750" height="360" key="GridCell.Tab.0.bottom/-1032.25.1032.643/0.25.1792.1095@0.25.1792.1095" timestamp="1615467499197" />
     <state width="1750" height="336" key="GridCell.Tab.0.bottom/-1032.25.1032.695/0.25.1792.1031@0.25.1792.1031" timestamp="1615464300245" />
@@ -359,9 +393,10 @@
     <state width="1750" height="359" key="GridCell.Tab.0.bottom/0.25.1792.1024@0.25.1792.1024" timestamp="1620540620229" />
     <state width="1750" height="255" key="GridCell.Tab.0.bottom/0.25.1792.1026@0.25.1792.1026" timestamp="1616232582032" />
     <state width="1750" height="335" key="GridCell.Tab.0.bottom/0.25.1792.1031@0.25.1792.1031" timestamp="1615866590753" />
+    <state width="1750" height="349" key="GridCell.Tab.0.bottom/0.25.1792.1038@0.25.1792.1038" timestamp="1621323404359" />
     <state width="1750" height="212" key="GridCell.Tab.0.bottom/1792.365.1032.695/0.25.1792.1031@0.25.1792.1031" timestamp="1615443922241" />
-    <state width="1750" height="389" key="GridCell.Tab.0.center" timestamp="1621142082311">
-      <screen x="0" y="25" width="1792" height="1022" />
+    <state width="1750" height="349" key="GridCell.Tab.0.center" timestamp="1621323404359">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1750" height="360" key="GridCell.Tab.0.center/-1032.25.1032.643/0.25.1792.1095@0.25.1792.1095" timestamp="1615467499196" />
     <state width="1750" height="336" key="GridCell.Tab.0.center/-1032.25.1032.695/0.25.1792.1031@0.25.1792.1031" timestamp="1615464300243" />
@@ -377,9 +412,10 @@
     <state width="1750" height="359" key="GridCell.Tab.0.center/0.25.1792.1024@0.25.1792.1024" timestamp="1620540620229" />
     <state width="1750" height="255" key="GridCell.Tab.0.center/0.25.1792.1026@0.25.1792.1026" timestamp="1616232582032" />
     <state width="1750" height="335" key="GridCell.Tab.0.center/0.25.1792.1031@0.25.1792.1031" timestamp="1615866590752" />
+    <state width="1750" height="349" key="GridCell.Tab.0.center/0.25.1792.1038@0.25.1792.1038" timestamp="1621323404359" />
     <state width="1750" height="212" key="GridCell.Tab.0.center/1792.365.1032.695/0.25.1792.1031@0.25.1792.1031" timestamp="1615443922240" />
-    <state width="1750" height="389" key="GridCell.Tab.0.left" timestamp="1621142082311">
-      <screen x="0" y="25" width="1792" height="1022" />
+    <state width="1750" height="349" key="GridCell.Tab.0.left" timestamp="1621323404358">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1750" height="360" key="GridCell.Tab.0.left/-1032.25.1032.643/0.25.1792.1095@0.25.1792.1095" timestamp="1615467499196" />
     <state width="1750" height="336" key="GridCell.Tab.0.left/-1032.25.1032.695/0.25.1792.1031@0.25.1792.1031" timestamp="1615464300243" />
@@ -396,9 +432,10 @@
     <state width="1750" height="359" key="GridCell.Tab.0.left/0.25.1792.1024@0.25.1792.1024" timestamp="1620540620228" />
     <state width="1750" height="255" key="GridCell.Tab.0.left/0.25.1792.1026@0.25.1792.1026" timestamp="1616232582031" />
     <state width="1750" height="335" key="GridCell.Tab.0.left/0.25.1792.1031@0.25.1792.1031" timestamp="1615866590752" />
+    <state width="1750" height="349" key="GridCell.Tab.0.left/0.25.1792.1038@0.25.1792.1038" timestamp="1621323404358" />
     <state width="1750" height="212" key="GridCell.Tab.0.left/1792.365.1032.695/0.25.1792.1031@0.25.1792.1031" timestamp="1615443922240" />
-    <state width="1750" height="389" key="GridCell.Tab.0.right" timestamp="1621142082312">
-      <screen x="0" y="25" width="1792" height="1022" />
+    <state width="1750" height="349" key="GridCell.Tab.0.right" timestamp="1621323404359">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1750" height="360" key="GridCell.Tab.0.right/-1032.25.1032.643/0.25.1792.1095@0.25.1792.1095" timestamp="1615467499197" />
     <state width="1750" height="336" key="GridCell.Tab.0.right/-1032.25.1032.695/0.25.1792.1031@0.25.1792.1031" timestamp="1615464300244" />
@@ -414,27 +451,32 @@
     <state width="1750" height="359" key="GridCell.Tab.0.right/0.25.1792.1024@0.25.1792.1024" timestamp="1620540620229" />
     <state width="1750" height="255" key="GridCell.Tab.0.right/0.25.1792.1026@0.25.1792.1026" timestamp="1616232582032" />
     <state width="1750" height="335" key="GridCell.Tab.0.right/0.25.1792.1031@0.25.1792.1031" timestamp="1615866590753" />
+    <state width="1750" height="349" key="GridCell.Tab.0.right/0.25.1792.1038@0.25.1792.1038" timestamp="1621323404359" />
     <state width="1750" height="212" key="GridCell.Tab.0.right/1792.365.1032.695/0.25.1792.1031@0.25.1792.1031" timestamp="1615443922241" />
-    <state width="1750" height="441" key="GridCell.Tab.1.bottom" timestamp="1620976881041">
-      <screen x="0" y="25" width="1792" height="1022" />
+    <state width="1750" height="349" key="GridCell.Tab.1.bottom" timestamp="1621323404360">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1750" height="215" key="GridCell.Tab.1.bottom/-1196.25.1196.871/0.25.1792.1022@0.25.1792.1022" timestamp="1616913107104" />
     <state width="1750" height="441" key="GridCell.Tab.1.bottom/0.25.1792.1022@0.25.1792.1022" timestamp="1620976881041" />
-    <state width="1750" height="441" key="GridCell.Tab.1.center" timestamp="1620976881041">
-      <screen x="0" y="25" width="1792" height="1022" />
+    <state width="1750" height="349" key="GridCell.Tab.1.bottom/0.25.1792.1038@0.25.1792.1038" timestamp="1621323404360" />
+    <state width="1750" height="349" key="GridCell.Tab.1.center" timestamp="1621323404360">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1750" height="215" key="GridCell.Tab.1.center/-1196.25.1196.871/0.25.1792.1022@0.25.1792.1022" timestamp="1616913107104" />
     <state width="1750" height="441" key="GridCell.Tab.1.center/0.25.1792.1022@0.25.1792.1022" timestamp="1620976881041" />
-    <state width="1750" height="441" key="GridCell.Tab.1.left" timestamp="1620976881041">
-      <screen x="0" y="25" width="1792" height="1022" />
+    <state width="1750" height="349" key="GridCell.Tab.1.center/0.25.1792.1038@0.25.1792.1038" timestamp="1621323404360" />
+    <state width="1750" height="349" key="GridCell.Tab.1.left" timestamp="1621323404360">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1750" height="215" key="GridCell.Tab.1.left/-1196.25.1196.871/0.25.1792.1022@0.25.1792.1022" timestamp="1616913107103" />
     <state width="1750" height="441" key="GridCell.Tab.1.left/0.25.1792.1022@0.25.1792.1022" timestamp="1620976881041" />
-    <state width="1750" height="441" key="GridCell.Tab.1.right" timestamp="1620976881041">
-      <screen x="0" y="25" width="1792" height="1022" />
+    <state width="1750" height="349" key="GridCell.Tab.1.left/0.25.1792.1038@0.25.1792.1038" timestamp="1621323404360" />
+    <state width="1750" height="349" key="GridCell.Tab.1.right" timestamp="1621323404360">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state width="1750" height="215" key="GridCell.Tab.1.right/-1196.25.1196.871/0.25.1792.1022@0.25.1792.1022" timestamp="1616913107104" />
     <state width="1750" height="441" key="GridCell.Tab.1.right/0.25.1792.1022@0.25.1792.1022" timestamp="1620976881041" />
+    <state width="1750" height="349" key="GridCell.Tab.1.right/0.25.1792.1038@0.25.1792.1038" timestamp="1621323404360" />
     <state width="228" height="457" key="HiddenNamespacesPopup" timestamp="1620113013037">
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
@@ -444,22 +486,24 @@
     </state>
     <state x="437" y="195" key="Maven.ArtifactSearchDialog/-1194.25.1194.809/0.25.1792.1022@0.25.1792.1022" timestamp="1617697523417" />
     <state x="437" y="195" key="Maven.ArtifactSearchDialog/0.25.1792.1022@0.25.1792.1022" timestamp="1620024255465" />
-    <state x="518" y="260" key="NewModule_or_Project.wizard" timestamp="1620038828082">
-      <screen x="0" y="25" width="1792" height="1022" />
+    <state x="518" y="264" key="NewModule_or_Project.wizard" timestamp="1621259099326">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="518" y="260" key="NewModule_or_Project.wizard/0.25.1792.1022@0.25.1792.1022" timestamp="1620038828082" />
+    <state x="518" y="264" key="NewModule_or_Project.wizard/0.25.1792.1038@0.25.1792.1038" timestamp="1621259099326" />
     <state x="429" y="344" key="Registry" timestamp="1620976696566">
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
     <state x="429" y="344" key="Registry/0.25.1792.1022@0.25.1792.1022" timestamp="1620976696566" />
-    <state x="0" y="25" width="1792" height="1022" key="SettingsEditor" timestamp="1620976315990">
-      <screen x="0" y="25" width="1792" height="1022" />
+    <state x="0" y="25" width="1792" height="1022" key="SettingsEditor" timestamp="1621259412156">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="405" y="175" key="SettingsEditor/-1194.25.1194.809/0.25.1792.1026@0.25.1792.1026" timestamp="1615957443322" />
     <state x="405" y="176" key="SettingsEditor/-1194.25.1194.809/0.25.1792.1031@0.25.1792.1031" timestamp="1615515375548" />
     <state x="405" y="176" key="SettingsEditor/-1196.25.1196.871/0.25.1792.1031@0.25.1792.1031" timestamp="1615430055439" />
     <state x="0" y="25" width="1792" height="1022" key="SettingsEditor/0.25.1792.1022@0.25.1792.1022" timestamp="1620976315990" />
     <state x="405" y="175" key="SettingsEditor/0.25.1792.1023@0.25.1792.1023" timestamp="1619140006573" />
+    <state x="0" y="25" key="SettingsEditor/0.25.1792.1038@0.25.1792.1038" timestamp="1621259412156" />
     <state x="640" y="221" key="VCS.ChangeListViewerDialog" timestamp="1620783721218">
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
@@ -472,15 +516,16 @@
       <screen x="0" y="25" width="1792" height="1022" />
     </state>
     <state x="427" y="268" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.25.1792.1022@0.25.1792.1022" timestamp="1620975883321" />
-    <state x="598" y="293" width="949" height="518" key="find.popup" timestamp="1620975617898">
-      <screen x="0" y="25" width="1792" height="1022" />
+    <state x="598" y="297" width="949" height="527" key="find.popup" timestamp="1621321833098">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="598" y="295" width="597" height="490" key="find.popup/-1032.25.1032.695/0.25.1792.1031@0.25.1792.1031" timestamp="1615464167878" />
     <state x="598" y="293" width="650" height="490" key="find.popup/-1194.25.1194.809/0.25.1792.1022@0.25.1792.1022" timestamp="1617704028498" />
     <state x="598" y="293" width="949" height="518" key="find.popup/0.25.1792.1022@0.25.1792.1022" timestamp="1620975617898" />
     <state x="598" y="293" width="949" height="519" key="find.popup/0.25.1792.1023@0.25.1792.1023" timestamp="1618485450924" />
-    <state x="280" y="204" width="1262" height="680" key="new project wizard" timestamp="1620788435067">
-      <screen x="0" y="25" width="1792" height="1022" />
+    <state x="598" y="297" width="949" height="527" key="find.popup/0.25.1792.1038@0.25.1792.1038" timestamp="1621321833098" />
+    <state x="280" y="207" width="1262" height="680" key="new project wizard" timestamp="1621259078822">
+      <screen x="0" y="25" width="1792" height="1038" />
     </state>
     <state x="302" y="199" key="new project wizard/-1194.25.1194.809/0.25.1792.1026@0.25.1792.1026" timestamp="1616050949016" />
     <state x="302" y="200" key="new project wizard/-1194.25.1194.809/0.25.1792.1031@0.25.1792.1031" timestamp="1615467810801" />
@@ -489,6 +534,7 @@
     <state x="280" y="204" key="new project wizard/0.25.1792.1023@0.25.1792.1023" timestamp="1619139921914" />
     <state x="248" y="195" width="1262" height="680" key="new project wizard/0.25.1792.1026@0.25.1792.1026" timestamp="1616235528830" />
     <state x="302" y="200" key="new project wizard/0.25.1792.1031@0.25.1792.1031" timestamp="1615862407885" />
+    <state x="280" y="207" key="new project wizard/0.25.1792.1038@0.25.1792.1038" timestamp="1621259078822" />
     <state x="302" y="200" key="new project wizard/1792.365.1032.695/0.25.1792.1031@0.25.1792.1031" timestamp="1615443237150" />
     <state x="561" y="251" width="670" height="671" key="search.everywhere.popup" timestamp="1620976661609">
       <screen x="0" y="25" width="1792" height="1022" />
@@ -515,7 +561,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/zzuoj-contest/src/main/java/cn/edu/zzu/oj/controller/ContestAdminController.java</url>
-          <line>28</line>
+          <line>31</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -530,13 +576,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/zzuoj-gateway/src/main/java/cn/edu/zzu/oj/filter/LoginFilter.java</url>
-          <line>187</line>
+          <line>189</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/zzuoj-base/zzuoj-conf/src/main/java/cn.edu.zzu.oj/ConfigServer.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="41" />
+          <url>file://$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/java/cn/edu/zzu/oj/service/impl/FileServiceImpl.java</url>
+          <line>146</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
