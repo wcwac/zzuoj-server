@@ -20,14 +20,14 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@RequestMapping("/internal/filesys")
+@RequestMapping("/internal/file")
 public interface FilesysApi {
-    String SERVICE_NAME = "filesys-service";
+    String SERVICE_NAME = "zzuoj-file";
 //
-//    @PostMapping(value = "/uploadBinaryFiles", consumes = "application/json")
-//    List<FileDTO> uploadBinaryFiles(@RequestBody List<BinaryFileUploadReqDTO> reqDTOList,
-//                                    @RequestParam("userId") long userId);
-//
+    @PostMapping(value = "/uploadBinaryFiles", consumes = "application/json")
+    List<FileDTO> uploadBinaryFiles(@RequestBody List<BinaryFileUploadReqDTO> reqDTOList,
+                                    @RequestParam("userId") String userId) throws Exception;
+
 //    @GetMapping(value = "/download", headers = "content-type=application/json")
 //    Resource download(@RequestParam("id") long id) throws IOException;
 //

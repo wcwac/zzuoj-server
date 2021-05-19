@@ -87,7 +87,7 @@ public class LoginFilter implements GlobalFilter, Ordered  {
         String token = exchange.getRequest().getHeaders().getFirst("Authorization");
         ServerHttpResponse resp = exchange.getResponse();
 
-        UserSessionDTO userSessionDTO = JWTUtil.getJwtModel(token, objectMapper);
+        UserSessionDTO userSessionDTO = token == null? null:JWTUtil.getJwtModel(token, objectMapper);
         // 装饰器 修改 getHeaders 方法
         ServerHttpRequestDecorator decorator = new ServerHttpRequestDecorator(exchange.getRequest()) {
             @Override

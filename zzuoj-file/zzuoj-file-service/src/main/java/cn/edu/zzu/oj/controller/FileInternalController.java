@@ -24,11 +24,11 @@ public class FileInternalController implements FilesysApi {
     @Autowired
     private FileService fileService;
 
-//    @Override
-//    public List<FileDTO> uploadBinaryFiles(List<BinaryFileUploadReqDTO> reqDTOList, long userId) {
-//        return fileService.uploadBinaryFiles(reqDTOList, userId);
-//    }
-//
+    @Override
+    public List<FileDTO> uploadBinaryFiles(List<BinaryFileUploadReqDTO> reqDTOList, String userId) throws Exception {
+        return fileService.uploadBinaryFiles(reqDTOList, userId);
+    }
+
 //    @Override
 //    public Resource download(long id) throws IOException {
 //        return new ByteArrayResource(fileService.downloadFile(id));

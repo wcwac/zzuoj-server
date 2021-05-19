@@ -4,8 +4,10 @@ import cn.edu.zzu.oj.Exceptions.BaseException;
 import cn.edu.zzu.oj.anotation.BaseResponse;
 import cn.edu.zzu.oj.entity.Problem;
 import cn.edu.zzu.oj.enums.HttpStatus;
+import cn.edu.zzu.oj.service.impl.CheckpointServiceImpl;
 import cn.edu.zzu.oj.service.impl.ProblemServiceImpl;
 import com.alibaba.fastjson.JSON;
+import com.sun.tools.javac.comp.Check;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,11 +26,15 @@ public class ProblemAdminController {
     @Autowired
     ProblemServiceImpl problemService;
 
+    @Autowired
+    CheckpointServiceImpl checkpointService;
+
     @GetMapping("/delete")
     public String deleteProblemById(@RequestParam("problemId") Integer problemId){
         Integer cnt = 0;
         try {
             cnt = problemService.deleteProblemById(problemId);
+            checkpointService.deleteAllPointsByPid(problemId);
         } catch (Exception e){
             log.error("delete problem by id error:" + e.toString());
             return "delete problem by id error";
