@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication(scanBasePackages = {"cn.edu.zzu.oj"})
+@SpringBootApplication
 @EnableEurekaClient
 public class FileApplication {
     public static void main(String[] args) {

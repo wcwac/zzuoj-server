@@ -8,6 +8,7 @@ import cn.edu.zzu.oj.dto.BinaryFileUploadReqDTO;
 import cn.edu.zzu.oj.entity.Checkpoint;
 import cn.edu.zzu.oj.entity.jwt.UserSessionDTO;
 import cn.edu.zzu.oj.service.impl.CheckpointServiceImpl;
+import com.sun.tools.javac.comp.Check;
 import org.hibernate.validator.constraints.pl.REGON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +17,10 @@ import org.springframework.web.bind.annotation.*;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -42,8 +46,9 @@ public class CheckpointController {
     CheckpointServiceImpl checkpointService;
 
     //批量添加测试点
+    //上传的是已经排好序的文件，挨着的两个一个是in
     @PostMapping("/uploadCheckPoints")
-    public String upload(@RequestParam("files")  MultipartFile[] files, @UserSession UserSessionDTO userSessionDTO) throws Exception {
+    public String upload(@RequestParam("files")  MultipartFile[] files, @RequestParam("pId") Integer pId,  @UserSession UserSessionDTO userSessionDTO) throws Exception {
         List<BinaryFileUploadReqDTO> reqDTOList = new ArrayList<>(files.length);
         try {
             for (MultipartFile file : files) {
@@ -59,9 +64,18 @@ public class CheckpointController {
             }
 
             List<Checkpoint> checkpoints = new ArrayList<>();
-            checkpointService.saveBatch(checkpoints);
+            for(int i=0;i<reqDTOList.size(); i+=2){
+                Checkpoint temp = new Checkpoint().setProblemId(pId)
+                        .setUserId( userSessionDTO.getUserId() )
+                        .setIsPrivate( "Y" )
+                        .setCreateTime(new Date())
+                        .setModifyTime(new Date())
+                        .setInputSize( reqDTOList.get(i).getSize() )
+                        .setOutputSize( reqDTOList.get(i+1).getSize() )
 
+            }
 
+            checkpointService.saveBatch(new ArrayList<>());
             fileClient.uploadBinaryFiles(reqDTOList, userSessionDTO.getUserId());
         } catch (Exception e) {
             log.error("uploadCheckPoints fail: " + e.getMessage());

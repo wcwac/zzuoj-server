@@ -4,8 +4,13 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.Date;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
@@ -15,6 +20,10 @@ import lombok.EqualsAndHashCode;
  * @author yuliuyuan
  * @since 2021-05-18
  */
+
+@Accessors(chain = true)
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class Checkpoint implements Serializable {
@@ -30,9 +39,9 @@ public class Checkpoint implements Serializable {
 
     private String isPrivate;
 
-    private LocalDateTime createTime;
+    private Date createTime;
 
-    private LocalDateTime modifyTime;
+    private Date modifyTime;
 
     private Integer inputSize;
 

@@ -68,9 +68,7 @@ public class LoginFilter implements GlobalFilter, Ordered  {
         //继续向下执行
         ServerHttpRequest request = exchange.getRequest();
         //OPTIONS方法放行
-
-        log.info("begin login filter");
-
+        log.info("method: " + request.getMethod());
         if (request.getMethod().equals(HttpMethod.OPTIONS)) {
             log.info("method: " + request.getMethod());
             return chain.filter(exchange);
