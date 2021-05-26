@@ -10,8 +10,20 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>zzuoj-common</artifactId>
+    <artifactId>zzuoj-common-web</artifactId>
+
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <!--            <exclusions>-->
+            <!--                <exclusion>-->
+            <!--                    <groupId>org.springframework</groupId>-->
+            <!--                    <artifactId>spring-webmvc</artifactId>-->
+            <!--                </exclusion>-->
+            <!--            </exclusions>-->
+        </dependency>
+
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -27,7 +39,7 @@
             <artifactId>validation-api</artifactId>
         </dependency>
 
-<!--        jjwt是一个Java对jwt的支持库，我们使用这个库来创建、解码token-->
+        <!--        jjwt是一个Java对jwt的支持库，我们使用这个库来创建、解码token-->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
@@ -38,6 +50,5 @@
             <artifactId>commons-codec</artifactId>
         </dependency>
     </dependencies>
-
 
 </project>

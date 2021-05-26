@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/zzuoj-base/zzuoj-common/zzuoj-common.iml" filepath="$PROJECT_DIR$/zzuoj-base/zzuoj-common/zzuoj-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zzuoj-base/zzuoj-common-web/zzuoj-base/zzuoj-common-web.iml" filepath="$PROJECT_DIR$/zzuoj-base/zzuoj-common-web/zzuoj-base/zzuoj-common-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/zzuoj-base/zzuoj-conf/zzuoj-conf.iml" filepath="$PROJECT_DIR$/zzuoj-base/zzuoj-conf/zzuoj-conf.iml" />
       <module fileurl="file://$PROJECT_DIR$/zzuoj-contest/zzuoj-contest.iml" filepath="$PROJECT_DIR$/zzuoj-contest/zzuoj-contest.iml" />
       <module fileurl="file://$PROJECT_DIR$/zzuoj-base/zzuoj-eureka/zzuoj-eureka.iml" filepath="$PROJECT_DIR$/zzuoj-base/zzuoj-eureka/zzuoj-eureka.iml" />

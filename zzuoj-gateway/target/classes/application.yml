@@ -25,6 +25,13 @@ spring:
         locator:
           enabled: true # 开启 Gateway 服务注册中心服务发现
           lower-case-service-id: true #使用小写
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowCredentials: true
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods: "*"
 #      下面的配置方法需要配置很多微服务，使用动态路由配置之服务名称转发，也就是上面的配置。http://ip:gateway_port/servername/正常请求的链接
 #      routes:
 #        - id: zzuoj-auth
@@ -66,6 +73,13 @@ spring:
         locator:
           enabled: true # 开启 Gateway 服务注册中心服务发现
           lower-case-service-id: true #使用小写
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowCredentials: true
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods: "*"
 #      下面的配置方法需要配置很多微服务，使用动态路由配置之服务名称转发，也就是上面的配置。http://ip:gateway_port/servername/正常请求的链接
 #      routes:
 #        - id: zzuoj-auth

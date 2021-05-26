@@ -8,22 +8,24 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="zzuoj-eureka" />
-        <module name="zzuoj-gateway" />
-        <module name="zzuoj-contest" />
-        <module name="zzuoj-problem-service" />
-        <module name="zzuoj-file-interface" />
-        <module name="zzuoj-user-service" />
-        <module name="zzuoj-judge-service" />
-        <module name="zzuoj-file-service" />
-        <module name="zzuoj-judge-interface" />
+        <module name="zzuoj-common" />
         <module name="zzuoj-conf" />
         <module name="zzuoj-problem-interface" />
-        <module name="zzuoj-common" />
+        <module name="zzuoj-file-interface" />
+        <module name="zzuoj-gateway" />
         <module name="zzuoj-user-interface" />
+        <module name="zzuoj-common-web" />
+        <module name="zzuoj-file-service" />
+        <module name="zzuoj-user-service" />
+        <module name="zzuoj-judge-interface" />
+        <module name="zzuoj-problem-service" />
+        <module name="zzuoj-contest" />
+        <module name="zzuoj-judge-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="zzuoj-common" target="1.8" />
+      <module name="zzuoj-common-web" target="1.8" />
       <module name="zzuoj-conf" target="1.8" />
       <module name="zzuoj-contest" target="1.8" />
       <module name="zzuoj-eureka" target="1.8" />

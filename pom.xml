@@ -13,6 +13,7 @@
         <module>zzuoj-base/zzuoj-conf</module>
         <module>zzuoj-base/zzuoj-eureka</module>
         <module>zzuoj-base/zzuoj-common</module>
+        <module>zzuoj-base/zzuoj-common-web</module>
         <module>zzuoj-file/zzuoj-file-service</module>
         <module>zzuoj-file/zzuoj-file-interface</module>
         <module>zzuoj-contest</module>
@@ -23,6 +24,7 @@
         <module>zzuoj-problem/zzuoj-problem-service</module>
         <module>zzuoj-judge/zzuoj-judge-service</module>
         <module>zzuoj-judge/zzuoj-judge-interface</module>
+        <module>zzuoj-base/zzuoj-common-web</module>
     </modules>
 
 <!--    所有微服务jar包版本全部统一配置-->
@@ -94,17 +96,16 @@
             <groupId>org.example</groupId>
             <artifactId>zzuoj-common</artifactId>
             <version>1.0-SNAPSHOT</version>
-            <scope>provided</scope>
         </dependency>
 
 
 <!--        热部署-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-devtools</artifactId>-->
-<!--            <scope>runtime</scope>-->
-<!--            <optional>true</optional>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
 
     </dependencies>
 
