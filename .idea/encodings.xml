@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zzuoj-base/zzuoj-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zzuoj-base/zzuoj-common/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zzuoj-base/zzuoj-conf/src/main/java" charset="UTF-8" />
@@ -15,6 +14,10 @@
     <file url="file://$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zzuoj-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zzuoj-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zzuoj-judge/zzuoj-judge-interface/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zzuoj-judge/zzuoj-judge-interface/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zzuoj-judge/zzuoj-judge-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zzuoj-judge/zzuoj-judge-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zzuoj-problem/zzuoj-problem-interface/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zzuoj-problem/zzuoj-problem-interface/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zzuoj-problem/zzuoj-problem-service/src/main/java" charset="UTF-8" />

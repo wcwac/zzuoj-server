@@ -2,6 +2,7 @@ package cn.edu.zzu.oj.controller.problem;
 
 import cn.edu.zzu.oj.Exceptions.BaseException;
 import cn.edu.zzu.oj.anotation.BaseResponse;
+import cn.edu.zzu.oj.client.FileClient;
 import cn.edu.zzu.oj.entity.Problem;
 import cn.edu.zzu.oj.enums.HttpStatus;
 import cn.edu.zzu.oj.service.impl.CheckpointServiceImpl;
@@ -27,6 +28,9 @@ public class ProblemAdminController {
     ProblemServiceImpl problemService;
 
     @Autowired
+    FileClient fileClient;
+
+    @Autowired
     CheckpointServiceImpl checkpointService;
 
     @GetMapping("/delete")
@@ -34,6 +38,13 @@ public class ProblemAdminController {
         Integer cnt = 0;
         try {
             cnt = problemService.deleteProblemById(problemId);
+
+            //删除所有测试点（文件+所有测试点）
+            if( fileClient.deleteFiles(String.valueOf(problemId)) ){
+                log.info("delete checkpoints by pId success");
+            } else {
+                log.error("delete checkpoints by pId fail");
+            }
             checkpointService.deleteAllPointsByPid(problemId);
         } catch (Exception e){
             log.error("delete problem by id error:" + e.toString());

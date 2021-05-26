@@ -28,6 +28,10 @@ public interface FilesysApi {
     List<FileDTO> uploadBinaryFiles(@RequestBody List<BinaryFileUploadReqDTO> reqDTOList,
                                     @RequestParam("userId") String userId) throws Exception;
 
+    //文件、目录都能删除（目录递归删除）
+    @GetMapping("/deleteFile")
+    boolean deleteFiles(@RequestParam("filePath") String path);
+
 //    @GetMapping(value = "/download", headers = "content-type=application/json")
 //    Resource download(@RequestParam("id") long id) throws IOException;
 //

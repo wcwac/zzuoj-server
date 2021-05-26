@@ -79,6 +79,29 @@ public class FileServiceImpl implements cn.edu.zzu.oj.service.FileService {
     }
 
     @Override
+    public boolean deleteFile(String path) {
+        File file = new File(String.valueOf(Paths.get(fileSystemProperties.getBaseDir(), path)));
+        if( file.isDirectory() ){
+            return deleteDir(file);
+        }
+        return file.delete();
+    }
+
+    private static boolean deleteDir(File dir) {
+        if (dir.isDirectory()) {
+            String[] children = dir.list();
+            for (int i=0; i<children.length; i++) {
+                boolean success = deleteDir(new File(dir, children[i]));
+                if (!success) {
+                    return false;
+                }
+            }
+        }
+        // 目录此时为空，可以删除
+        return dir.delete();
+    }
+
+    @Override
     @Transactional
     public List<FileDTO> uploadFiles(MultipartFile[] files, String userId) throws Exception {
         List<BinaryFileUploadReqDTO> reqDTOList = new ArrayList<>(files.length);

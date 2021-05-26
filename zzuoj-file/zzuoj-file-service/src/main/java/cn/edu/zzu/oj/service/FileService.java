@@ -29,6 +29,11 @@ public interface FileService {
     FileDTO upload(MultipartFile file);
 
     /**
+     * @Description 删除单个文件
+     */
+    boolean deleteFile(String path);
+
+    /**
     * @Description 批量上传文件
     **/
     List<FileDTO> uploadFiles(MultipartFile[] files, String usedId) throws Exception;

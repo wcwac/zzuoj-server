@@ -29,6 +29,11 @@ public class FileInternalController implements FilesysApi {
         return fileService.uploadBinaryFiles(reqDTOList, userId);
     }
 
+    @Override
+    public boolean deleteFiles(String path) {
+        return fileService.deleteFile(path);
+    }
+
 //    @Override
 //    public Resource download(long id) throws IOException {
 //        return new ByteArrayResource(fileService.downloadFile(id));

@@ -8,32 +8,35 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="zzuoj-eureka" />
+        <module name="zzuoj-gateway" />
         <module name="zzuoj-contest" />
         <module name="zzuoj-problem-service" />
-        <module name="zzuoj-gateway" />
+        <module name="zzuoj-file-interface" />
         <module name="zzuoj-user-service" />
-        <module name="zzuoj-user-interface" />
-        <module name="zzuoj-conf" />
+        <module name="zzuoj-judge-service" />
         <module name="zzuoj-file-service" />
+        <module name="zzuoj-judge-interface" />
+        <module name="zzuoj-conf" />
         <module name="zzuoj-problem-interface" />
         <module name="zzuoj-common" />
-        <module name="zzuoj-file-interface" />
+        <module name="zzuoj-user-interface" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="problem" target="1.8" />
-      <module name="test-client" target="1.8" />
-      <module name="zzuoj-auth" target="1.8" />
-      <module name="zzuoj-base" target="1.5" />
-      <module name="zzuoj-conf-client-test" target="1.8" />
-      <module name="zzuoj-config" target="1.5" />
-      <module name="zzuoj-entity" target="1.8" />
-      <module name="zzuoj-problem" target="1.8" />
-      <module name="zzuoj-service" target="1.8" />
-      <module name="zzuoj-temp" target="1.8" />
-      <module name="zzuoj-test" target="1.8" />
-      <module name="zzuoj-user" target="1.8" />
-      <module name="zzuoj-util" target="1.8" />
+    <bytecodeTargetLevel target="8">
+      <module name="zzuoj-common" target="1.8" />
+      <module name="zzuoj-conf" target="1.8" />
+      <module name="zzuoj-contest" target="1.8" />
+      <module name="zzuoj-eureka" target="1.8" />
+      <module name="zzuoj-file-interface" target="1.8" />
+      <module name="zzuoj-file-service" target="1.8" />
+      <module name="zzuoj-gateway" target="1.8" />
+      <module name="zzuoj-judge-interface" target="1.8" />
+      <module name="zzuoj-judge-service" target="1.8" />
+      <module name="zzuoj-problem-interface" target="1.8" />
+      <module name="zzuoj-problem-service" target="1.8" />
+      <module name="zzuoj-server" target="1.8" />
+      <module name="zzuoj-user-interface" target="1.8" />
+      <module name="zzuoj-user-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
