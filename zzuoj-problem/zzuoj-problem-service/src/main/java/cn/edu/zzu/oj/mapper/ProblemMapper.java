@@ -21,4 +21,11 @@ public interface ProblemMapper extends BaseMapper<Problem> {
 
     @Update("update problem set defunct = #{defunct} where problem_id =#{problemId}")
     Integer updateProblemDefunctStatus(Problem problem);
+
+    @Update("update problem set submit = submit+1 where problem_id =#{problemId}")
+    Integer increSubmit(Integer problemId);
+
+    @Update("update problem set submit = submit+1, accepted = accepted + 1 where problem_id =#{problemId}")
+    Integer increSubmitAC(Integer problemId);
+
 }

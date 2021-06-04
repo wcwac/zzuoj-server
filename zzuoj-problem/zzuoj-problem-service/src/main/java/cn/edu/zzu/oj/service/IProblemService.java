@@ -19,7 +19,7 @@ public interface IProblemService extends IService<Problem> {
 
     public List<Problem> getProblemsPage(Integer pos, Integer limit) throws Exception;
 
-    public Problem getProblemById(Integer id);
+    public List<Problem> getProblemByIds(List<Integer> ids);
 
     public Integer deleteProblemById(Integer id);
 
@@ -28,6 +28,9 @@ public interface IProblemService extends IService<Problem> {
     public Integer addProblem(Problem problem);
 
     public Integer switchDefunctStatusByPid(Integer pid, String status);
+
+    //增加一次提交
+    public Integer incre(Integer pid, boolean ac);
 
 
 }

@@ -1,9 +1,16 @@
 package cn.edu.zzu.oj.entity;
 
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
 import java.util.Date;
 
-public class Source {
+@Accessors(chain = true)
+@NoArgsConstructor
+@Data
+public class SourceT {
     private Integer solutionId;
 
     private Integer problemId;
@@ -22,5 +29,5 @@ public class Source {
 
     private Integer codeLength;
 
-    private String code;
+    private String filePath;
 }

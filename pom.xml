@@ -19,12 +19,13 @@
         <module>zzuoj-contest</module>
         <module>zzuoj-user/zzuoj-user-service</module>
         <module>zzuoj-user/zzuoj-user-interface</module>
-        <module>zzuoj-file/zzuoj-file-interface</module>
         <module>zzuoj-problem/zzuoj-problem-interface</module>
         <module>zzuoj-problem/zzuoj-problem-service</module>
         <module>zzuoj-judge/zzuoj-judge-service</module>
         <module>zzuoj-judge/zzuoj-judge-interface</module>
         <module>zzuoj-base/zzuoj-common-web</module>
+        <module>zzuoj-submission/zzuoj-submission-interface</module>
+        <module>zzuoj-submission/zzuoj-submission-service</module>
     </modules>
 
 <!--    所有微服务jar包版本全部统一配置-->
@@ -100,12 +101,12 @@
 
 
 <!--        热部署-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-devtools</artifactId>-->
+<!--            <scope>runtime</scope>-->
+<!--            <optional>true</optional>-->
+<!--        </dependency>-->
 
     </dependencies>
 

@@ -1,8 +1,12 @@
 package cn.edu.zzu.oj.entity;
 
 import java.io.Serializable;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
@@ -12,6 +16,10 @@ import lombok.EqualsAndHashCode;
  * @author yuliuyuan
  * @since 2021-06-02
  */
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Accessors(chain = true)
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class Compileinfo implements Serializable {

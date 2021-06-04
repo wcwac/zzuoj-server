@@ -1,6 +1,6 @@
 package cn.edu.zzu.oj.util;
 
-public class LangUtil {
+public class LanguageUtil {
     public static String getFileSuf(Integer i){
         if(i==1) return ".c";
         if(i==2) return ".c++";

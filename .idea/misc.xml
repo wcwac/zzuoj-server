@@ -20,6 +20,7 @@
         <option value="$PROJECT_DIR$/zzuoj-user/zzuoj-user-interface/pom.xml" />
         <option value="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/zzuoj-submission/zzuoj-submission-service/pom.xml" />
       </list>
     </option>
   </component>

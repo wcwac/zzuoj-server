@@ -46,14 +46,14 @@ public class ProblemServiceImpl extends ServiceImpl<ProblemMapper, Problem> impl
     }
 
     @Override
-    public Problem getProblemById(Integer id) {
-        Problem problem = null;
+    public List<Problem> getProblemByIds(List<Integer> ids) {
+        List<Problem> problems = null;
         try {
-            problem = problemMapper.selectById(id);
+            problems = problemMapper.selectBatchIds(ids);
         } catch (Exception e){
             throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return problem;
+        return problems;
     }
 
     @Override
@@ -91,6 +91,17 @@ public class ProblemServiceImpl extends ServiceImpl<ProblemMapper, Problem> impl
             cnt = problemMapper.updateProblemDefunctStatus(new Problem().setProblemId(pid).setDefunct(status));
         } catch (Exception e){
             throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return cnt;
+    }
+
+    @Override
+    public Integer incre(Integer pid, boolean ac) {
+        Integer cnt = 0;
+        if(ac){
+            cnt = problemMapper.increSubmitAC(pid);
+        }else{
+            cnt = problemMapper.increSubmit(pid);
         }
         return cnt;
     }

@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,7 +27,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class SolutionT implements Serializable {
+public class Solution implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -41,7 +42,7 @@ public class SolutionT implements Serializable {
 
     private Integer memory;
 
-    private LocalDateTime inDate;
+    private Date inDate;
 
     private Integer result;
 

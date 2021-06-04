@@ -4,6 +4,7 @@ import cn.edu.zzu.oj.entity.Solution;
 import cn.edu.zzu.oj.mapper.SolutionMapper;
 import cn.edu.zzu.oj.service.ISolutionService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**

@@ -2,6 +2,7 @@ package cn.edu.zzu.oj.mapper;
 
 import cn.edu.zzu.oj.entity.Runtimeinfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author yuliuyuan
  * @since 2021-06-02
  */
+
+@Mapper
 public interface RuntimeinfoMapper extends BaseMapper<Runtimeinfo> {
 
 }

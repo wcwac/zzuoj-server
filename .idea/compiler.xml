@@ -8,6 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="zzuoj-eureka" />
+        <module name="zzuoj-submission-service" />
+        <module name="zzuoj-submission-interface" />
         <module name="zzuoj-common" />
         <module name="zzuoj-conf" />
         <module name="zzuoj-problem-interface" />
@@ -37,6 +39,9 @@
       <module name="zzuoj-problem-interface" target="1.8" />
       <module name="zzuoj-problem-service" target="1.8" />
       <module name="zzuoj-server" target="1.8" />
+      <module name="zzuoj-submission" target="1.8" />
+      <module name="zzuoj-submission-interface" target="1.8" />
+      <module name="zzuoj-submission-service" target="1.8" />
       <module name="zzuoj-user-interface" target="1.8" />
       <module name="zzuoj-user-service" target="1.8" />
     </bytecodeTargetLevel>

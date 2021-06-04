@@ -4,7 +4,7 @@ spring:
 
 ---
 zzuoj:
-  filesys: /home/zzuoj/data
+  filesys: /home/zzuoj/data/checkpoint
 
 
 server:
@@ -40,7 +40,7 @@ eureka:
 ---
 zzuoj:
   filesys:
-    baseDir: /Users/bytedance/yly/zzuoj/data
+    baseDir: /Users/bytedance/yly/zzuoj/data/checkpoint
 
 server:
   port: 8203

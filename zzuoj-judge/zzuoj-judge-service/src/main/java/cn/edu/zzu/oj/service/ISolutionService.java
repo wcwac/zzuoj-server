@@ -12,5 +12,4 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2021-06-02
  */
 public interface ISolutionService extends IService<Solution> {
-
 }
