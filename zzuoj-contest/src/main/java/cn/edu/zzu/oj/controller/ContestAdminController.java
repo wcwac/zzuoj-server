@@ -33,6 +33,11 @@ public class ContestAdminController {
         try {
             Contest contest = FrontToEntity.ContestFrontToContest(contestFront);
             cnt = contestService.addContest(contest);
+//
+//            String[] problems = contest.getProblems().split("^");
+//            //添加到contest_problem
+
+
         } catch (Exception e) {
             log.error("add contest fail: "+ e.getMessage());
             throw new BaseException(HttpStatus.HTTP_VERSION_NOT_SUPPORTED);

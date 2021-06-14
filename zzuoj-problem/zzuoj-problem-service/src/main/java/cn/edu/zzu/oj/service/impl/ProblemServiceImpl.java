@@ -37,6 +37,19 @@ public class ProblemServiceImpl extends ServiceImpl<ProblemMapper, Problem> impl
         List<Problem> records = null;
         try {
             Page<Problem> page = new Page<>(pos,limit);
+            IPage<Problem> problemIPage = problemMapper.selectPage(page, new QueryWrapper<Problem>().eq("defunct", "N"));
+            records = problemIPage.getRecords();
+        } catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+        return records;
+    }
+
+    @Override
+    public List<Problem> getProblemsPageIncludePrivate(Integer pos, Integer limit) throws Exception {
+        List<Problem> records = null;
+        try {
+            Page<Problem> page = new Page<>(pos,limit);
             IPage<Problem> problemIPage = problemMapper.selectPage(page, new QueryWrapper<Problem>());
             records = problemIPage.getRecords();
         } catch (Exception e){
@@ -69,6 +82,12 @@ public class ProblemServiceImpl extends ServiceImpl<ProblemMapper, Problem> impl
 
     @Override
     public Integer getProblemCnt() {
+        QueryWrapper<Problem> queryWrapper = new QueryWrapper<Problem>().eq("defunct", "N");
+        return problemMapper.selectCount(queryWrapper);
+    }
+
+    @Override
+    public Integer getProblemCntIncludePrivate() {
         QueryWrapper<Problem> queryWrapper = new QueryWrapper<Problem>();
         return problemMapper.selectCount(queryWrapper);
     }
@@ -84,6 +103,12 @@ public class ProblemServiceImpl extends ServiceImpl<ProblemMapper, Problem> impl
         return cnt;
     }
 
+    //插入的时候会获取自增id
+    public int insert(Problem problem) {
+        baseMapper.insert(problem);
+        return problem.getProblemId();
+    }
+
     @Override
     public Integer switchDefunctStatusByPid(Integer pid, String status) {
         Integer cnt = 0;
@@ -93,6 +118,11 @@ public class ProblemServiceImpl extends ServiceImpl<ProblemMapper, Problem> impl
             throw new BaseException(HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return cnt;
+    }
+
+    @Override
+    public Integer updateProblemByPid(Problem problem) {
+        return problemMapper.updateById(problem);
     }
 
     @Override

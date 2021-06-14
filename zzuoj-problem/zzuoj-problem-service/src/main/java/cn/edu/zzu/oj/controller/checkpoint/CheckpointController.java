@@ -6,12 +6,13 @@ import cn.edu.zzu.oj.anotation.UserSession;
 import cn.edu.zzu.oj.client.FileClient;
 import cn.edu.zzu.oj.dto.BinaryFileUploadReqDTO;
 import cn.edu.zzu.oj.entity.Checkpoint;
+import cn.edu.zzu.oj.entity.checkpoint.CheckPointConf;
+import cn.edu.zzu.oj.entity.checkpoint.TestCaseDTO;
 import cn.edu.zzu.oj.entity.jwt.UserSessionDTO;
 import cn.edu.zzu.oj.service.impl.CheckpointServiceImpl;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.sun.tools.javac.comp.Check;
-import org.omg.PortableInterceptor.INACTIVE;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.awt.peer.CheckboxPeer;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -81,13 +86,57 @@ public class CheckpointController {
             }
             checkpointService.saveBatch(checkpoints);
 
-
-
             for(int i=0; i<reqDTOList.size(); i++){
                 String temp = reqDTOList.get(i).getFilename();
                 reqDTOList.get(i).setFilename(  (String) jsonObject.get("pId") + "/" + temp);
             }
             fileClient.uploadBinaryFiles(reqDTOList, userSessionDTO.getUserId());
+
+
+            Integer problemId = Integer.parseInt((String) jsonObject.get("pId")) ;
+            //上传成功之后，修改problem.json文件
+            String base = "/Users/bytedance/yly/zzuoj/deer-executor/";
+            String filePath = "data/problems/"+problemId;
+
+            //读取
+            BufferedReader reader = new BufferedReader(new FileReader(base + filePath + "/problem.json"));
+            StringBuilder stringBuilder = new StringBuilder();
+            char[] buffer = new char[10];
+            while (reader.read(buffer) != -1) {
+                stringBuilder.append(new String(buffer));
+                buffer = new char[10];
+            }
+            reader.close();
+            String content = stringBuilder.toString();
+
+            CheckPointConf checkPointConf= (CheckPointConf) JSONObject.parseObject(content, CheckPointConf.class);
+
+            int p = 0;
+            List<TestCaseDTO> testCaseDTOS = checkPointConf.getTestCaseList();
+            if(testCaseDTOS == null){
+                testCaseDTOS = new ArrayList<>();
+            }else {
+                p = checkPointConf.getTestCaseList().size();
+            }
+
+            for(int i=0; i<reqDTOList.size(); i+=2){
+                p++;
+                TestCaseDTO testCaseDTO = new TestCaseDTO()
+                        .setHandle( String.valueOf(p))
+                        .setEnabled(true)
+                        .setInput(reqDTOList.get(i).getFilename().split("/")[1])
+                        .setOutput(reqDTOList.get(i+1).getFilename().split("/")[1])
+                        .setName(problemId + " Test #"+p);
+                testCaseDTOS.add(testCaseDTO);
+            }
+
+            checkPointConf.setTestCaseList(testCaseDTOS);
+
+            //写回problem.json
+            BufferedWriter out = new BufferedWriter(new FileWriter(base + filePath + "/problem.json"));
+            out.write( JSONObject.toJSONString(checkPointConf) );
+            out.close();
+
         } catch (Exception e) {
             log.error("uploadCheckPoints fail: " + e.getMessage());
             throw new Exception(e.getMessage());

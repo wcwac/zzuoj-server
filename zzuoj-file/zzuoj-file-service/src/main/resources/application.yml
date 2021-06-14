@@ -4,7 +4,7 @@ spring:
 
 ---
 zzuoj:
-  filesys: /home/zzuoj/data/checkpoint
+  filesys: /Users/bytedance/yly/zzuoj/deer-executor/data/problems
 
 
 server:
@@ -40,7 +40,7 @@ eureka:
 ---
 zzuoj:
   filesys:
-    baseDir: /Users/bytedance/yly/zzuoj/data/checkpoint
+    baseDir: /Users/bytedance/yly/zzuoj/deer-executor/data/problems
 
 server:
   port: 8203

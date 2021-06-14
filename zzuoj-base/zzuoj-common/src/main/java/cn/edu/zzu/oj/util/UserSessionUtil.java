@@ -9,6 +9,6 @@ public class UserSessionUtil {
     }
 
     public static boolean isRoot(UserSessionDTO userSessionDTO){
-        return userSessionDTO.getRole() != 1;
+        return userSessionDTO.getRole() == 1;
     }
 }

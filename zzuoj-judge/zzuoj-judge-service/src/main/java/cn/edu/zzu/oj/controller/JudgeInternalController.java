@@ -28,11 +28,11 @@ public class JudgeInternalController implements JudgeInternalApi {
     @Autowired
     CompileinfoServiceImpl compileinfoService;
 
-//    @Autowired
-//    ProblemClient problemClient;
-//
-//    @Autowired
-//    UserClient userClient;
+    @Autowired
+    ProblemClient problemClient;
+
+    @Autowired
+    UserClient userClient;
 
 
 
@@ -80,8 +80,8 @@ public class JudgeInternalController implements JudgeInternalApi {
 
 
         //更新题目信息，更新用户信息。
-//        problemClient.increSubmitAc(solution.getProblemId(), solution.getResult() == 0? true : false);
-//        userClient.increSubmitAc(solution.getUserId(), solution.getResult() == 0? true : false);
+        problemClient.increSubmitAc(solution.getProblemId(), solution.getResult() == 0? true : false);
+        userClient.increSubmitAc(solution.getUserId(), solution.getResult() == 0? true : false);
 
         return 1;
     }

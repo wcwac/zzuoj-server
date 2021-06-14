@@ -33,6 +33,7 @@ public class SolutionServiceImpl extends ServiceImpl<SolutionMapper, Solution> i
         try {
             Page<Solution> page = new Page<>(pos,limit);
             QueryWrapper<Solution> queryWrapper = new QueryWrapper<Solution>();
+            queryWrapper.orderByDesc("solution_id");
             IPage<Solution> solutionIPage = solutionMapper.selectPage(page, queryWrapper);
             records = solutionIPage.getRecords();
         } catch (Exception e){
@@ -48,6 +49,7 @@ public class SolutionServiceImpl extends ServiceImpl<SolutionMapper, Solution> i
             Page<Solution> page = new Page<>(pos,limit);
             QueryWrapper<Solution> queryWrapper = new QueryWrapper<Solution>();
             queryWrapper.eq("user_id", userId);
+            queryWrapper.orderByDesc("solution_id");
             IPage<Solution> solutionIPage = solutionMapper.selectPage(page, queryWrapper);
             records = solutionIPage.getRecords();
         } catch (Exception e){
@@ -63,6 +65,7 @@ public class SolutionServiceImpl extends ServiceImpl<SolutionMapper, Solution> i
             Page<Solution> page = new Page<>(pos,limit);
             QueryWrapper<Solution> queryWrapper = new QueryWrapper<Solution>();
             queryWrapper.eq("problem_id", pId);
+            queryWrapper.orderByDesc("solution_id");
             IPage<Solution> solutionIPage = solutionMapper.selectPage(page, queryWrapper);
             records = solutionIPage.getRecords();
         } catch (Exception e){
@@ -79,6 +82,7 @@ public class SolutionServiceImpl extends ServiceImpl<SolutionMapper, Solution> i
             QueryWrapper<Solution> queryWrapper = new QueryWrapper<Solution>();
             queryWrapper.eq("user_id", userId);
             queryWrapper.eq("problem_id", pId);
+            queryWrapper.orderByDesc("solution_id");
             IPage<Solution> solutionIPage = solutionMapper.selectPage(page, queryWrapper);
             records = solutionIPage.getRecords();
         } catch (Exception e){

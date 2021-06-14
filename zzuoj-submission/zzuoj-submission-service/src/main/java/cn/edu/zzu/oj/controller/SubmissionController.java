@@ -85,17 +85,17 @@ public class SubmissionController {
 
     //uid空设成"", pid空设成0
     @GetMapping("/show")
-    public List<SolutionFront> show(@RequestParam("pos") Integer pos, @RequestParam("limit") Integer limit, @RequestParam("uid") String  uid, @RequestParam("pid") Integer  pid){
+    public List<SolutionFront> show(@RequestParam("pos") Integer pos, @RequestParam("limit") Integer limit, @RequestParam(value = "uid", required = false) String  uid, @RequestParam(value = "pid", required = false) Integer  pid){
         List<Solution> list = null;
         try {
-            if(uid == ""){
-                if(pid == 0){
+            if(uid == null){
+                if(pid == null){
                     list = solutionService.getSolutionsPage(pos, limit);
                 } else {
                     list = solutionService.getSolutionsPageByPid(pos, limit, pid);
                 }
             }else{
-                if(pid == 0){
+                if(pid == null){
                     list = solutionService.getSolutionsPageByUid(pos, limit, uid);
                 } else {
                     list = solutionService.getSolutionsPageByUidPid(pos, limit, uid, pid);
@@ -110,16 +110,16 @@ public class SubmissionController {
 
     //uid空设成"", pid空设成0
     @GetMapping("/cnt")
-    public Integer getSolutionCnt(@RequestParam("uid") String uid, @RequestParam("pid") Integer pid){
+    public Integer getSolutionCnt(@RequestParam(value = "uid", required = false) String uid, @RequestParam(value = "pid", required = false) Integer pid){
         Integer res = 0;
-        if(uid == ""){
-            if(pid == 0){
+        if(uid == null){
+            if(pid == null){
                 res = solutionService.getSolutionCnt();
             } else {
                 res = solutionService.getSolutionCntByPid(pid);
             }
         }else{
-            if(pid == 0){
+            if(pid == null){
                 res = solutionService.getSolutionCntByUid(uid);
             } else {
                 res = solutionService.getSolutionCntByUidPid(uid, pid);

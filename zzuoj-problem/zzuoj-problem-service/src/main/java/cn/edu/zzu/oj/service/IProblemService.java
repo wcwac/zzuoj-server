@@ -19,15 +19,24 @@ public interface IProblemService extends IService<Problem> {
 
     public List<Problem> getProblemsPage(Integer pos, Integer limit) throws Exception;
 
+    public List<Problem> getProblemsPageIncludePrivate(Integer pos, Integer limit) throws Exception;
+
     public List<Problem> getProblemByIds(List<Integer> ids);
 
     public Integer deleteProblemById(Integer id);
 
     public Integer getProblemCnt();
 
+    public Integer getProblemCntIncludePrivate();
+
+    //插入的时候返回的是自增id
+    public int insert(Problem problem) ;
+
     public Integer addProblem(Problem problem);
 
     public Integer switchDefunctStatusByPid(Integer pid, String status);
+
+    public Integer updateProblemByPid(Problem problem);
 
     //增加一次提交
     public Integer incre(Integer pid, boolean ac);

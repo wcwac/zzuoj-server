@@ -36,6 +36,9 @@ public class NewsControllerTTT {
     //显示所有的新闻
     @GetMapping("/show")
     public List<NewFront> getAllNews(@RequestParam("pos") Integer pos, @RequestParam("limit") Integer limit){
+        //暂时先不用redis
+//        redisUtils.set("k", "v");
+
         return WebEntityToFrontEntity.NewsToNewsFront(newsService.getNews(pos, limit));
     }
 
