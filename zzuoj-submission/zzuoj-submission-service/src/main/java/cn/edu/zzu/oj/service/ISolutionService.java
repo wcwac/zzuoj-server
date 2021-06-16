@@ -30,8 +30,16 @@ public interface ISolutionService extends IService<Solution> {
     //通过userId、problemId查询
     public List<Solution> getSolutionsPageByUidPid(Integer pos, Integer limit, String userId, Integer pId) throws Exception;
 
+    //通过contestId查询
+    public List<Solution> getSolutionsPageByContestId(Integer pos, Integer limit, Integer contestId) throws Exception;
+
+    public List<Solution> getSolutionRanking(Integer contestId) throws Exception;
+
+
     public Integer getSolutionCnt();
     public Integer getSolutionCntByUid(String uid);
     public Integer getSolutionCntByPid(Integer pid);
     public Integer getSolutionCntByUidPid(String uid, Integer pid);
+    public Integer getSolutionCntByContestId(Integer contestId);
+
 }

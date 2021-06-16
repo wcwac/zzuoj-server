@@ -3,10 +3,6 @@ spring:
     active: test
 
 ---
-zzuoj:
-  filesys: /Users/bytedance/yly/zzuoj/deer-executor/data/problems
-
-
 server:
   port: 8203
 spring:
@@ -24,11 +20,6 @@ spring:
       min-idle: 3
       max-active: 10
       max-wait: 6000
-  http:
-    multipart:
-      enabled: true
-      file-size-threshold: 0
-
 
 eureka:
   instance:
@@ -37,11 +28,9 @@ eureka:
     service-url:
       defaultZone: http://eureka01:7001/eureka
 
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**.xml
 ---
-zzuoj:
-  filesys:
-    baseDir: /Users/bytedance/yly/zzuoj/deer-executor/data/problems
-
 server:
   port: 8203
 
@@ -67,7 +56,6 @@ spring:
       min-idle: 3
       max-active: 10
       max-wait: 60000
-  http:
-    multipart:
-      enabled: true
-      file-size-threshold: 0
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**.xml

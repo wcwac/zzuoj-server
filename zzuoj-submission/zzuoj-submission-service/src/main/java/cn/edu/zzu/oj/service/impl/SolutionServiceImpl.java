@@ -92,6 +92,29 @@ public class SolutionServiceImpl extends ServiceImpl<SolutionMapper, Solution> i
     }
 
     @Override
+    public List<Solution> getSolutionsPageByContestId(Integer pos, Integer limit, Integer contestId) throws Exception {
+        List<Solution> records = null;
+        try {
+            Page<Solution> page = new Page<>(pos,limit);
+            QueryWrapper<Solution> queryWrapper = new QueryWrapper<Solution>();
+            queryWrapper.eq("contest_id", contestId);
+            queryWrapper.orderByDesc("solution_id");
+            IPage<Solution> solutionIPage = solutionMapper.selectPage(page, queryWrapper);
+            records = solutionIPage.getRecords();
+        } catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+        return records;
+    }
+
+    @Override
+    public List<Solution> getSolutionRanking(Integer contestId) throws Exception {
+        QueryWrapper q = new QueryWrapper();
+        q.eq("contest_id", contestId);
+        return solutionMapper.selectList(q);
+    }
+
+    @Override
     public Integer getSolutionCnt() {
         QueryWrapper<Solution> queryWrapper = new QueryWrapper<>();
         return solutionMapper.selectCount(queryWrapper);
@@ -116,6 +139,13 @@ public class SolutionServiceImpl extends ServiceImpl<SolutionMapper, Solution> i
         QueryWrapper<Solution> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("user_id",uid );
         queryWrapper.eq("problem_id", pid);
+        return solutionMapper.selectCount(queryWrapper);
+    }
+
+    @Override
+    public Integer getSolutionCntByContestId(Integer contestId) {
+        QueryWrapper<Solution> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("contest_id",contestId );
         return solutionMapper.selectCount(queryWrapper);
     }
 }

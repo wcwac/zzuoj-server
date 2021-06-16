@@ -85,9 +85,19 @@ public class SubmissionController {
 
     //uid空设成"", pid空设成0
     @GetMapping("/show")
-    public List<SolutionFront> show(@RequestParam("pos") Integer pos, @RequestParam("limit") Integer limit, @RequestParam(value = "uid", required = false) String  uid, @RequestParam(value = "pid", required = false) Integer  pid){
+    public List<SolutionFront> show(@RequestParam("pos") Integer pos, @RequestParam("limit") Integer limit, @RequestParam(value = "uid", required = false) String  uid,
+                                    @RequestParam(value = "pid", required = false) Integer  pid,
+                                    @RequestParam(value = "cid", required = false) Integer  contestId){
+
+
         List<Solution> list = null;
         try {
+            //todo: udpate
+            if(contestId!=null){
+                list = solutionService.getSolutionsPageByContestId(pos,limit, contestId);
+                return EntityToFrontEntity.SolutionToSolutionFront(list);
+            }
+
             if(uid == null){
                 if(pid == null){
                     list = solutionService.getSolutionsPage(pos, limit);
@@ -110,8 +120,16 @@ public class SubmissionController {
 
     //uid空设成"", pid空设成0
     @GetMapping("/cnt")
-    public Integer getSolutionCnt(@RequestParam(value = "uid", required = false) String uid, @RequestParam(value = "pid", required = false) Integer pid){
+    public Integer getSolutionCnt(@RequestParam(value = "uid", required = false) String uid,
+                                  @RequestParam(value = "pid", required = false) Integer pid,
+                                   @RequestParam(value = "cid", required = false) Integer  contestId ){
         Integer res = 0;
+        //todo: udpate
+        if(contestId!=null){
+            res = solutionService.getSolutionCntByContestId(contestId);
+            return res;
+        }
+
         if(uid == null){
             if(pid == null){
                 res = solutionService.getSolutionCnt();

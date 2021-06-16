@@ -1,13 +1,13 @@
 package cn.edu.zzu.oj.entity;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class ResponseResult extends BaseDTO {
     /**
      * 返回状态码
