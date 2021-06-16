@@ -1,0 +1,76 @@
+spring:
+  profiles:
+    active: dev
+
+---
+server:
+  port: 8209
+spring:
+  profiles: dev
+  application:
+    name: zzuoj-submission
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/zzuoj?characterEncoding=utf-8&useSSl=false
+    username: root
+    password: yY139411.
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      initial-size: 3
+      min-idle: 3
+      max-active: 10
+      max-wait: 6000
+
+eureka:
+  instance:
+    instance-id: zzuoj-submission-8209 #修改Eureka上的默认描述信息
+  client:
+    service-url:
+      defaultZone: http://eureka01:7001/eureka
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**.xml
+
+#设置feign 客户端超时时间（openFeign默认支持ribbon）
+ribbon:
+  #指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间
+  ReadTimeout: 5000
+  #指的是建立连接后从服务器读取到可用资源所用的时间
+  ConnectTimeout: 5000
+
+
+---
+server:
+  port: 8209
+eureka:
+  instance:
+    instance-id: zzuoj-submission-8209  #修改Eureka上的默认描述信息
+  client:
+    service-url:
+      defaultZone: http://eureka01:7001/eureka
+
+spring:
+  profiles: test
+  application:
+    name: zzuoj-submission
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/zzuoj?characterEncoding=utf-8&useSSl=false
+    username: root
+    password: yY139411.
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      initial-size: 3
+      min-idle: 3
+      max-active: 10
+      max-wait: 60000
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**.xml
+
+#设置feign 客户端超时时间（openFeign默认支持ribbon）
+ribbon:
+  #指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间
+  ReadTimeout: 5000
+  #指的是建立连接后从服务器读取到可用资源所用的时间
+  ConnectTimeout: 5000

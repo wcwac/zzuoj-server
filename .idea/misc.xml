@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/zzuoj-base/zzuoj-common/pom.xml" />
+        <option value="$PROJECT_DIR$/zzuoj-base/zzuoj-conf/pom.xml" />
+        <option value="$PROJECT_DIR$/zzuoj-base/zzuoj-eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/zzuoj-contest/pom.xml" />
+        <option value="$PROJECT_DIR$/zzuoj-file/zzuoj-file-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/zzuoj-file/zzuoj-file-service/pom.xml" />
+        <option value="$PROJECT_DIR$/zzuoj-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/zzuoj-judge/zzuoj-judge-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/zzuoj-judge/zzuoj-judge-service/pom.xml" />
+        <option value="$PROJECT_DIR$/zzuoj-problem/zzuoj-problem-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/zzuoj-problem/zzuoj-problem-service/pom.xml" />
+        <option value="$PROJECT_DIR$/zzuoj-user/zzuoj-user-interface/pom.xml" />
         <option value="$PROJECT_DIR$/zzuoj-user/zzuoj-user-service/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/zzuoj-submission/zzuoj-submission-service/pom.xml" />
       </list>
     </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/problem/pom.xml" />
-        <option value="$PROJECT_DIR$/test-client/pom.xml" />
-        <option value="$PROJECT_DIR$/zzuoj-auth/pom.xml" />
-        <option value="$PROJECT_DIR$/zzuoj-base/pom.xml" />
-        <option value="$PROJECT_DIR$/zzuoj-common/pom.xml" />
-        <option value="$PROJECT_DIR$/zzuoj-common/zzuoj-util/pom.xml" />
-        <option value="$PROJECT_DIR$/zzuoj-conf-client-test/pom.xml" />
-        <option value="$PROJECT_DIR$/zzuoj-service/pom.xml" />
-        <option value="$PROJECT_DIR$/zzuoj-temp/pom.xml" />
-        <option value="$PROJECT_DIR$/zzuoj-test/pom.xml" />
-        <option value="$PROJECT_DIR$/zzuoj-user-interface/pom.xml" />
-      </set>
-    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
-  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

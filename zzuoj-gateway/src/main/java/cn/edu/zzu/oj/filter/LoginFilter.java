@@ -85,14 +85,13 @@ public class LoginFilter implements GlobalFilter, Ordered  {
         String token = exchange.getRequest().getHeaders().getFirst("Authorization");
         ServerHttpResponse resp = exchange.getResponse();
 
-        UserSessionDTO userSessionDTO = JWTUtil.getJwtModel(token, objectMapper);
+        UserSessionDTO userSessionDTO = token == null? null:JWTUtil.getJwtModel(token, objectMapper);
         // 装饰器 修改 getHeaders 方法
         ServerHttpRequestDecorator decorator = new ServerHttpRequestDecorator(exchange.getRequest()) {
             @Override
             public HttpHeaders getHeaders() {
                 MultiValueMap<String, String> multiValueMap = CollectionUtils.toMultiValueMap(new LinkedCaseInsensitiveMap(8, Locale.ENGLISH));
                 super.getHeaders().forEach((key, value) -> multiValueMap.put(key, value));
-                //              multiValueMap.remove("cookie"); // 在此处已解码 token, 故不下传省流量, 如果后续有多值 cookie 此处需要修改
                 multiValueMap.remove(UserSessionDTO.HEADER_KEY);
                 multiValueMap.add(UserSessionDTO.HEADER_KEY, JSON.toJSONString(userSessionDTO));
                 return new HttpHeaders(multiValueMap);
@@ -103,7 +102,7 @@ public class LoginFilter implements GlobalFilter, Ordered  {
         log.info("token: "+token);
         if(isAllowPath) {
             if(token != null && JWTUtil.checkToken(token, objectMapper)){
-                return chain.filter(exchange.mutate().request(decorator).build()).then(thenHandlerSession(exchange));
+                return chain.filter(exchange.mutate().request(decorator).build());
             }
             return chain.filter(exchange);
         }
@@ -135,7 +134,8 @@ public class LoginFilter implements GlobalFilter, Ordered  {
                     return authErro(exchange, "Authentication failed");
                 }
             }
-            return chain.filter(exchange.mutate().request(decorator).build()).then(thenHandlerSession(exchange));
+            return chain.filter(exchange.mutate().request(decorator).build());
+//            return chain.filter(exchange.mutate().request(decorator).build()).then(thenHandlerSession(exchange));
         } catch (ExpiredJwtException e) {
             log.error(e.getMessage(), e);
             if (e.getMessage().contains("Allowed clock skew")) {
@@ -168,7 +168,7 @@ public class LoginFilter implements GlobalFilter, Ordered  {
 
     @Override
     public int getOrder() {
-        return 0;
+        return -100;
     }
 
     private Mono<Void> authErro(ServerWebExchange exchange, String msg) {

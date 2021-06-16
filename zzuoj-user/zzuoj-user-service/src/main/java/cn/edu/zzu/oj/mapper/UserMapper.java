@@ -19,4 +19,10 @@ public interface UserMapper extends BaseMapper<User> {
 
     @Update("update user set email = #{email}, nick = #{nick}, school = #{school} where user_id =#{userId}")
     Integer updateUserByUserId(User user);
+
+    @Update("update user set submit = submit+1 where user_id =#{userId}")
+    Integer increSubmit(String  userId);
+
+    @Update("update user set submit = submit+1, solved = solved+1 where user_id =#{userId}")
+    Integer increSubmitAc(String  userId);
 }

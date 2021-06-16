@@ -5,8 +5,6 @@ import cn.edu.zzu.oj.entity.BaseDTO;
 import lombok.*;
 import lombok.experimental.Accessors;
 
-import java.util.List;
-
 @Accessors(chain = true)
 @Data
 @Builder

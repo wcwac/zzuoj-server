@@ -38,4 +38,6 @@ public interface IUserService extends IService<User> {
     public User getUserById(String uId);
 
     public Integer updateUserByUserId(User user);
+
+    public Integer increSubmitAc(String uid, boolean ac);
 }

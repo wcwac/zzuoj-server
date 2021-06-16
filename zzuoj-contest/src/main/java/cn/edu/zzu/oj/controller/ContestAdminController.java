@@ -8,6 +8,7 @@ import cn.edu.zzu.oj.entity.frontToWeb.ContestFront;
 import cn.edu.zzu.oj.enums.HttpStatus;
 import cn.edu.zzu.oj.service.impl.ContestServiceImpl;
 import cn.edu.zzu.oj.util.ContestUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +16,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
+
+@Slf4j
 @BaseResponse
 @RestController
 @RequestMapping("/admin/contest")
 public class ContestAdminController {
-    private static Logger log = LoggerFactory.getLogger(ContestAdminController.class);
+//    private static Logger log = LoggerFactory.getLogger(ContestAdminController.class);
 
     @Autowired
     ContestServiceImpl contestService;
@@ -30,6 +33,11 @@ public class ContestAdminController {
         try {
             Contest contest = FrontToEntity.ContestFrontToContest(contestFront);
             cnt = contestService.addContest(contest);
+//
+//            String[] problems = contest.getProblems().split("^");
+//            //添加到contest_problem
+
+
         } catch (Exception e) {
             log.error("add contest fail: "+ e.getMessage());
             throw new BaseException(HttpStatus.HTTP_VERSION_NOT_SUPPORTED);

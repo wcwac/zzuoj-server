@@ -110,5 +110,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return cnt;
     }
 
+    @Override
+    public Integer increSubmitAc(String uid, boolean ac) {
+        Integer cnt = 0;
+        if(ac){
+            cnt = userMapper.increSubmitAc(uid);
+        }else {
+            cnt = userMapper.increSubmit(uid);
+        }
+        return cnt;
+    }
 }
 
