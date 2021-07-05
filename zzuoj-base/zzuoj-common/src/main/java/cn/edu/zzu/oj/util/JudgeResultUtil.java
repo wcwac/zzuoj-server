@@ -2,13 +2,12 @@ package cn.edu.zzu.oj.util;
 
 import cn.edu.zzu.oj.enums.CodeStatus;
 import com.alibaba.fastjson.JSONObject;
-import com.sun.tools.javac.jvm.Code;
 
 import java.util.Map;
 
 public class JudgeResultUtil {
     public static CodeStatus parseResult(String s){
-        Integer i = 0;
+        int i = 0;
         if(s.startsWith("exit status ")){
             String temp = s.split(" ")[2];
             temp = temp.split("\n")[0];
