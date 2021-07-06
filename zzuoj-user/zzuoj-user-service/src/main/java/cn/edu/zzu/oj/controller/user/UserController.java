@@ -17,6 +17,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,12 +49,36 @@ public class UserController {
     @Autowired
     PrivilegeServiceImpl privilegeService;
 
-    @Transactional
+//    @Transactional
+//    @PostMapping("/registry")
+//    public String registry(@Valid @RequestBody UserFront userFront){
+//        User user = new User().setUserId(userFront.getUserId())
+//                .setEmail(userFront.getEmail())
+//                .setPassword( MD5Util.md5(userFront.getPassword()) )
+//                .setNick(userFront.getNickname())
+//                .setSchool(userFront.getSchool());
+//        user.setSubmit(0)
+//                .setSolved(0)
+//                .setDefunct("N")
+//                .setIp(null)
+//                .setAccesstime(new Date())
+//                .setRegTime(new Date());
+//
+//        if( userService.registry(user) ){
+//            return "注册成功!";
+//        } else{
+//            return "注册失败，可能是账号重复或者网络问题";
+//        }
+//    }
+
     @PostMapping("/registry")
-    public String registry(@Valid @RequestBody UserFront userFront){
+    public ResponseResult registry(@Valid @RequestBody UserFront userFront, BindingResult result) {
+        if (result.hasErrors()) {
+            return ResponseResult.err("注册失败，" + result.getAllErrors().get(0).getDefaultMessage(), null);
+        }
         User user = new User().setUserId(userFront.getUserId())
                 .setEmail(userFront.getEmail())
-                .setPassword( MD5Util.md5(userFront.getPassword()) )
+                .setPassword(MD5Util.md5(userFront.getPassword()))
                 .setNick(userFront.getNickname())
                 .setSchool(userFront.getSchool());
         user.setSubmit(0)
@@ -62,11 +87,11 @@ public class UserController {
                 .setIp(null)
                 .setAccesstime(new Date())
                 .setRegTime(new Date());
-
-        if( userService.registry(user) ){
-            return "注册成功!";
-        } else{
-            return "注册失败，可能是账号重复或者网络问题";
+        if (userService.registry(user)) {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return ResponseResult.ok("注册成功!", null);
+        } else {
+            return ResponseResult.err("注册失败，该学号已注册", null);
         }
     }
 

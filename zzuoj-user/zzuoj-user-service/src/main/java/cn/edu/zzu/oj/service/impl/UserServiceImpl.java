@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.parsing.Problem;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -35,7 +36,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
     @Override
     public Boolean registry(User user) {
-        return userMapper.insert(user) == 1;
+        try {
+            return userMapper.insert(user) == 1;
+        } catch (DuplicateKeyException e) {
+            return false;
+        }
     }
 
     @Override
