@@ -50,7 +50,7 @@
 <!--        eureka、config、zuul-->
         <springcloud-netflix-eureka-server.version>2.2.1.RELEASE</springcloud-netflix-eureka-server.version>
         <springcloud-netflix-eureka-client.version>2.2.1.RELEASE</springcloud-netflix-eureka-client.version>
-        <springcloud-config-server.version>2.2.1.RELEASE</springcloud-config-server.version>
+        <springcloud-config-server.version>2.2.4.RELEASE</springcloud-config-server.version>
         <springcloud-config.version>2.2.1.RELEASE</springcloud-config.version>
         <springcloud-netfilx-zuul.version>2.2.1.RELEASE</springcloud-netfilx-zuul.version>
 <!--        hystrix、ribbon、feign-->
