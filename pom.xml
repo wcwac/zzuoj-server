@@ -23,7 +23,6 @@
         <module>zzuoj-problem/zzuoj-problem-service</module>
         <module>zzuoj-judge/zzuoj-judge-service</module>
         <module>zzuoj-judge/zzuoj-judge-interface</module>
-        <module>zzuoj-base/zzuoj-common-web</module>
         <module>zzuoj-submission/zzuoj-submission-interface</module>
         <module>zzuoj-submission/zzuoj-submission-service</module>
     </modules>
@@ -43,7 +42,7 @@
         <spring-boot-web.version>2.2.2.RELEASE</spring-boot-web.version>
         <spring-boot-test.version>2.2.2.RELEASE</spring-boot-test.version>
         <!--数据库-->
-        <mysql-connector-java.version>5.1.47</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.25</mysql-connector-java.version>
         <druid.version>1.1.10</druid.version>
         <mybatis-plus-generator.version>3.4.1</mybatis-plus-generator.version>
         <mybatis-plus-boot-starter.version>3.4.1</mybatis-plus-boot-starter.version>
@@ -248,16 +247,16 @@
 <!--    热部署-->
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-<!--                    <source>1.8</source>-->
-<!--                    <target>1.8</target>-->
-                    <fork>true</fork>
-                    <addResources>true</addResources>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--&lt;!&ndash;                    <source>1.8</source>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <target>1.8</target>&ndash;&gt;-->
+<!--                    <fork>true</fork>-->
+<!--                    <addResources>true</addResources>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
